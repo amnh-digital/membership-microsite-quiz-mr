@@ -195,7 +195,8 @@ var timeline = (function($){
 	};
 
 	var showAnswer = function(num){
-
+		$('#question'+num+' .questionWrapper').hide();
+		$('#question'+num+' .answerWrapper').show();
 	};
 
 

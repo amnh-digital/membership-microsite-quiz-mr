@@ -19,8 +19,6 @@
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 
-		display: none;
-
 		h2 {
 			font-family: $styled-font;
 			font-size: $timeline-font-h2;
@@ -53,6 +51,7 @@
 		-webkit-box-sizing: border-box; 
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
+		display: none;
 
 		h2 {
 			font-family: $styled-font;
