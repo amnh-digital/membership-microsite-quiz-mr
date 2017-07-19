@@ -16,12 +16,19 @@ var timeline = (function($){
 			timelineBottomClass: 'timelineElementBottom',
 			timelineAxisClass: 'major-axis-point',
 			timelineTickClass: 'tick-box',
-			chosenClass: 'optChosen'
+			chosenClass: 'optChosen',
+			correctClass: 'optCorrect',
+			incorrectClass: 'optIncorrect',
+			answerElementInnerClass: 'answerWrapper'
 		}
 	};
 	
 	var init = function(opt){
 		o = $.extend({}, o, opt);
+
+		questions = o.data.questions;
+
+		console.log(questions);
 
 		buildTimelines();
 		toggleHelper();
@@ -42,8 +49,6 @@ var timeline = (function($){
 		data = o.data;
 
 		$.each(data.questions,function(i,q){
-			console.log(i); // number
-			console.log(q); // question data
 
 			// set some important values
 			var min = q.min; //min year on timeline
@@ -64,28 +69,23 @@ var timeline = (function($){
 			console.log(minWidth);
 
 
-			// create question as wrapped element
-			$("<div>", {class: o.elems.questionElementClass, 'id': 'question'+i}).css({
+			// create question and answer as wrapped element
+			$("<div>", {class: o.elems.questionElementClass, id: 'question'+i}).css({
 	        	'background-image': 'url(/dist/img/'+q.image+')'
 	        }).append(
 		        $("<div>", {class: o.elems.questionElementInnerClass}).append(
 		            $("<h2>").text('Question #'+(i+1)),
 		            $('<p>').text(q.text)
-		        )
+		        ),
+		        $('<div>',{class: o.elems.answerElementInnerClass}).append(
+		        	$('<h2>').html('You did better than <span>XX%</span> of people who answered this question!'),
+		        	$('<div>',{class: 'answerText'}).html(q.answerText),
+		        	$('<div>',{ class: 'nextButtonWrapper' }).append(
+		        		$('<span>',{class: 'next', 'data-timeline': i}).text('next'),
+		        		$('<div>',{class: 'arrow-right'})
+	        		)
+	        	)
 		    ).appendTo(o.elems.questionWrapper);
-
-
-			// this was there for testing, likely wont need
-			/*
-			var nextWrapper = $('<div></div>').addClass('next-wrapper');
-			$(nextWrapper).appendTo($thisQ);
-
-			var nextButton = $('<input>').addClass('next').attr({
-				'type': 'button',
-				'value': 'next',
-				'data-timeline': i
-			});
-			$(nextButton).appendTo($(nextWrapper));*/
 
 			// create timeline element for this questions
 			var thisT = $('<div></div>')
@@ -117,11 +117,6 @@ var timeline = (function($){
 			        $("<div>", {class: 'label'}).text(displayYear)
 			    ).appendTo($(thisT).children('.'+o.elems.timelineTopClass));
 
-
-
-
-
-
 				/*
 				if('hideMinorLabels' in q){
 					if(q.hideMinorLabels == true){
@@ -129,17 +124,9 @@ var timeline = (function($){
 					}
 				}*/
 
-	
-
 				thisYear = thisYear + scale;
 				count++;
 			}
-
-
-
-
-
-
 			
 			$('.tick-box').each(function(){
 				var thisYear = $(this).attr('data-year');
@@ -163,7 +150,6 @@ var timeline = (function($){
 		});
 	};
 
-	
 
 	var showSplash = function(){
 
@@ -187,12 +173,39 @@ var timeline = (function($){
 	};
 
 	
-
 	var answerSelected = function(opt){
 		$('.'+o.elems.chosenClass).remove();
 		var $indicator = $("<img>", {class: o.elems.chosenClass, 'src': o.imgPath+'pick.png'})
 		.appendTo('.'+o.elems.timelineTickClass+'[data-year="'+opt+'"] .hit');
-	}
+	};
+
+
+	var verifyAnswer = function(opt,num){
+		var correct = questions[num].answer;
+
+		$('.chosen').remove();
+
+		var $indicator = $("<img>", {class: 'chosen '+ o.elems.correctClass, 'src': o.imgPath+'yep.png'})
+			.appendTo('.'+o.elems.timelineTickClass+'[data-year="'+correct+'"] .hit');
+
+		if(opt != correct){
+			var $indicator = $("<img>", {class: 'chosen '+o.elems.incorrectClass, 'src': o.imgPath+'nope.png'})
+			.appendTo('.'+o.elems.timelineTickClass+'[data-year="'+opt+'"] .hit');
+		}
+	};
+
+	var showAnswer = function(num){
+
+	};
+
+
+
+
+
+
+
+
+
 
 
 	var toggleHelper = function(){
@@ -215,10 +228,6 @@ var timeline = (function($){
 			$tooltip.hide();
 			$(o.elems.timelineWrapper).css({'cursor': 'default'});
 		}
-
-		
-
-
 	}
 
 
@@ -267,7 +276,11 @@ var timeline = (function($){
 
 		$('.'+o.elems.timelineTickClass+' .hit').click(function(){
 			var selectedYear = $(this).parent().attr('data-year');
-			answerSelected(selectedYear);
+			var $t = getActiveTimeline();
+			var timelineNum = $t.attr('id').substring(8);
+			//answerSelected(selectedYear);
+			verifyAnswer(selectedYear,timelineNum);
+			showAnswer(timelineNum);
 		});
 	};
 
