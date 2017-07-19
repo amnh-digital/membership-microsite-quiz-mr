@@ -49,6 +49,21 @@ body {
 			float:left;
 			width: 150px;
 			color: $header-text;
+
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				display: inline-block;
+				float: right;
+				margin-top: 11px;
+
+				li {
+					display: inline-block;
+					padding: 5px;
+					margin-left: 5px;
+				}
+			}
 		}
 	}
 
