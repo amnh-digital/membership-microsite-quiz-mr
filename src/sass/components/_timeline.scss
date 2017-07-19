@@ -14,10 +14,6 @@
 	left: 0;
 	font-family: $styled-font;
 	overflow: hidden; 
-	cursor: grab; 
-	cursor : -o-grab; 
-	cursor : -moz-grab; 
-	cursor : -webkit-grab;
 
 
 
@@ -58,20 +54,37 @@
 		.tick-box {
 			display: table-cell;
 			font-size: $timeline-font-sm;
-			
-	
+			vertical-align: top;
 			border-right: 1px solid $tick-border;
 			
 			
 			height: 100%;
 
-			div {
+			.hit{
+				width: 100%;
+				height:55px;
+				cursor: pointer;
+				padding: 6px 4px 0 4px;
+				-webkit-box-sizing: border-box; 
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+				img {
+					max-width: 100%;
+					margin-top: 50%;
+				}
+
+				&:hover {
+					background: rgba(0,0,0, .2);
+				}
+			}
+
+			.label {
 				border-top: 3px solid $tick-border;
 				padding: 10px 4px 0 4px;
 				-webkit-box-sizing: border-box; 
 				-moz-box-sizing: border-box;  
-				box-sizing: border-box; 
-				margin-top: 55px;
+				box-sizing: border-box;
 			}
 		}
 	}

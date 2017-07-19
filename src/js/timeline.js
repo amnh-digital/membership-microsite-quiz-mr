@@ -4,6 +4,7 @@ var timeline = (function($){
 
 	var o = {
 		timelineMinWidth: 1000,
+		imgPath: '/dist/img/',
 		elems: {
 			questionWrapper: '.wrapper',
 			timelineWrapper: '#timeline',
@@ -14,7 +15,8 @@ var timeline = (function($){
 			timelineTopClass: 'timelineElementTop',
 			timelineBottomClass: 'timelineElementBottom',
 			timelineAxisClass: 'major-axis-point',
-			timelineTickClass: 'tick-box'
+			timelineTickClass: 'tick-box',
+			chosenClass: 'optChosen'
 		}
 	};
 	
@@ -25,6 +27,8 @@ var timeline = (function($){
 		toggleHelper();
 		addListeners();
 		showSplash();
+
+		answerSelected('-4.7');
 
 
 		var d = new Date();
@@ -63,17 +67,6 @@ var timeline = (function($){
 
 
 			// create question as wrapped element
-			/*var thisQ = $('<div></div>')
-				.addClass(o.elems.questionElementClass)
-				.attr({'id':'question'+i})
-				.html('<h2>Question #'+(i+1)+'</h2><p>'+q.text+'</p>');
-			$(thisQ).appendTo(o.elems.questionWrapper);
-
-			var $thisQ = $('<div>',{
-				'class': o.elems.questionElementClass,
-				'id': 'question'+i
-			}).appendTo(o.elems.questionWrapper);*/
-
 			$("<div>", {class: o.elems.questionElementClass, 'id': 'question'+i}).css({
 	        	'background-image': 'url(/dist/img/'+q.image+')'
 	        }).append(
@@ -103,20 +96,11 @@ var timeline = (function($){
 				.css({'minWidth':minWidth+'px'})
 				.html('<div class="'+o.elems.timelineTopClass+'"></div><div class="'+o.elems.timelineBottomClass+'"></div>');
 			$(thisT).appendTo(o.elems.timelineWrapper);
-
-			console.log('ping elem made');
-			
+		
 
 			/* * * * * * * * * * */
 			/* build tick marks */
 			/* * * * * * * * * * */
-			//console.log(min);
-			//console.log(max);
-			//console.log(scale);
-
-
-
-
 			var thisYear = min;
 			var count = 0;
 			console.log('---------');
@@ -130,8 +114,16 @@ var timeline = (function($){
 					displayYear = thisYear.toFixed(roundScale);
 				}
 
+				var $tick = $("<div>", {class: o.elems.timelineTickClass, 'data-year': thisYear.toFixed(roundScale)}).append(
+			        $("<div>", {class: 'hit'}),
+			        $("<div>", {class: 'label'}).text(displayYear)
+			    ).appendTo($(thisT).children('.'+o.elems.timelineTopClass));
 
-				var tick = $('<div></div>').addClass('tick-box').html('<div>'+displayYear+'</div>').attr('data-year',thisYear.toFixed(roundScale));
+
+
+
+
+
 				/*
 				if('hideMinorLabels' in q){
 					if(q.hideMinorLabels == true){
@@ -139,7 +131,7 @@ var timeline = (function($){
 					}
 				}*/
 
-				$(tick).appendTo($(thisT).children('.'+o.elems.timelineTopClass));
+	
 
 				thisYear = thisYear + scale;
 				count++;
@@ -210,7 +202,18 @@ var timeline = (function($){
 			showCard(thisTimeline);
 
 		});
+
+		$('.'+o.elems.timelineTickClass+' .hit').click(function(){
+			var selectedYear = $(this).parent().attr('data-year');
+			answerSelected(selectedYear);
+		});
 	};
+
+	var answerSelected = function(opt){
+		$('.'+o.elems.chosenClass).remove();
+		var $indicator = $("<img>", {class: o.elems.chosenClass, 'src': o.imgPath+'pick.png'})
+		.appendTo('.'+o.elems.timelineTickClass+'[data-year="'+opt+'"] .hit');
+	}
 
 
 	var toggleHelper = function(){
@@ -223,8 +226,15 @@ var timeline = (function($){
 
 		if($timeline.width() > $(window).width()){
 			$tooltip.show();
+			$(o.elems.timelineWrapper).css({
+				'cursor': 'grab', 
+				'cursor': '-o-grab',
+				'cursor' : '-moz-grab',
+				'cursor' : '-webkit-grab'
+			});
 		} else {
 			$tooltip.hide();
+			$(o.elems.timelineWrapper).css({'cursor': 'default'});
 		}
 
 		
