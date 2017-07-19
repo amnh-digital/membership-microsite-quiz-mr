@@ -28,12 +28,10 @@ var timeline = (function($){
 		addListeners();
 		showSplash();
 
-		answerSelected('-4.7');
+
 
 
 		var d = new Date();
-		
-
 		console.log('dragger initialized');
 		console.log('end of build '+d.toLocaleTimeString());
 		
@@ -188,26 +186,7 @@ var timeline = (function($){
 		}	
 	};
 
-	var addListeners = function(){
-		var that = this;
-
-		$(window).resize(function() {
-			fitTimelineLabels();
-			toggleHelper();
-		});
-
-		$('.next').click(function(){
-			var thisTimeline = $(this).attr('data-timeline');
-			thisTimeline++;
-			showCard(thisTimeline);
-
-		});
-
-		$('.'+o.elems.timelineTickClass+' .hit').click(function(){
-			var selectedYear = $(this).parent().attr('data-year');
-			answerSelected(selectedYear);
-		});
-	};
+	
 
 	var answerSelected = function(opt){
 		$('.'+o.elems.chosenClass).remove();
@@ -269,6 +248,27 @@ var timeline = (function($){
 
 	var getActiveTimeline = function(){
 		return $('.'+o.elems.timelineElementClass+':visible');
+	};
+
+	var addListeners = function(){
+		var that = this;
+
+		$(window).resize(function() {
+			fitTimelineLabels();
+			toggleHelper();
+		});
+
+		$('.next').click(function(){
+			var thisTimeline = $(this).attr('data-timeline');
+			thisTimeline++;
+			showCard(thisTimeline);
+
+		});
+
+		$('.'+o.elems.timelineTickClass+' .hit').click(function(){
+			var selectedYear = $(this).parent().attr('data-year');
+			answerSelected(selectedYear);
+		});
 	};
 
 
