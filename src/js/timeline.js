@@ -7,6 +7,7 @@ var timeline = (function($){
 		elems: {
 			questionWrapper: '.wrapper',
 			timelineWrapper: '#timeline',
+			tooltip: '#tooltip',
 			questionElementClass: 'questionElement',
 			questionElementInnerClass: 'questionWrapper',
 			timelineElementClass: 'timelineElement',
@@ -21,6 +22,7 @@ var timeline = (function($){
 		o = $.extend({}, o, opt);
 
 		buildTimelines();
+		toggleHelper();
 		addListeners();
 		showSplash();
 
@@ -199,6 +201,7 @@ var timeline = (function($){
 
 		$(window).resize(function() {
 			fitTimelineLabels();
+			toggleHelper();
 		});
 
 		$('.next').click(function(){
@@ -210,7 +213,24 @@ var timeline = (function($){
 	};
 
 
+	var toggleHelper = function(){
+		
+		var $tooltip = $(o.elems.tooltip);
+		var $timeline = getActiveTimeline();
 
+		console.log($timeline.width());
+		console.log($(window).width());
+
+		if($timeline.width() > $(window).width()){
+			$tooltip.show();
+		} else {
+			$tooltip.hide();
+		}
+
+		
+
+
+	}
 
 
 	var fitTimelineLabels = function(timelineId){
