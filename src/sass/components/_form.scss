@@ -21,6 +21,8 @@
     margin-right: auto;
     color: #333333;
     top: 30px;
+    overflow: auto;
+    height: calc(100% - (#{$header-height} / 2) -  (#{$timeline-height} / 2) + 20px );
 
     h3 {
     	display: inline-block;
@@ -29,9 +31,9 @@
     	text-transform: uppercase;
     	color: #fff;
     	margin: 0;
-    	padding: 14px 0;
+    	padding: 12px 0;
     	background-color: #004bb4;
-    	font-size: 30px;
+    	font-size: 28px;
     	font-family: $styled-font;
     }
 
@@ -44,31 +46,42 @@
     	label {
     		display: inline-block;
     		width: 100%;
-    		font-size: 16px;
+    		font-size: 15px;
     		color: #333333;
     		margin-bottom: 3px;
     	}
 
     	input[type="text"], input[type="email"] {
     		width: calc(100% - 20px);
-    		padding: 14px 10px;
+    		padding: 10px;
     		border: 1px solid #cccccc;
     		border-radius: 2px;
+    		font-size: 15px;
     	}
 
     	select {
     		width: calc(100% - 40px);
-    		padding: 14px 10px;
+    		padding: 10px;
     		border: 1px solid #cccccc;
     		border-radius: 2px;
     		-webkit-appearance: none;
 		    -moz-appearance: none;
 		    appearance: none;
 		    background-color: #fff;
+		    font-size: 15px;
 
     	}
     	option {
 	    	background-color: #fff;
+	    }
+
+	    input[type="button"]{
+	    	background-color: #004bb4;
+	    	width: 100%;
+	    	padding: 10px 0;
+	    	border-width: 0;
+	    	color: #fff;
+	    	cursor: pointer;
 	    }
     }
 
@@ -85,11 +98,12 @@
 
     .form-submit {
     	clear: both;
+    	margin-top: 5px;
     }
 
     p {
     	margin: 20px 20px 5px 20px;
-    	font-size: 16px;
+    	font-size: 15px;
 
     	&.footnote {
     		font-size: 12px;
@@ -103,3 +117,5 @@
     	}
     }
 }
+
+#form, #screen { display: none; }

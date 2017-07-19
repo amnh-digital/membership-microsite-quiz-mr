@@ -71,7 +71,7 @@ var timeline = (function($){
 
 			// create question and answer as wrapped element
 			$("<div>", {class: o.elems.questionElementClass, id: 'question'+i}).css({
-	        	'background-image': 'url(/dist/img/'+q.image+')'
+	        	'background-image': 'url(/slideImages/'+q.image+')'
 	        }).append(
 		        $("<div>", {class: o.elems.questionElementInnerClass}).append(
 		            $("<h2>").text('Question #'+(i+1)),
@@ -174,10 +174,7 @@ var timeline = (function($){
 	};
 
 
-	var captureUser = function(){
-		
-	};
-
+	
 	
 	var answerSelected = function(opt){
 		$('.'+o.elems.chosenClass).remove();
@@ -185,8 +182,7 @@ var timeline = (function($){
 		.appendTo('.'+o.elems.timelineTickClass+'[data-year="'+opt+'"] .hit');
 	};
 
-
-	var verifyAnswer = function(opt,num){
+	var showAnswer = function(opt,num){
 		var correct = questions[num].answer;
 
 		$('.chosen').remove();
@@ -197,14 +193,26 @@ var timeline = (function($){
 		if(opt != correct){
 			var $indicator = $("<img>", {class: 'chosen '+o.elems.incorrectClass, 'src': o.imgPath+'nope.png'})
 			.appendTo('.'+o.elems.timelineTickClass+'[data-year="'+opt+'"] .hit');
-		}
-	};
+		}	
 
-	var showAnswer = function(num){
 		$(o.elems.tooltip).hide();
 		$('#question'+num+' .questionWrapper').hide();
 		$('#question'+num+' .answerWrapper').show();
 	};
+
+	var showForm = function(selectedYear){
+		$('#form #submittedYear').val(selectedYear);
+		$(o.elems.tooltip).hide();
+		$('#form, #screen').show();
+
+
+	};
+
+	var validateForm = function(){
+		$('#form, #screen').hide();
+		var selectedYear = $('#form #submittedYear').val();
+		showAnswer(selectedYear,0);
+	}
 
 
 
@@ -289,16 +297,15 @@ var timeline = (function($){
 
 
 			if(timelineNum == 0){
-				captureUser();
+				showForm(selectedYear);
 			} else {
 				//answerSelected(selectedYear);
-				verifyAnswer(selectedYear,timelineNum);
-				showAnswer(timelineNum);
+				showAnswer(selectedYear,timelineNum);
 			}
+		});
 
-
-
-			
+		$('#form #submit').click(function(){
+			validateForm();
 		});
 	};
 

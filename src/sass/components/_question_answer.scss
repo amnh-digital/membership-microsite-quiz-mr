@@ -64,7 +64,9 @@
 			margin: 0;
 			text-align:center;
 
-			span { color: #fff; }
+			span { 
+				color: #fff; 
+			}
 		}
 
 		p {
@@ -101,6 +103,17 @@
 			border-left: 10px solid #dcdcdc;
 			display: inline-block;
 		}
+	}
 
+
+	@media (max-width: $breakpoint-lg){
+		.questionWrapper, .answerWrapper {
+			max-width: 900px;
+
+			.next {
+				padding: 20px 25px;
+				font-size: 26px;
+			}
+		}
 	}
 }
