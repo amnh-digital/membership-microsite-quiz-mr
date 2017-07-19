@@ -167,6 +167,7 @@ var timeline = (function($){
 		if($('#question'+num).length) {
 			$('#question'+num+', #timeline'+num).show();
 			fitTimelineLabels(num);
+			toggleHelper();
 		} else {
 			alert('no more questions');
 		}	
@@ -195,6 +196,7 @@ var timeline = (function($){
 	};
 
 	var showAnswer = function(num){
+		$(o.elems.tooltip).hide();
 		$('#question'+num+' .questionWrapper').hide();
 		$('#question'+num+' .answerWrapper').show();
 	};
@@ -279,6 +281,7 @@ var timeline = (function($){
 			var selectedYear = $(this).parent().attr('data-year');
 			var $t = getActiveTimeline();
 			var timelineNum = $t.attr('id').substring(8);
+
 			//answerSelected(selectedYear);
 			verifyAnswer(selectedYear,timelineNum);
 			showAnswer(timelineNum);
