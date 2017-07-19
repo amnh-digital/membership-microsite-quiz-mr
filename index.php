@@ -36,17 +36,81 @@
 
 </head>
 <body>
-
+<div id="screen"></div>
 <header>
 	<div class="logo"><a href=""><img src="/dist/img/logo.png" alt="American Museum of Natural History"/></a></div>
 	<div class="site-title"><h1>Quiz: When In The World</h1></div>
-	<div class="social">social</div>
+	<div class="social">
+		<ul>
+			<li><a href=""><img src="/dist/img/share-fb.png"/></a></li>
+			<li><a href=""><img src="/dist/img/share-tw.png"/></a></li>
+			<li><a href=""><img src="/dist/img/share-tum.png"/></a></li>
+			<li><a href=""><img src="/dist/img/share-em.png"/></a></li>
+		</ul>
+	</div>
 </header>
+
+
+<div id="form">
+	<h3>Wait!</h3>
+	<p><strong>Before we go on, please tell use where to send your decal!</strong></p>
+
+	<div class="form-wrap">
+		<label for="fn">First name</label>
+		<input type="text" name="fn" id="fn">
+	</div>
+
+	<div class="form-wrap">
+		<label for="ln">Last name</label>
+		<input type="text" name="ln" id="ln">
+	</div>
+
+	<div class="form-wrap">
+		<label for="em">Email</label>
+		<input type="email" name="em" id="em">
+	</div>
+
+	<div class="form-wrap">
+		<label for="address">Street Address</label>
+		<input type="text" name="address" id="address">
+	</div>
+
+	<div class="form-wrap">
+		<label for="city">City</label>
+		<input type="text" name="city" id="city">
+	</div>
+
+	<div class="form-wrap form-state">
+		<label for="state">State</label>
+		<select id="state" name="state">
+			<option>sdf</option>
+		</select>
+	</div>
+
+	<div class="form-wrap form-zip">
+		<label for="zip">Zip</label>
+		<input type="text" name="zip" id="zip">
+	</div>
+
+	<div class="form-wrap form-submit">
+		<input type="button" id="submit" value="Enter">
+	</div>
+
+	<p class="footnote">We'll send you fascinating new discoveries, special offers, and sneak peeks at upcoming exhibitions.</p>
+	<p class="footnote">And if you don’t love seeing cool content, you can unsubscribe at any time.</p>
+</div>
+
 <div class="wrapper"></div>
 
-<div id="tooltip">Scroll timeline and select tiem period below</div>
+<div id="tooltip">
+	<span class="first">Scroll timeline</span><br />
+	<span class="grey">and select time period below</span>
+</div>
 <div id="timeline-spacer"></div>
 <div id="timeline" class="dragscroll"></div>
+
+
+
 
 
 
@@ -55,7 +119,9 @@
 	var questions = {
 		'questions':[
 			{
-				'text': 'When did our solar system form?',
+				'text': 'You gotta start somewhere (or somewhen): when did our solar system form?',
+				'answerText': '<p>Our solar system began forming from a wispy cloud of gas and dust about 4.6 billion years ago. Gravity compressed the center of this flat spinning disk until nuclear fusion sparked our Sun, with enough leftover material for planets, moons, asteroids, and comets. And while 4.6 billion years ago seems like a long time, think about this: our galaxy had already been around for over 8.5 billion years before the Sun came into existence.</p>',
+				'answer': '-4.6',
 				'min': 	-8,
 				'max': -2.1,
 				'minorScale': .1,
@@ -69,6 +135,7 @@
 			},
 			{
 				'text': 'When was the American Museum of Natural History founded?',
+				'answerText': '',
 				'min': 1850,
 				'max': 1899,
 				'minorScale': 1,
@@ -78,9 +145,10 @@
 				'majorLabelOffset': 0,
 				'majorGridLabel': '',
 				'image': 'lions.jpg'
-			},
+			}/*,
 			{
 				'text': 'When did the Aztec civilization exist in central and southern Mexico?',
+				'answerText': '',
 				'min': 1000,
 				'max': 1800,
 				'minorScale': 20,
@@ -90,7 +158,7 @@
 				'majorLabelOffset': -1,
 				'majorGridLabel': 'th Century',
 				'image': 'lions.jpg'
-			}
+			}*/
 		]
 	};
 

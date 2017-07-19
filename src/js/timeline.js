@@ -173,6 +173,11 @@ var timeline = (function($){
 		}	
 	};
 
+
+	var captureUser = function(){
+		
+	};
+
 	
 	var answerSelected = function(opt){
 		$('.'+o.elems.chosenClass).remove();
@@ -282,9 +287,18 @@ var timeline = (function($){
 			var $t = getActiveTimeline();
 			var timelineNum = $t.attr('id').substring(8);
 
-			//answerSelected(selectedYear);
-			verifyAnswer(selectedYear,timelineNum);
-			showAnswer(timelineNum);
+
+			if(timelineNum == 0){
+				captureUser();
+			} else {
+				//answerSelected(selectedYear);
+				verifyAnswer(selectedYear,timelineNum);
+				showAnswer(timelineNum);
+			}
+
+
+
+			
 		});
 	};
 

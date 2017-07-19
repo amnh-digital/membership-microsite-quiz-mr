@@ -65,6 +65,11 @@ body {
 				}
 			}
 		}
+
+		@media (max-width: $breakpoint-md){
+			.site-title { display: none; }
+			.social { float: right; }
+		}
 	}
 
 	.wrapper {
