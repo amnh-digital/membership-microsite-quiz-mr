@@ -1,0 +1,8 @@
+{
+  "name": "AMNH Quiz",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "normalize-css": "normalize.css#^7.0.0",
+    "dragscroll": "^0.0.8"
+  }
+}
