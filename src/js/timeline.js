@@ -43,8 +43,8 @@ var timeline = (function($){
 		console.log('dragger initialized');
 		console.log('end of build '+d.toLocaleTimeString());
 
-		//$('.hit').trigger('click');
-		showCard(1);
+		$('.hit').trigger('click');
+		//showCard(1);
 
 
 		/* testing and debug */
@@ -318,6 +318,20 @@ var timeline = (function($){
 
 		$('#form #submit').click(function(){
 			validateForm();
+		});
+
+		$('#form input[type="text"],#form input[type="email"]').focus(function(){
+			$(this).addClass('active');
+		}).blur(function(){
+			if($(this).val() == ''){
+				$(this).removeClass('active');
+				
+				if($(this).siblings('label').hasClass('required')){
+					$(this).addClass('error');
+				}
+			} else {
+				$(this).removeClass('error').addClass('active');
+			}
 		});
 	};
 

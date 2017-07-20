@@ -49,6 +49,14 @@
     		font-size: 15px;
     		color: #333333;
     		margin-bottom: 3px;
+            &.required:after {
+                content:" *";
+                color: #af3838;
+                display: inline;
+                position: absolute;
+                margin-top: -5px;
+                margin-left: 1px;
+            }
     	}
 
     	input[type="text"], input[type="email"] {
@@ -57,6 +65,19 @@
     		border: 1px solid #cccccc;
     		border-radius: 2px;
     		font-size: 15px;
+            color: #004bb4;
+
+            &:focus {
+                outline:none;
+                border-color: #004bb4;
+            }
+            &.active {
+                border-color: #004bb4;
+            }
+            &.error {
+                border-color: #af3838;
+                color: #af3838;
+            }
     	}
 
     	select {
@@ -69,10 +90,12 @@
 		    appearance: none;
 		    background-color: #fff;
 		    font-size: 15px;
+            color: #004bb4;
 
     	}
     	option {
 	    	background-color: #fff;
+            color: #004bb4;
 	    }
 
 	    input[type="button"]{

@@ -59,17 +59,17 @@
 	<p><strong>Before we go on, please tell use where to send your decal!</strong></p>
 
 	<div class="form-wrap">
-		<label for="fn">First name</label>
+		<label for="fn" class="required">First name</label>
 		<input type="text" name="fn" id="fn">
 	</div>
 
 	<div class="form-wrap">
-		<label for="ln">Last name</label>
+		<label for="ln" class="required">Last name</label>
 		<input type="text" name="ln" id="ln">
 	</div>
 
 	<div class="form-wrap">
-		<label for="em">Email</label>
+		<label for="em" class="required">Email</label>
 		<input type="email" name="em" id="em">
 	</div>
 
