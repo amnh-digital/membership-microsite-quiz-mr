@@ -125,7 +125,7 @@
 <div id="timeline" class="dragscroll"></div>
 <!-- /timeline elements -->
 
-<div id="splash-screen">
+<div class="splash" id="splash-screen">
 	<div id="intro">
 		<img src="/dist/img/logo-white.png"/>
 		<h1>When In The World Quiz</h1>
@@ -139,7 +139,27 @@
 			<div class="left"><span>the</span></div>
 			<div class="right"><span>Take Quiz</span></div>
 		</div>
+	</div>
+</div>
 
+<div class="splash" id="confirmation-screen">
+	<div id="thanks">
+		<img src="/dist/img/logo-white.png"/>
+		<h1>Thank Your for taking "When in the World quiz"</h1>
+
+		<h2>You did better than <span>XX%</span> of people who took this quiz!</h2>
+
+		<p>Thanks for exploring some of the key moments in the 4.6 billion-year story contained within the American Museum of Natural History. From our planet’s earliest moments to the scientific breakthroughs happening today, this vast history helps us know more about who we are and what lies ahead.</p>
+ 
+		<p>Your Museum decal will be on its way to you soon. Now, take a moment to help us do what we do best: share fascinating facts far and wide! Share the When in the World quiz on <a href="">Facebook</a> and <a href="">Twitter</a>, and challenge your friends to put their knowledge to the test.</p>
+
+		<p>There is so much more to discover at the Museum, and Members get to explore our halls like no one else. Membership will give you unlimited access to the Museum’s collections, along with tickets to special exhibitions and other incredible benefits.</p>
+
+		<p><a href="http://www.amnh.org/join-support">Click here to learn more and start or renew your membership!</a></p>
+
+		<p><a href="">Click here</a> to finish creating your profile on AMNH.org to make sure you’re in the know about all the events and news that’s important to you.
+
+		<p></p>
 	</div>
 </div>
 
@@ -151,21 +171,6 @@
 <script>
 	var questions = {
 		'questions':[
-			{
-				'text': 'You gotta start somewhere (or somewhen): when did our solar system form?',
-				'answerText': '<p>Our solar system began forming from a wispy cloud of gas and dust about 4.6 billion years ago. Gravity compressed the center of this flat spinning disk until nuclear fusion sparked our Sun, with enough leftover material for planets, moons, asteroids, and comets. And while 4.6 billion years ago seems like a long time, think about this: our galaxy had already been around for over 8.5 billion years before the Sun came into existence.</p>',
-				'answer': '-4.6',
-				'min': 	-8,
-				'max': -2.1,
-				'minorScale': .1,
-				'minorLabelRoundScale': 1,
-				'majorGridPoint': 1,
-				'majorLabelRoundScale': 1,
-				'majorLabelOffset': 0,
-				'majorGridLabel': ' Billion years ago',
-				'image': 'museum-outside.jpg',
-				'timelineMinWidth': 1800
-			},
 			{
 				'text': 'When was the American Museum of Natural History founded?',
 				'answerText': '',
@@ -180,7 +185,22 @@
 				'majorGridLabel': '',
 				'image': 'stars.jpg',
 				'timelineMinWidth': 1600
-			}/*,
+			},{
+				'text': 'You gotta start somewhere (or somewhen): when did our solar system form?',
+				'answerText': '<p>Our solar system began forming from a wispy cloud of gas and dust about 4.6 billion years ago. Gravity compressed the center of this flat spinning disk until nuclear fusion sparked our Sun, with enough leftover material for planets, moons, asteroids, and comets. And while 4.6 billion years ago seems like a long time, think about this: our galaxy had already been around for over 8.5 billion years before the Sun came into existence.</p>',
+				'answer': '-4.6',
+				'min': 	-8,
+				'max': -2.1,
+				'minorScale': .1,
+				'minorLabelRoundScale': 1,
+				'majorGridPoint': 1,
+				'majorLabelRoundScale': 1,
+				'majorLabelOffset': 0,
+				'majorGridLabel': ' Billion years ago',
+				'image': 'museum-outside.jpg',
+				'timelineMinWidth': 1800
+			}
+			/*,
 			{
 				'text': 'When did the Aztec civilization exist in central and southern Mexico?',
 				'answerText': '',
@@ -199,11 +219,11 @@
 
 	$(document).ready(function(){
 		$('#jedediah').click(function(){
-			timeline.init({data: questions,splash: '#splash-screen'});
+			timeline.init({data: questions});
 		});
 	});
 
-	timeline.init({data: questions,splash: '#splash-screen'});
+	//timeline.init({data: questions});
 
 
 </script>
