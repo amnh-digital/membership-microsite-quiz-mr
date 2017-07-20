@@ -116,4 +116,35 @@
 			}
 		}
 	}
+	@media (max-width: $breakpoint-md){
+
+		.questionWrapper {
+			h2 { font-size: 23px; }
+			p { font-size: 23px; }
+		}
+	}
+	@media (max-width: $breakpoint-sm){
+		.questionWrapper, .answerWrapper {
+			margin-top: 10px;
+			width: calc(100% - 20px); 
+			height: calc(100% - 20px);
+		}
+
+		.answerWrapper {
+			padding: 20px;
+
+			h2 { font-size: 17px; letter-spacing: 1px; }
+			p { font-size: 14px; line-height: 18px; }
+
+			.next {
+				font-size: 18px;
+				padding: 10px 15px;
+			}
+			.arrow-right {
+				border-top: 8px solid transparent;
+    			border-bottom: 8px solid transparent;
+    			border-left: 8px solid #dcdcdc;
+			}
+		}
+	}
 }

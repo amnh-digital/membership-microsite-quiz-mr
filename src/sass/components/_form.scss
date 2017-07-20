@@ -117,5 +117,35 @@
     	}
     }
 }
+@media (max-width: $breakpoint-sm){
+	#form {
+		top: 10px;
+		height: calc(100% - 20px);
+		max-width: calc(100% - 20px);
+
+		h3 {
+			padding: 8px 0;
+	    	font-size: 22px;
+		}
+		.form-wrap:not(.form-state):not(.form-zip) {
+			width: calc(100% - 30px);
+    		margin: 0 15px 10px 15px;
+
+    		label { 
+    			font-size: 14px; 
+    			margin-bottom: 2px;
+    		}
+
+    		input[type="text"], input[type="email"] {
+				padding: 8px;
+				font-size: 14px;
+			}
+		}
+		p {
+			margin: 15px 15px 5px 15px;
+		}
+	}
+}
 
 #form, #screen { display: none; }
+
