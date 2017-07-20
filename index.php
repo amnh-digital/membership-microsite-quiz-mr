@@ -37,6 +37,8 @@
 </head>
 <body>
 <div id="screen"></div>
+
+
 <header>
 	<div class="logo"><a href=""><img src="/dist/img/logo.png" alt="American Museum of Natural History"/></a></div>
 	<div class="site-title"><h1>Quiz: When In The World</h1></div>
@@ -49,6 +51,7 @@
 		</ul>
 	</div>
 </header>
+<!-- /header -->
 
 
 <div id="form">
@@ -94,21 +97,47 @@
 
 	<div class="form-wrap form-submit">
 		<input type="button" id="submit" value="Enter">
+		<input type="hidden" name="submitedYear" id="submittedYear"/>
 	</div>
 
 	<p class="footnote">We'll send you fascinating new discoveries, special offers, and sneak peeks at upcoming exhibitions.</p>
 	<p class="footnote">And if you don’t love seeing cool content, you can unsubscribe at any time.</p>
 </div>
+<!-- #form -->
 
+<!-- wrapper -->
 <div class="wrapper"></div>
+<!-- /.wrapper -->
 
+<!-- tooltip -->
 <div id="tooltip">
 	<span class="first">Scroll timeline</span><br />
 	<span class="grey">and select time period below</span>
 </div>
+<!-- /#tooltip -->
+
+<!-- timeline elements -->
 <div id="timeline-spacer"></div>
 <div id="timeline" class="dragscroll"></div>
+<!-- /timeline elements -->
 
+<div id="splash-screen">
+	<div id="intro">
+		<img src="/dist/img/logo-white.png"/>
+		<h1>When In The World Quiz</h1>
+		<p>Our history is vast. From the formation of our universe to the growth and evolution of life to the development of human cultures as we know them – it's an extensive journey through time and space.</p>
+
+		<p>We celebrate and explore all of that history at the American Museum of Natural History. We find that it's especially tricky to grasp the immense scales involved – in the simplest terms, what happened when.</p>
+
+		<p>Now's your chance to test your knowledge. Take the When in the World quiz and see if you can pinpoint key moments on the timeline, from mammoths to mummies. Take the quiz before September 9, and we’ll send you a free Museum decal so you can show off your smarts!</p>
+
+		<div id="jedediah">
+			<div class="left"><span>the</span></div>
+			<div class="right"><span>Take Quiz</span></div>
+		</div>
+
+	</div>
+</div>
 
 
 
@@ -136,6 +165,7 @@
 			{
 				'text': 'When was the American Museum of Natural History founded?',
 				'answerText': '',
+				'answer': 'f',
 				'min': 1850,
 				'max': 1899,
 				'minorScale': 1,
@@ -144,7 +174,8 @@
 				'majorLabelRoundScale': 1,
 				'majorLabelOffset': 0,
 				'majorGridLabel': '',
-				'image': 'lions.jpg'
+				'image': 'stars.jpg',
+				'timelineMinWidth': 1600
 			}/*,
 			{
 				'text': 'When did the Aztec civilization exist in central and southern Mexico?',
@@ -162,7 +193,13 @@
 		]
 	};
 
-	timeline.init({data: questions});
+	$(document).ready(function(){
+		$('#jedediah').click(function(){
+			timeline.init({data: questions,splash: '#splash-screen'});
+		});
+	});
+
+	timeline.init({data: questions,splash: '#splash-screen'});
 
 
 </script>

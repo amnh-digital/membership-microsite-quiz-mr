@@ -3,6 +3,7 @@ var timeline = (function($){
 	var questions;
 
 	var o = {
+		splash: '',
 		timelineMinWidth: 1000,
 		imgPath: '/dist/img/',
 		elems: {
@@ -26,22 +27,26 @@ var timeline = (function($){
 	var init = function(opt){
 		o = $.extend({}, o, opt);
 
+		if(o.splash == ''){
+			throw new Error('the splash screen must be defined');
+		}
 		questions = o.data.questions;
-
-		console.log(questions);
 
 		buildTimelines();
 		toggleHelper();
 		addListeners();
-		showSplash();
-
-
-
+		start();
 
 		var d = new Date();
 		console.log('dragger initialized');
 		console.log('end of build '+d.toLocaleTimeString());
 		
+	};
+
+	var start = function(){
+		
+		$(o.splash).hide();
+		showCard(0);
 	};
 
 	var buildTimelines = function(){
@@ -151,14 +156,7 @@ var timeline = (function($){
 	};
 
 
-	var showSplash = function(){
-
-
-		//this will be moved to a click element later
-		showCard(0);
-
-
-	};
+	
 
 
 	var showCard = function(num){
