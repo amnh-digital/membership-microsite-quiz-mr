@@ -95,6 +95,10 @@
 		<input type="text" name="zip" id="zip">
 	</div>
 
+	<div class="form-wrap error-wrapper">
+		<span>Oops, you forgot to complete the form! Please fill in any missing information below.</span>
+	</div>
+
 	<div class="form-wrap form-submit">
 		<input type="button" id="submit" value="Enter">
 		<input type="hidden" name="submitedYear" id="submittedYear"/>

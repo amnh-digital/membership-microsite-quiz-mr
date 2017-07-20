@@ -43,6 +43,19 @@
     	width: calc(100% - 40px);
     	margin: 0 20px 12px 20px;
 
+        &.error-wrapper{
+            color: $error-red;
+            font-size: 11px;
+            text-align: center;
+            margin-bottom: 7px;
+            opacity: 0;
+
+            span {
+                padding-top: 5px;
+
+            }
+        }
+
     	label {
     		display: inline-block;
     		width: 100%;
@@ -51,7 +64,7 @@
     		margin-bottom: 3px;
             &.required:after {
                 content:" *";
-                color: #af3838;
+                color: $error-red;
                 display: inline;
                 position: absolute;
                 margin-top: -5px;
@@ -75,8 +88,8 @@
                 border-color: #004bb4;
             }
             &.error {
-                border-color: #af3838;
-                color: #af3838;
+                border-color: $error-red;
+                color: $error-red;
             }
     	}
 
@@ -105,6 +118,10 @@
 	    	border-width: 0;
 	    	color: #fff;
 	    	cursor: pointer;
+            &:disabled {
+                background: #c5c4c4;
+                pointer-events: none;
+            }
 	    }
     }
 

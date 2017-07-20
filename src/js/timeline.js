@@ -10,6 +10,9 @@ var timeline = (function($){
 			questionWrapper: '.wrapper',
 			timelineWrapper: '#timeline',
 			tooltip: '#tooltip',
+			form: '#form',
+			formSubmit: '#form #submit',
+			formError: '.error-wrapper',
 			questionElementClass: 'questionElement',
 			questionElementInnerClass: 'questionWrapper',
 			timelineElementClass: 'timelineElement',
@@ -213,9 +216,24 @@ var timeline = (function($){
 	};
 
 	var validateForm = function(){
-		$('#form, #screen').hide();
-		var selectedYear = $('#form #submittedYear').val();
-		showAnswer(selectedYear,0);
+
+		var formError = false;
+		$(o.elems.form + ' .required').each(function() {
+			var $theInput = $(this).siblings('input');
+
+			if($theInput.val() == ''){
+				formError = true;
+				$($theInput).addClass('error');
+			}
+		});
+
+		if(formError == true){
+			toggleSubmit(false);
+		} else {
+			$('#form, #screen').hide();
+			var selectedYear = $('#form #submittedYear').val();
+			showAnswer(selectedYear,0);
+		}
 	}
 
 
@@ -256,6 +274,17 @@ var timeline = (function($){
 			$(o.elems.timelineWrapper).css({'pointer-events': 'auto'});
 		} else {
 			$(o.elems.timelineWrapper).css({'pointer-events': 'none'});
+		}
+	}
+
+	toggleSubmit = function(newStatus){
+
+		if(newStatus == true){
+			$(o.elems.formError).css({'opacity': 0});
+			$(o.elems.formSubmit).removeAttr('disabled');
+		} else {
+			$(o.elems.formError).css({'opacity': 1});
+			$(o.elems.formSubmit).attr('disabled','disabled');
 		}
 	}
 
@@ -316,22 +345,33 @@ var timeline = (function($){
 			}
 		});
 
-		$('#form #submit').click(function(){
+		$(o.elems.formSubmit).click(function(){
 			validateForm();
 		});
 
 		$('#form input[type="text"],#form input[type="email"]').focus(function(){
 			$(this).addClass('active');
 		}).blur(function(){
+
+			// adjust this input
 			if($(this).val() == ''){
 				$(this).removeClass('active');
-				
+
 				if($(this).siblings('label').hasClass('required')){
 					$(this).addClass('error');
 				}
 			} else {
 				$(this).removeClass('error').addClass('active');
 			}
+
+			// check all inputs to toggle error message
+			if($('#form input[type="text"],#form input[type="email"]').hasClass('error')){
+				toggleSubmit(false);
+			} else {
+				toggleSubmit(true);
+			}
+
+
 		});
 	};
 
