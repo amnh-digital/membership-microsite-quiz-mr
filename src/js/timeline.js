@@ -52,15 +52,21 @@ var timeline = (function($){
 		
 	};
 
+
+	// hide the splash page, show the first question
 	var start = function(){
 		$(o.splash).hide();
 		showCard(0);
 	};
 
+
+	// show conformation page
 	var destroy = function(){
 		$(o.confirmation).css({'display': 'flex'});
 	};
 
+
+	// go through each question and built timeline, question text, answer text
 	var buildTimelines = function(){
 
 		data = o.data;
@@ -168,7 +174,7 @@ var timeline = (function($){
 	};
 	
 
-
+	// hide this timeline and show the next one
 	var showCard = function(num){
 
 		toggleTimeline(true);
@@ -185,7 +191,7 @@ var timeline = (function($){
 	};
 
 
-
+	// show the user what the correct answer is with text and timeline ticks
 	var showAnswer = function(opt,num){
 
 		toggleTimeline(false);
@@ -200,14 +206,13 @@ var timeline = (function($){
 			$('.'+o.elems.timelineTickClass+'[data-year="'+opt+'"] .hit').addClass('incorrect');
 		}
 
-
-
-
 		$(o.elems.tooltip).hide();
 		$('#question'+num+' .questionWrapper').hide();
 		$('#question'+num+' .answerWrapper').show();
 	};
 
+
+	// show the user capture form
 	var showForm = function(selectedYear){
 		$('#form #submittedYear').val(selectedYear);
 		$(o.elems.tooltip).hide();
@@ -216,6 +221,8 @@ var timeline = (function($){
 
 	};
 
+
+	// validate form fields on capture form
 	var validateForm = function(){
 
 		var formError = false;
@@ -237,59 +244,8 @@ var timeline = (function($){
 		}
 	}
 
-
-
-
-
-
-
-
-
-
-
-	var toggleHelper = function(){
-		
-		var $tooltip = $(o.elems.tooltip);
-		var $timeline = getActiveTimeline();
-
-		console.log($timeline.width());
-		console.log($(window).width());
-
-		if($timeline.width() > $(window).width()){
-			$tooltip.show();
-			$(o.elems.timelineWrapper).css({
-				'cursor': 'grab', 
-				'cursor': '-o-grab',
-				'cursor' : '-moz-grab',
-				'cursor' : '-webkit-grab'
-			});
-		} else {
-			$tooltip.hide();
-			$(o.elems.timelineWrapper).css({'cursor': 'default'});
-		}
-	}
-
-	var toggleTimeline = function(newStatus){
-
-		if(newStatus == true){
-			$(o.elems.timelineWrapper).css({'pointer-events': 'auto'});
-		} else {
-			$(o.elems.timelineWrapper).css({'pointer-events': 'none'});
-		}
-	}
-
-	toggleSubmit = function(newStatus){
-
-		if(newStatus == true){
-			$(o.elems.formError).css({'opacity': 0});
-			$(o.elems.formSubmit).removeAttr('disabled');
-		} else {
-			$(o.elems.formError).css({'opacity': 1});
-			$(o.elems.formSubmit).attr('disabled','disabled');
-		}
-	}
-
-
+	
+	// look at the year boxes for this timeline and adjust their widths
 	var fitTimelineLabels = function(timelineId){
 
 		if(timelineId == null){
@@ -314,18 +270,70 @@ var timeline = (function($){
 		});
 	};
 
+
+	// helper, get the active timeline
 	var getActiveTimeline = function(){
 		return $('.'+o.elems.timelineElementClass+':visible');
 	};
 
+
+	//look at widths of window and timeline to show/hide helper tooltip
+	var toggleHelper = function(){
+		
+		var $tooltip = $(o.elems.tooltip);
+		var $timeline = getActiveTimeline();
+
+		if($timeline.width() > $(window).width()){
+			$tooltip.show();
+			$(o.elems.timelineWrapper).css({
+				'cursor': 'grab', 
+				'cursor': '-o-grab',
+				'cursor' : '-moz-grab',
+				'cursor' : '-webkit-grab'
+			});
+		} else {
+			$tooltip.hide();
+			$(o.elems.timelineWrapper).css({'cursor': 'default'});
+		}
+	}
+
+
+	// when showing the answer to a question, disable clicking on the timeline they just interacted with
+	var toggleTimeline = function(newStatus){
+
+		if(newStatus == true){
+			$(o.elems.timelineWrapper).css({'pointer-events': 'auto'});
+		} else {
+			$(o.elems.timelineWrapper).css({'pointer-events': 'none'});
+		}
+	}
+
+
+	// turn the user capture form submit button on and off
+	toggleSubmit = function(newStatus){
+
+		if(newStatus == true){
+			$(o.elems.formError).css({'opacity': 0});
+			$(o.elems.formSubmit).removeAttr('disabled');
+		} else {
+			$(o.elems.formError).css({'opacity': 1});
+			$(o.elems.formSubmit).attr('disabled','disabled');
+		}
+	}
+
+
+	// add event listeners
 	var addListeners = function(){
 		var that = this;
 
+		// timeline year boxes need to be sized properly on load and resize
+		// tooltip to scroll shows when the timeline is wider than the window
 		$(window).resize(function() {
 			fitTimelineLabels();
 			toggleHelper();
 		});
 
+		// user has viewed an answer, move on to the next question
 		$('.next').click(function(){
 			var thisTimeline = $(this).attr('data-timeline');
 			thisTimeline++;
@@ -333,6 +341,7 @@ var timeline = (function($){
 
 		});
 
+		// user has picked their answer, proceed to answer or capture if this is Q #1
 		$('.'+o.elems.timelineTickClass+' .hit').click(function(){
 			var selectedYear = $(this).parent().attr('data-year');
 			var $t = getActiveTimeline();
@@ -346,10 +355,12 @@ var timeline = (function($){
 			}
 		});
 
+		// user has attempted to submit the capture form
 		$(o.elems.formSubmit).click(function(){
 			validateForm();
 		});
 
+		// user interactions with capture form fields
 		$('#form input[type="text"],#form input[type="email"]').focus(function(){
 			$(this).addClass('active');
 		}).blur(function(){
@@ -371,8 +382,6 @@ var timeline = (function($){
 			} else {
 				toggleSubmit(true);
 			}
-
-
 		});
 	};
 
