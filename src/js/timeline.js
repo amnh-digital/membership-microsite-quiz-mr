@@ -37,9 +37,17 @@ var timeline = (function($){
 		addListeners();
 		start();
 
+
+		/* testing and debug */
 		var d = new Date();
 		console.log('dragger initialized');
 		console.log('end of build '+d.toLocaleTimeString());
+
+		//$('.hit').trigger('click');
+		showCard(1);
+
+
+		/* testing and debug */
 		
 	};
 
