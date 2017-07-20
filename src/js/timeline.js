@@ -154,15 +154,16 @@ var timeline = (function($){
 			});
 		});
 	};
-
-
 	
 
 
 	var showCard = function(num){
-		$('.'+o.elems.questionElementClass+', .'+o.elems.timelineElementClass).hide();
+
+		toggleTimeline(true);
+		
 		
 		if($('#question'+num).length) {
+			$('.'+o.elems.questionElementClass+', .'+o.elems.timelineElementClass).hide();
 			$('#question'+num+', #timeline'+num).show();
 			fitTimelineLabels(num);
 			toggleHelper();
@@ -172,26 +173,23 @@ var timeline = (function($){
 	};
 
 
-	
-	
-	var answerSelected = function(opt){
-		$('.'+o.elems.chosenClass).remove();
-		var $indicator = $("<img>", {class: o.elems.chosenClass, 'src': o.imgPath+'pick.png'})
-		.appendTo('.'+o.elems.timelineTickClass+'[data-year="'+opt+'"] .hit');
-	};
 
 	var showAnswer = function(opt,num){
+
+		toggleTimeline(false);
+
 		var correct = questions[num].answer;
 
 		$('.chosen').remove();
 
-		var $indicator = $("<img>", {class: 'chosen '+ o.elems.correctClass, 'src': o.imgPath+'yep.png'})
-			.appendTo('.'+o.elems.timelineTickClass+'[data-year="'+correct+'"] .hit');
+		$('.'+o.elems.timelineTickClass+'[data-year="'+correct+'"] .hit').addClass('correct');
 
 		if(opt != correct){
-			var $indicator = $("<img>", {class: 'chosen '+o.elems.incorrectClass, 'src': o.imgPath+'nope.png'})
-			.appendTo('.'+o.elems.timelineTickClass+'[data-year="'+opt+'"] .hit');
-		}	
+			$('.'+o.elems.timelineTickClass+'[data-year="'+opt+'"] .hit').addClass('incorrect');
+		}
+
+
+
 
 		$(o.elems.tooltip).hide();
 		$('#question'+num+' .questionWrapper').hide();
@@ -241,6 +239,15 @@ var timeline = (function($){
 		} else {
 			$tooltip.hide();
 			$(o.elems.timelineWrapper).css({'cursor': 'default'});
+		}
+	}
+
+	var toggleTimeline = function(newStatus){
+
+		if(newStatus == true){
+			$(o.elems.timelineWrapper).css({'pointer-events': 'auto'});
+		} else {
+			$(o.elems.timelineWrapper).css({'pointer-events': 'none'});
 		}
 	}
 
@@ -297,7 +304,6 @@ var timeline = (function($){
 			if(timelineNum == 0){
 				showForm(selectedYear);
 			} else {
-				//answerSelected(selectedYear);
 				showAnswer(selectedYear,timelineNum);
 			}
 		});
