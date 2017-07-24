@@ -1,6 +1,9 @@
 {
   "name": "AMNH Quiz",
   "version": "1.0.0",
+  "engines": {
+    "npm": "^3.10"
+  },
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.6.0",
