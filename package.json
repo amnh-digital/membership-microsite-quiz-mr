@@ -18,6 +18,7 @@
   },
   "scripts": {
     "build": "gulp all",
-    "start": "gulp all"
+    "start": "gulp all",
+    "postinstall": "gulp all"
   }
 }
