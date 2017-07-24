@@ -69,5 +69,5 @@ gulp.task('image', function () {
 //
 //  Build tasks
 //
-gulp.task( 'all', ['sass','js','image'] );
+gulp.task( 'heroku:production', ['sass','js','image'] );
 gulp.task( 'default', ['sass','js'] );
