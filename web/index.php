@@ -201,22 +201,8 @@ try{
 	var questions = {
 		'questions':[
 			{
-				'text': 'When was the American Museum of Natural History founded?',
-				'answerText': '',
-				'answer': 1852,
-				'min': 1850,
-				'max': 1899,
-				'minorScale': 1,
-				'minorLabelRoundScale': 0,
-				'majorGridPoint': 10,
-				'majorLabelRoundScale': 1,
-				'majorLabelOffset': 0,
-				'majorGridLabel': '',
-				'image': 'stars.jpg',
-				'timelineMinWidth': 1600
-			},{
 				'text': 'You gotta start somewhere (or somewhen): when did our solar system form?',
-				'answerText': '<p>Our solar system began forming from a wispy cloud of gas and dust about 4.6 billion years ago. Gravity compressed the center of this flat spinning disk until nuclear fusion sparked our Sun, with enough leftover material for planets, moons, asteroids, and comets. And while 4.6 billion years ago seems like a long time, think about this: our galaxy had already been around for over 8.5 billion years before the Sun came into existence.</p>',
+				'answerText': '<p>Our solar system began forming from a wispy cloud of gas and dust about 4.6 billion years ago. Gravity compressed the center of this flat spinning disk until nuclear fusion sparked our sun, with enough leftover material for planets, moons, asteroids, and comets. And while 4.6 billion years ago seems like a long time, think about this: our galaxy had already been around for over eight and a half billion years before the sun was a glimmer in the Milky Way\'s eye</p>',
 				'answer': '-4.6',
 				'min': 	-8,
 				'max': -2.1,
@@ -228,6 +214,21 @@ try{
 				'majorGridLabel': ' Billion years ago',
 				'image': 'museum-outside.jpg',
 				'timelineMinWidth': 1800
+			},
+			{
+				'text': 'The sad thing about the first appearance of life on a planet is that there was was no one around yet to say "It\'s alive. It’s ALIIIIIVE!!!" When did living things first begin to form on Earth?',
+				'answerText': '<p>Your first ancestor (and your cat\'s, your houseplant\'s, your digestive microorganisms\' first ancestor) appeared about 3.5 billion years ago. Scientists are still working to determine exactly how life first emerged – but knowing when is a pretty good start.</p>',
+				'answer': -3.5,
+				'min': -5,
+				'max': -1.1,
+				'minorScale': .1,
+				'minorLabelRoundScale': 1,
+				'majorGridPoint': 1,
+				'majorLabelRoundScale': 1,
+				'majorLabelOffset': 0,
+				'majorGridLabel': ' Billion years ago',
+				'image': 'stars.jpg',
+				'timelineMinWidth': 1600
 			}
 			/*,
 			{

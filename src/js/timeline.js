@@ -151,7 +151,7 @@ var timeline = (function($){
 				count++;
 			}
 			
-			$('.tick-box').each(function(){
+			$('#timeline'+i+' .tick-box').each(function(){
 				var thisYear = $(this).attr('data-year');
 
 				if(thisYear % majorGridPoint === 0){
@@ -182,6 +182,9 @@ var timeline = (function($){
 		
 		if($('#question'+num).length) {
 			$('.'+o.elems.questionElementClass+', .'+o.elems.timelineElementClass).hide();
+			$('.'+o.elems.timelineTickClass+' .hit').removeClass('correct').removeClass('incorrect');
+
+
 			$('#question'+num+', #timeline'+num).show();
 			fitTimelineLabels(num);
 			toggleHelper();
