@@ -1,5 +1,5 @@
 {
-  "name": "AMNH Quiz",
+  "name": "amnh_quiz",
   "version": "1.0.0",
   "engines": {
     "npm": "^3.10",
