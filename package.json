@@ -2,7 +2,8 @@
   "name": "AMNH Quiz",
   "version": "1.0.0",
   "engines": {
-    "npm": "^3.10"
+    "npm": "^3.10",
+    "node": "6.9.4"
   },
   "dependencies": {
     "gulp": "^3.9.1",
