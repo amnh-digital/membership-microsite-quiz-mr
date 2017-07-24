@@ -17,6 +17,7 @@
     "main-bower-files": "^2.13.1"
   },
   "scripts": {
-    "build": "gulp all"
+    "build": "gulp all",
+    "start": "gulp all"
   }
 }
