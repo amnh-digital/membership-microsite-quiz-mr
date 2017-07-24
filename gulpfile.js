@@ -35,7 +35,7 @@ gulp.task( 'sass', function() {
 		.pipe( sass() )
 		.pipe(plugins.concat('main.css'))
 		.pipe(cleanCSS({compatibility: 'ie8'}))
-		.pipe(gulp.dest( './dist/css/' ));
+		.pipe(gulp.dest( './web/dist/css/' ));
 
 });
 
@@ -56,17 +56,18 @@ gulp.task('js', function() {
 		.pipe(plugins.filter('**/*.js'))
 		.pipe(plugins.concat('main.js'))
 		.pipe(plugins.uglify())
-		.pipe(gulp.dest('./dist/js/'));
+		.pipe(gulp.dest('./web/dist/js/'));
 
 });
 
 gulp.task('image', function () {
   gulp.src('./src/img/*')
     .pipe(image())
-    .pipe(gulp.dest('./dist/img/'));
+    .pipe(gulp.dest('./web/dist/img/'));
 });
 
 //
 //  Build tasks
 //
+gulp.task( 'all', ['sass','js','image'] );
 gulp.task( 'default', ['sass','js'] );
