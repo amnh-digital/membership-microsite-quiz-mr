@@ -1,19 +1,22 @@
 #timeline-spacer {
 	height: $timeline-spacer-height;
 	width: 100%;
-	background-color: $timeline-background;
 	position:absolute;
 	bottom: $timeline-height;
+	background: linear-gradient($timeline-background-top,$timeline-background);
+	background: -webkit-linear-gradient($timeline-background-top,$timeline-background);
+    background: -o-linear-gradient($timeline-background-top,$timeline-background); 
+    background: -moz-linear-gradient($timeline-background-top,$timeline-background); 
 }
 #timeline {
 	width: 100%;
 	height: $timeline-height;
-	background-color: $timeline-background;
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	font-family: $styled-font;
 	overflow: hidden; 
+	background: $timeline-background;
 
 
 

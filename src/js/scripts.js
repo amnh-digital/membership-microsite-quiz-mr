@@ -15,6 +15,7 @@ $.extend({
 });
 
 $(document).ready(function(){
+	// define mapping for loading form values
 	var urlVars = {
 		'fn':'#fn',
 		'ln':'#ln',
@@ -22,9 +23,19 @@ $(document).ready(function(){
 		'source': '#source'
 	};
 
+	// load form values
 	$.each(urlVars,function(key,val){
 		if($.getUrlVar(key)){
 			$(val).val($.getUrlVar(key));
 		}
+	});
+
+	//header social share hover states
+	$('header .social ul a').hover(function() {
+		var $thisImg = $(this).find('img');
+		$thisImg.attr('src',$thisImg.attr('src').replace('.png','-hover.png'));
+	}, function() {
+		var $thisImg = $(this).find('img');
+		$thisImg.attr('src',$thisImg.attr('src').replace('-hover.png','.png'));
 	});
 });

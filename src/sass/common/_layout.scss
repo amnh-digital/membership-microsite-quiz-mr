@@ -49,6 +49,7 @@ body {
 			float:left;
 			width: 150px;
 			color: $header-text;
+			height: 100%;
 
 			ul {
 				margin: 0;
@@ -56,12 +57,27 @@ body {
 				list-style: none;
 				display: inline-block;
 				float: right;
-				margin-top: 11px;
+				height: 100%;
 
 				li {
 					display: inline-block;
-					padding: 5px;
-					margin-left: 5px;
+					height: 100%;
+
+					&:hover {
+						background-color: #f2f2f2;
+					}
+					a {
+						padding: 10px;
+						display: inline-block;
+						height: 100%;
+						line-height: 35px;
+
+						img {
+							margin: auto;
+   							vertical-align: middle; 
+   							display: inline-block;
+						}
+					}
 				}
 			}
 		}
