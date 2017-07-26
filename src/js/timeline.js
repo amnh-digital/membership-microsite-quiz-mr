@@ -12,6 +12,7 @@ var timeline = (function($){
 			timelineWrapper: '#timeline',
 			tooltip: '#tooltip',
 			form: '#form',
+			mailFields: ['address','city','state','zip'],
 			formSubmit: '#form #submit',
 			formError: '.error-wrapper',
 			questionElementClass: 'questionElement',
@@ -44,8 +45,9 @@ var timeline = (function($){
 		console.log('dragger initialized');
 		console.log('end of build '+d.toLocaleTimeString());
 
-		//$('.hit').trigger('click');
-		//showCard(2);
+		
+		showCard(0);
+		$('.hit').trigger('click');
 
 
 		/* testing and debug */
@@ -230,7 +232,9 @@ var timeline = (function($){
 
 		var formError = false;
 		$(o.elems.form + ' .required').each(function() {
-			var $theInput = $(this).siblings('input');
+			var $theInput = $(this).siblings();
+
+			console.log($theInput.attr('id'));
 
 			if($theInput.val() == ''){
 				formError = true;
@@ -364,18 +368,22 @@ var timeline = (function($){
 		});
 
 		// user interactions with capture form fields
-		$('#form input[type="text"],#form input[type="email"]').focus(function(){
+		$('#form input[type="text"],#form input[type="email"], #form select').on('focus',function() {
 			$(this).addClass('active');
-		}).blur(function(){
+		}).on('keyup blur',function() {
 
 			// adjust this input
 			if($(this).val() == ''){
+				console.log('empty');
 				$(this).removeClass('active');
+
+				//console.log($(this).attr('id')+'   '+$(this).val());
 
 				if($(this).siblings('label').hasClass('required')){
 					$(this).addClass('error');
 				}
 			} else {
+				console.log('empty');
 				$(this).removeClass('error').addClass('active');
 			}
 
@@ -384,6 +392,19 @@ var timeline = (function($){
 				toggleSubmit(false);
 			} else {
 				toggleSubmit(true);
+			}
+		});
+
+		$('#form #optin').click(function(){
+			if($(this).is(":checked")){
+				//$('label[for="address"], label[for="city"]').addClass('required');
+				$.each(o.elems.mailFields,function(i,v){
+					$('label[for="'+v+'"]').addClass('required');
+				});
+			} else {
+				$.each(o.elems.mailFields,function(i,v){
+					$('label[for="'+v+'"]').removeClass('required');
+				});
 			}
 		});
 	};
