@@ -72,7 +72,7 @@ try{
 	<div class="logo"><a href=""><img src="/dist/img/logo.png" alt="American Museum of Natural History"/></a></div>
 	<div class="site-title"><h1>Quiz: When In The World</h1></div>
 	<div class="social">
-		<ul>
+		<ul class="social-list">
 			<li><a href=""><img src="/dist/img/share-fb.png"/></a></li>
 			<li><a href=""><img src="/dist/img/share-tw.png"/></a></li>
 			<li><a href=""><img src="/dist/img/share-tum.png"/></a></li>
@@ -246,7 +246,13 @@ try{
 
 		<p><a href="">Click here</a> to finish creating your profile on AMNH.org to make sure you’re in the know about all the events and news that’s important to you.
 
-		<p></p>
+	
+		<ul class="social-list">
+			<li><a href=""><img src="/dist/img/share-fb.png"/></a></li>
+			<li><a href=""><img src="/dist/img/share-tw.png"/></a></li>
+			<li><a href=""><img src="/dist/img/share-tum.png"/></a></li>
+			<li><a href=""><img src="/dist/img/share-em.png"/></a></li>
+		</ul>
 	</div>
 </div>
 
@@ -310,7 +316,7 @@ try{
 			timeline.init({data: questions});
 		});
 	});
-	
+
 	//timeline.init({data: questions});
 
 

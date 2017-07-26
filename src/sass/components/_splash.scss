@@ -203,6 +203,31 @@
 		}
 	}
 
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+
+		li { 
+			display: inline-block;
+
+			a {
+				padding: 10px;
+				display: inline-block;
+				height: 100%;
+
+				img {
+					margin: auto;
+					vertical-align: middle; 
+					display: inline-block;
+				}
+			}
+		}
+	}
+
 	@media (max-width: $breakpoint-md-lg){
 		#thanks {
 			padding: 30px;
