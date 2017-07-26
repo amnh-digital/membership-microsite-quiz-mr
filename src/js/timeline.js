@@ -46,8 +46,8 @@ var timeline = (function($){
 		console.log('end of build '+d.toLocaleTimeString());
 
 		
-		showCard(0);
-		$('.hit').trigger('click');
+		//showCard(0);
+		//$('.hit').trigger('click');
 
 
 		/* testing and debug */
@@ -64,6 +64,7 @@ var timeline = (function($){
 
 	// show conformation page
 	var destroy = function(){
+		eventTrigger('show confirmtation');
 		$(o.confirmation).css({'display': 'flex'});
 	};
 
@@ -90,8 +91,6 @@ var timeline = (function($){
 			} else {
 				var minWidth = o.timelineMinWidth;
 			}
-
-			console.log(minWidth);
 
 
 			// create question and answer as wrapped element
@@ -126,7 +125,6 @@ var timeline = (function($){
 			/* * * * * * * * * * */
 			var thisYear = min;
 			var count = 0;
-			console.log('---------');
 
 			for(j = min; j.toFixed(roundScale) <= max; j = j + scale){
 
@@ -186,11 +184,15 @@ var timeline = (function($){
 			$('.'+o.elems.questionElementClass+', .'+o.elems.timelineElementClass).hide();
 			$('.'+o.elems.timelineTickClass+' .hit').removeClass('correct').removeClass('incorrect');
 
+			eventTrigger('page show',(num+1));
+
 
 			$('#question'+num+', #timeline'+num).show();
 			fitTimelineLabels(num);
 			toggleHelper();
 		} else {
+			
+			eventTrigger('quiz complete');
 			destroy();
 		}	
 	};
@@ -219,11 +221,10 @@ var timeline = (function($){
 
 	// show the user capture form
 	var showForm = function(selectedYear){
+		eventTrigger('show form');
 		$('#form #submittedYear').val(selectedYear);
 		$(o.elems.tooltip).hide();
 		$('#form, #screen').show();
-
-
 	};
 
 
@@ -234,8 +235,6 @@ var timeline = (function($){
 		$(o.elems.form + ' .required').each(function() {
 			var $theInput = $(this).siblings();
 
-			console.log($theInput.attr('id'));
-
 			if($theInput.val() == ''){
 				formError = true;
 				$($theInput).addClass('error');
@@ -245,6 +244,10 @@ var timeline = (function($){
 		if(formError == true){
 			toggleSubmit(false);
 		} else {
+
+			eventTrigger('form submit');
+
+
 			$('#form, #screen').hide();
 			var selectedYear = $('#form #submittedYear').val();
 			showAnswer(selectedYear,0);
@@ -354,6 +357,7 @@ var timeline = (function($){
 			var $t = getActiveTimeline();
 			var timelineNum = $t.attr('id').substring(8);
 
+			eventTrigger('answered question',(parseInt(timelineNum)+1));
 
 			if(timelineNum == 0){
 				showForm(selectedYear);
@@ -370,20 +374,16 @@ var timeline = (function($){
 		// user interactions with capture form fields
 		$('#form input[type="text"],#form input[type="email"], #form select').on('focus',function() {
 			$(this).addClass('active');
-		}).on('keyup blur',function() {
+		}).on('blur',function() {
 
 			// adjust this input
 			if($(this).val() == ''){
-				console.log('empty');
 				$(this).removeClass('active');
-
-				//console.log($(this).attr('id')+'   '+$(this).val());
 
 				if($(this).siblings('label').hasClass('required')){
 					$(this).addClass('error');
 				}
 			} else {
-				console.log('empty');
 				$(this).removeClass('error').addClass('active');
 			}
 
@@ -409,8 +409,15 @@ var timeline = (function($){
 		});
 	};
 
+	var eventTrigger = function(eventName,val){
+		var addition = '';
+		if(val !== undefined){
+			var addition = ', '+val;
+		}
+
+		console.log('triggering event: '+eventName+addition);
+	};
+
 
 	return { init: init };
 })(jQuery);
-
-

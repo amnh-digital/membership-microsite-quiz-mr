@@ -176,6 +176,11 @@ try{
 		<input type="text" name="zip" id="zip">
 	</div>
 
+	<div class="form-wrap form-check">
+		<input id="optin" type="checkbox" name="optin" value="Yes">
+		<label for="optin">Yes, please send me the awesome gift.</label>
+	</div>
+
 	<div class="form-wrap error-wrapper">
 		<span>Oops, you forgot to complete the form! Please fill in any missing information below.</span>
 	</div>
@@ -183,6 +188,7 @@ try{
 	<div class="form-wrap form-submit">
 		<input type="button" id="submit" value="Enter">
 		<input type="hidden" name="submitedYear" id="submittedYear"/>
+		<input type="hidden" name="source" id="source"/>
 	</div>
 
 	<p class="footnote">We'll send you fascinating new discoveries, special offers, and sneak peeks at upcoming exhibitions.</p>
@@ -304,7 +310,7 @@ try{
 			timeline.init({data: questions});
 		});
 	});
-
+	
 	//timeline.init({data: questions});
 
 
