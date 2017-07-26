@@ -24,6 +24,8 @@ try{
 	//die();
 }
 
+
+
  
 
 ?>
@@ -192,7 +194,7 @@ try{
 	</div>
 
 	<p class="footnote">We'll send you fascinating new discoveries, special offers, and sneak peeks at upcoming exhibitions.</p>
-	<p class="footnote">And if you don’t love seeing cool content, you can unsubscribe at any time.</p>
+	<p class="footnote">And if you don't love seeing cool content, you can unsubscribe at any time.</p>
 </div>
 <!-- #form -->
 
@@ -216,11 +218,11 @@ try{
 	<div id="intro">
 		<img src="/dist/img/logo-white.png"/>
 		<h1>When In The World Quiz</h1>
-		<p>Our history is vast. From the formation of our universe to the growth and evolution of life to the development of human cultures as we know them – it's an extensive journey through time and space.</p>
+		<p>Our history is vast. It stretches back to stellar dust coalescing into planets… through imperceptibly small changes in geography that reshaped the face of the Earth over thousands of years... the slow evolutionary branching of all life… and yes, to human cultures developing, shifting, turning back out toward the stars.</p>
 
-		<p>We celebrate and explore all of that history at the American Museum of Natural History. We find that it's especially tricky to grasp the immense scales involved – in the simplest terms, what happened when.</p>
+		<p>We celebrate and explore all of that history at the American Museum of Natural History. And one of the trickiest parts to grasp is the immense scale involved – in the simplest terms, what happened when.</p>
 
-		<p>Now's your chance to test your knowledge. Take the When in the World quiz and see if you can pinpoint key moments on the timeline, from mammoths to mummies. Take the quiz before September 9, and we’ll send you a free Museum decal so you can show off your smarts!</p>
+		<p>Now's your chance to test your knowledge. Take the <em>When in the World</em> quiz and see if you can pinpoint key moments on the timeline, from mummies to mammoths. <strong>Take the quiz before [DEADLINE] and we'll send you a free Museum decal so you can show off your smarts!</strong></p>
 
 		<div id="jedediah">
 			<div class="left"><span>the</span></div>
@@ -236,15 +238,15 @@ try{
 
 		<h2>You did better than <span>XX%</span> of people who took this quiz!</h2>
 
-		<p>Thanks for exploring some of the key moments in the 4.6 billion-year story contained within the American Museum of Natural History. From our planet’s earliest moments to the scientific breakthroughs happening today, this vast history helps us know more about who we are and what lies ahead.</p>
+		<p>Thanks for exploring some of the key moments in the 4.6 billion-year story contained within the American Museum of Natural History. From our planet's earliest moments to the scientific breakthroughs happening today, this vast history helps us know more about who we are and what lies ahead.</p>
  
 		<p>Your Museum decal will be on its way to you soon. Now, take a moment to help us do what we do best: share fascinating facts far and wide! Share the When in the World quiz on <a href="">Facebook</a> and <a href="">Twitter</a>, and challenge your friends to put their knowledge to the test.</p>
 
-		<p>There is so much more to discover at the Museum, and Members get to explore our halls like no one else. Membership will give you unlimited access to the Museum’s collections, along with tickets to special exhibitions and other incredible benefits.</p>
+		<p>There is so much more to discover at the Museum, and Members get to explore our halls like no one else. Membership will give you unlimited access to the Museum's collections, along with tickets to special exhibitions and other incredible benefits.</p>
 
 		<p><a href="http://www.amnh.org/join-support">Click here to learn more and start or renew your membership!</a></p>
 
-		<p><a href="">Click here</a> to finish creating your profile on AMNH.org to make sure you’re in the know about all the events and news that’s important to you.
+		<p><a href="">Click here</a> to finish creating your profile on AMNH.org to make sure you're in the know about all the events and news that's important to you.
 
 	
 		<ul class="social-list">
@@ -280,7 +282,7 @@ try{
 				'timelineMinWidth': 1800
 			},
 			{
-				'text': 'The sad thing about the first appearance of life on a planet is that there was was no one around yet to say "It\'s alive. It’s ALIIIIIVE!!!" When did living things first begin to form on Earth?',
+				'text': 'The sad thing about the first appearance of life on a planet is that there was was no one around yet to say "It\'s alive. It\'s ALIIIIIVE!!!" When did living things first begin to form on Earth?',
 				'answerText': '<p>Your first ancestor (and your cat\'s, your houseplant\'s, your digestive microorganisms\' first ancestor) appeared about 3.5 billion years ago. Scientists are still working to determine exactly how life first emerged – but knowing when is a pretty good start.</p>',
 				'answer': -3.5,
 				'min': -5,
@@ -293,21 +295,132 @@ try{
 				'majorGridLabel': ' Billion years ago',
 				'image': 'stars.jpg',
 				'timelineMinWidth': 1600
-			}
-			/*,
+			},
 			{
-				'text': 'When did the Aztec civilization exist in central and southern Mexico?',
-				'answerText': '',
-				'min': 1000,
-				'max': 1800,
+				'text': 'They say that breaking up is hard to do – but without it, our planet wouldn\'t be nearly as interesting. When did the supercontinent of Pangaea begin to break up into the separate continents we know today? ',
+				'answerText': '<p>Pangaea broke up about 200 million years ago during the early Jurassic Period, as the continental plates inched along their separate paths. The evidence is all around, from the puzzle-piece coastlines of Africa and South America to the similarity of fossil organisms on land now separated by vast oceans – but it wasn\'t until the 20<sup>th</sup> Century that scientists recognized this crucial part of our history. </p>',
+				'answer': -200,
+				'min': -900,
+				'max': -125,
+				'minorScale': 25,
+				'minorLabelRoundScale': 0,
+				'majorGridPoint': 100,
+				'majorLabelRoundScale': 1,
+				'majorLabelOffset': 0,
+				'majorGridLabel': ' Million years ago',
+				'image': 'stars.jpg',
+				'timelineMinWidth': 1600
+			},
+			{
+				'text': 'When life began (3.5 billion years ago, remember?), organisms were simple, microscopic things. Evolution moves slowly, but eventually life got complicated – and <em>big</em>. When did the 122-foot long plant-eating Titanosaur roam the Earth?',
+				'answerText': '<p>Researchers have dated the Titanosaur to the early Cretaceous Period, about 140 million years ago. The Titanosaur was one of the largest land animals ever to stomp its way across the Earth. It also happens to be the longest animal ever displayed at the American Museum of Natural History (though not the most massive – that distinction goes to the blue whale in the Millstein Hall of Ocean Life).</p>',
+				'answer': -140,
+				'min': -500,
+				'max': -10,
 				'minorScale': 20,
 				'minorLabelRoundScale': 0,
-				'majorGridPoint': 200,
-				'majorLabelRoundScale': 100,
-				'majorLabelOffset': -1,
-				'majorGridLabel': 'th Century',
-				'image': 'lions.jpg'
-			}*/
+				'majorGridPoint': 50,
+				'majorLabelRoundScale': 1,
+				'majorLabelOffset': 0,
+				'majorGridLabel': ' million years ago',
+				'image': 'stars.jpg',
+				'timelineMinWidth': 1600
+			},
+			{
+				'text': 'Not as large as the Titanosaur, but still as warm and grandiose – when did the first mammoths appear?',
+				'answerText': '<p>Mammoths, like the ones on display at the Museum, are "only" about 4 million years old. That\'s about 3% of the time since Titanosaurs lived, and fully 3,000,000,000 years since life first emerged. Like we said, evolution moves slowly.</p>',
+				'answer': -4,
+				'min': -100,
+				'max': -2,
+				'minorScale': 2,
+				'minorLabelRoundScale': 0,
+				'majorGridPoint': 10,
+				'majorLabelRoundScale': 1,
+				'majorLabelOffset': 0,
+				'majorGridLabel': ' Million years ago',
+				'image': 'stars.jpg',
+				'timelineMinWidth': 1600
+			},
+			{
+				'text': 'She may be the most famous archeological discovery of all time, on a first-name basis with millions of people. But when did the hominid known as Lucy leave her footprints in African dust?',
+				'answerText': '<p>Lucy, one of the most complete hominid skeletons ever discovered, lived around 3.2 million years ago. She was named after the Beatles song "Lucy in the Sky with Diamonds," which researchers played as they celebrated their find in 1974. Not a bad way to welcome a new (old) member of the extended human family.</p>',
+				'answer': -3.2,
+				'min': -5,
+				'max': -.1,
+				'minorScale': .1,
+				'minorLabelRoundScale': 1,
+				'majorGridPoint': 1,
+				'majorLabelRoundScale': 1,
+				'majorLabelOffset': 0,
+				'majorGridLabel': ' Million years ago',
+				'image': 'stars.jpg',
+				'timelineMinWidth': 1600
+			},
+			{
+				'text': 'Ancient Egyptians may get all the attention (thanks, Hollywood), but they were not the only ones to wrap and preserve their dead. When did cultures in Peru begin the practice of mummification?',
+				'answerText': '<p>Several cultures in what is now Peru began practicing mummification 7,000 years ago, long before the Egyptians. This sacred practice helped the living connect with the dead – in fact, some people kept mummies in their homes or brought them to festivals.</p><p><em>Take in the fascinating history of ancient mummification– Egyptian and Peruvian – in the special Mummies exhibition at the LeFrak Gallery– open through January 2018.</em></p>',
+				'answer': -7,
+				'min': -40,
+				'max': -1,
+				'minorScale': 1,
+				'minorLabelRoundScale': 0,
+				'majorGridPoint': 5,
+				'majorLabelRoundScale': 1,
+				'majorLabelOffset': 0,
+				'majorGridLabel': ' thousand years ago',
+				'image': 'stars.jpg',
+				'timelineMinWidth': 1600
+			},
+			{
+				'text': 'You may not recognize the name of the Rapa Nui, but you know their handiwork: this is the culture that carved the Moai statues of Easter Island. When did the Rapa Nui first settle on Easter Island?<br /><br />(DD: this one needs some work... ignore timeline for now)',
+				'answerText': '<p>The Rapa Nui first arrived on Easter Island around 300 CE – at 2,300 miles from the coast of Chile, it was the most isolated inhabited island in the world. And the Moai? They may seem like ancient history, but these unique monuments were carved between the 10th and 16th Centuries.</p>',
+				'answer': -3.5,
+				'min': -5,
+				'max': -1.1,
+				'minorScale': .1,
+				'minorLabelRoundScale': 1,
+				'majorGridPoint': 1,
+				'majorLabelRoundScale': 1,
+				'majorLabelOffset': 0,
+				'majorGridLabel': ' Billion years ago',
+				'image': 'stars.jpg',
+				'timelineMinWidth': 1600
+			},
+			{
+				'text': 'Here\'s one that\'s a little close to home: When was the American Museum of Natural History founded?',
+				'answerText': '<p>The Museum was founded in 1869 thanks to the efforts of Albert Smith Bickmore, a one-time student of Harvard zoologist Louis Agassiz, and a group of influential New Yorkers including Theodore Roosevelt, Sr., and J. Pierpont Morgan. The rest, as they say, is history.</p><p><em>The American Museum of Natural History is open from 10 am to 5:45 pm 363 days a year (closed on Thanksgiving and Christmas) – we hope to see you around sometime soon! </em></p>',
+				'answer': 1869,
+				'min': 1850,
+				'max': 1899,
+				'minorScale': 1,
+				'minorLabelRoundScale': 0,
+				'majorGridPoint': 10,
+				'majorLabelRoundScale': 1,
+				'majorLabelOffset': 0,
+				'majorGridLabel': '',
+				'image': 'stars.jpg',
+				'timelineMinWidth': 1600
+			},
+			{
+				'text': 'Okay, here\'s our last question, and the only one that you might well remember experiencing if you are of a certain age: when did the first person land on the moon?',
+				'answerText': '<p>That giant leap for mankind occurred on July 20, 1969 during the Apollo 11 mission – 100 years after the founding of the Museum. It is a stirring reminder of the discoveries still to be made and frontiers still to be explored, the hunger for knowledge that drives everything we do at the Museum.</p>',
+				'answer': 1969,
+				'min': 1920,
+				'max': 1989,
+				'minorScale': 1,
+				'minorLabelRoundScale': 0,
+				'majorGridPoint': 10,
+				'majorLabelRoundScale': 1,
+				'majorLabelOffset': 0,
+				'majorGridLabel': '',
+				'image': 'stars.jpg',
+				'timelineMinWidth': 2200
+			}
+
+			/*
+			minorScale: amt between each minor tick mark
+
+			*/
 		]
 	};
 

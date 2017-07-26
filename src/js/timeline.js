@@ -46,7 +46,7 @@ var timeline = (function($){
 		console.log('end of build '+d.toLocaleTimeString());
 
 		
-		//showCard(0);
+		//showQuestion(0);
 		//$('.hit').trigger('click');
 
 
@@ -58,7 +58,7 @@ var timeline = (function($){
 	// hide the splash page, show the first question
 	var start = function(){
 		$(o.splash).hide();
-		showCard(0);
+		showQuestion(0);
 	};
 
 
@@ -99,7 +99,7 @@ var timeline = (function($){
 	        }).append(
 		        $("<div>", {class: o.elems.questionElementInnerClass}).append(
 		            $("<h2>").text('Question #'+(i+1)),
-		            $('<p>').text(q.text)
+		            $('<p>').html(q.text)
 		        ),
 		        $('<div>',{class: o.elems.answerElementInnerClass}).append(
 		        	$('<h2>').html('You did better than <span>XX%</span> of people who answered this question!'),
@@ -175,7 +175,7 @@ var timeline = (function($){
 	
 
 	// hide this timeline and show the next one
-	var showCard = function(num){
+	var showQuestion = function(num){
 
 		toggleTimeline(true);
 		
@@ -197,9 +197,38 @@ var timeline = (function($){
 		}	
 	};
 
+	var saveQuestionResponse = function(opt,num){
+		/*data = {
+			name: 'David',
+			opt: opt,
+			num: num
+		};
+		
+		$.post("post.php",data).done(function( data ) {
+			result = JSON.parse(data);
+			console.log(result);
+			console.log('calling showAnswer');
+			showAnswer(opt,num);
+		});*/
+		showAnswer(opt,num);
+	}
+
 
 	// show the user what the correct answer is with text and timeline ticks
 	var showAnswer = function(opt,num){
+		
+
+		data = {
+			name: 'Chuck',
+			opt: opt,
+			num: num
+		};
+
+		//console.log(data);
+
+		//return true;
+
+
 
 		toggleTimeline(false);
 
@@ -347,7 +376,7 @@ var timeline = (function($){
 		$('.next').click(function(){
 			var thisTimeline = $(this).attr('data-timeline');
 			thisTimeline++;
-			showCard(thisTimeline);
+			showQuestion(thisTimeline);
 
 		});
 
@@ -362,7 +391,7 @@ var timeline = (function($){
 			if(timelineNum == 0){
 				showForm(selectedYear);
 			} else {
-				showAnswer(selectedYear,timelineNum);
+				saveQuestionResponse(selectedYear,timelineNum);
 			}
 		});
 
