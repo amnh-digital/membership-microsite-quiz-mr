@@ -1,27 +1,22 @@
 <?php 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+//$dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$username;password=$password";
+$dbopts = parse_url(getenv('DATABASE_URL'));
 
-//echo phpinfo();die();
-
-
-$host = 'localhost';
-$db = 'amnhquiz';
-$username = 'postgres';
-$password = 'admin';
+include('../config.php');
+@include('../config.local.php');
 
 
-$dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$username;password=$password";
+
  
 try{
 	// create a PostgreSQL database connection
 	$conn = new PDO($dsn);
+	echo 'good';
  
 }catch (PDOException $e){
 	// report error message
-	//echo $e->getMessage();
-	//die();
+	echo $e->getMessage();
+	
 }
 
 
