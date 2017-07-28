@@ -1,0 +1,9 @@
+{
+  "name": "AMNH When In The World Quiz",
+  "description": "AMNH Quiz",
+  "addons": ["heroku-postgresql:hobby-dev"],
+  "buildpacks": [
+  	{"url": "heroku/nodejs"},
+  	{"url": "heroku/php"}
+  ]
+}

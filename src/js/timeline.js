@@ -46,19 +46,23 @@ var timeline = (function($){
 		console.log('end of build '+d.toLocaleTimeString());
 
 		
-		//showQuestion(0);
-		//$('.hit').trigger('click');
+		//showNextQuestion(0);
+		//$('.hit').first().trigger('click');
 
 
 		/* testing and debug */
 		
 	};
 
-
+	/**
+	  * build and destroy
+	  * 
+	  * 
+	*/
 	// hide the splash page, show the first question
 	var start = function(){
 		$(o.splash).hide();
-		showQuestion(0);
+		showNextQuestion(0);
 	};
 
 
@@ -69,6 +73,13 @@ var timeline = (function($){
 	};
 
 
+
+
+	/**
+	  * generate html for each timeline/question pair
+	  * 
+	  * 
+	*/
 	// go through each question and built timeline, question text, answer text
 	var buildTimelines = function(){
 
@@ -172,10 +183,98 @@ var timeline = (function($){
 			});
 		});
 	};
+
+
+
+
+	/**
+	  * timeline interactions
+	  * 
+	  * 
+	*/
+	// look at the year boxes for this timeline and adjust their widths
+	var fitTimelineLabels = function(timelineId){
+
+		if(timelineId == null){
+			var timeline = getActiveTimeline();
+		} else {
+			var timeline = $('#timeline'+timelineId);
+		}
+		
+		
+		var majorGridPoint = $(timeline).attr('data-axis');
+		var childTicks = $(timeline).find('.'+o.elems.timelineTickClass);
+
+		$(childTicks).each(function(){
+
+			var thisYear = $(this).attr('data-year');
+			if(thisYear % majorGridPoint === 0){
+				var offset = $(this).offset();
+				var majorPoint = $(timeline).find('.'+o.elems.timelineAxisClass+'[data-year="'+thisYear+'"]');
+				$(majorPoint).css({'left':(offset.left-1)+'px'});
+			}
+
+		});
+	};
 	
 
+	// save individual question
+	var saveQuestionResponse = function(userAnswer,timelineNumber){
+		data = {
+			step: 'question',
+			answer: userAnswer,
+			questionNumber: timelineNumber
+		};
+		
+		$.post("post.php",data).done(function(resp) {
+			result = JSON.parse(resp);
+
+			if(result.result == 'success'){
+				prepareAnswer(result.message);
+			}
+		});
+	}
+
+
+	// show the user what the correct answer after saving it is with text and timeline ticks
+	var prepareAnswer = function(data){
+		
+
+		//console.log(data);
+		//console.log('done');
+
+
+		var timelineNum = data.questionId - 1;
+		var correctAnswer = data.questionAnswer;
+		var userAnswer = data.userAnswer;
+		var score = data.score;
+
+		if(score <= 20){
+			h2copy = 'You scored in the bottom <span>20%</span>. Perhaps you should visit the Museum to brush up on your history';
+		} else {
+			h2copy = 'You did better than <span>'+score+'%</span> of people who answered this question!';
+		}
+
+		toggleTimeline(false);
+
+
+		$('.chosen').remove();
+
+		$('.'+o.elems.timelineTickClass+'[data-year="'+correctAnswer+'"] .hit').addClass('correct');
+
+		if(userAnswer != correctAnswer){
+			$('.'+o.elems.timelineTickClass+'[data-year="'+userAnswer+'"] .hit').addClass('incorrect');
+		}
+
+		$(o.elems.tooltip).hide();
+		$('#question'+timelineNum+' .questionWrapper').hide();
+		$('#question'+timelineNum+' .answerWrapper h2').html(h2copy);
+		$('#question'+timelineNum+' .answerWrapper').show();
+	};
+
+
 	// hide this timeline and show the next one
-	var showQuestion = function(num){
+	var showNextQuestion = function(num){
 
 		toggleTimeline(true);
 		
@@ -197,57 +296,14 @@ var timeline = (function($){
 		}	
 	};
 
-	var saveQuestionResponse = function(opt,num){
-		/*data = {
-			name: 'David',
-			opt: opt,
-			num: num
-		};
-		
-		$.post("post.php",data).done(function( data ) {
-			result = JSON.parse(data);
-			console.log(result);
-			console.log('calling showAnswer');
-			showAnswer(opt,num);
-		});*/
-		showAnswer(opt,num);
-	}
-
-
-	// show the user what the correct answer is with text and timeline ticks
-	var showAnswer = function(opt,num){
-		
-
-		data = {
-			name: 'Chuck',
-			opt: opt,
-			num: num
-		};
-
-		//console.log(data);
-
-		//return true;
 
 
 
-		toggleTimeline(false);
-
-		var correct = questions[num].answer;
-
-		$('.chosen').remove();
-
-		$('.'+o.elems.timelineTickClass+'[data-year="'+correct+'"] .hit').addClass('correct');
-
-		if(opt != correct){
-			$('.'+o.elems.timelineTickClass+'[data-year="'+opt+'"] .hit').addClass('incorrect');
-		}
-
-		$(o.elems.tooltip).hide();
-		$('#question'+num+' .questionWrapper').hide();
-		$('#question'+num+' .answerWrapper').show();
-	};
-
-
+	/**
+	  * form interactions
+	  * 
+	  * 
+	*/
 	// show the user capture form
 	var showForm = function(selectedYear){
 		eventTrigger('show form');
@@ -273,49 +329,53 @@ var timeline = (function($){
 		if(formError == true){
 			toggleSubmit(false);
 		} else {
-
-			eventTrigger('form submit');
-
-
-			$('#form, #screen').hide();
-			var selectedYear = $('#form #submittedYear').val();
-			showAnswer(selectedYear,0);
+			var formData = convertToJson('#form form');
+			saveFormResponse(formData);
 		}
 	}
 
-	
-	// look at the year boxes for this timeline and adjust their widths
-	var fitTimelineLabels = function(timelineId){
 
-		if(timelineId == null){
-			var timeline = getActiveTimeline();
-		} else {
-			var timeline = $('#timeline'+timelineId);
-		}
-		
-		
-		var majorGridPoint = $(timeline).attr('data-axis');
-		var childTicks = $(timeline).find('.'+o.elems.timelineTickClass);
+	// post the form to the database, move on to first answer
+	var saveFormResponse = function(data){
 
-		$(childTicks).each(function(){
+		data.step = 'user';
 
-			var thisYear = $(this).attr('data-year');
-			if(thisYear % majorGridPoint === 0){
-				var offset = $(this).offset();
-				var majorPoint = $(timeline).find('.'+o.elems.timelineAxisClass+'[data-year="'+thisYear+'"]');
-				$(majorPoint).css({'left':(offset.left-1)+'px'});
+		$.post("post.php",data).done(function( resp ) {
+			result = JSON.parse(resp);
+
+			if(result.result == 'error'){
+				toggleSubmit(false);
+
+				$.each(result.focus,function(key,val){
+					$(val).addClass('error');
+				});
+
+				if('message' in result){
+					$(o.elems.formError+' span').text(result.message);
+				}
+
+			} else {
+				toggleSubmit(true);
+				$('*').removeClass('error');
+
+				eventTrigger('form submit');
+				$('#form, #screen').hide();
+
+				saveQuestionResponse(data.submittedYear,0);
 			}
+
 
 		});
 	};
 
 
-	// helper, get the active timeline
-	var getActiveTimeline = function(){
-		return $('.'+o.elems.timelineElementClass+':visible');
-	};
 
 
+	/**
+	  * togglers
+	  * catch events, prepare some values, call a function
+	  * 
+	*/
 	//look at widths of window and timeline to show/hide helper tooltip
 	var toggleHelper = function(){
 		
@@ -361,7 +421,43 @@ var timeline = (function($){
 	}
 
 
-	// add event listeners
+
+
+	/**
+	  * helpers
+	  * catch events, prepare some values, call a function
+	  * 
+	*/
+	// helper, get the active timeline
+	var getActiveTimeline = function(){
+		return $('.'+o.elems.timelineElementClass+':visible');
+	};
+
+
+	// convert form fields with set value to key => value
+	var convertToJson = function(form){
+	    var array = jQuery(form).serializeArray();
+	    var json = {};
+	    
+	    jQuery.each(array, function() {
+
+	    	if(this.value != ''){
+	    		json[this.name] = this.value || '';
+	    	}
+	        
+	    });
+	    
+	    return json;
+	}
+
+	
+
+
+	/**
+	  * event listeners
+	  * catch events, prepare some values, call a function
+	  * 
+	*/
 	var addListeners = function(){
 		var that = this;
 
@@ -376,8 +472,7 @@ var timeline = (function($){
 		$('.next').click(function(){
 			var thisTimeline = $(this).attr('data-timeline');
 			thisTimeline++;
-			showQuestion(thisTimeline);
-
+			showNextQuestion(thisTimeline);
 		});
 
 		// user has picked their answer, proceed to answer or capture if this is Q #1
@@ -424,9 +519,9 @@ var timeline = (function($){
 			}
 		});
 
+		// adjust which fields are required if the user wants a premium
 		$('#form #optin').click(function(){
 			if($(this).is(":checked")){
-				//$('label[for="address"], label[for="city"]').addClass('required');
 				$.each(o.elems.mailFields,function(i,v){
 					$('label[for="'+v+'"]').addClass('required');
 				});
@@ -438,6 +533,8 @@ var timeline = (function($){
 		});
 	};
 
+
+	// google analytics event firing
 	var eventTrigger = function(eventName,val){
 		var addition = '';
 		if(val !== undefined){
