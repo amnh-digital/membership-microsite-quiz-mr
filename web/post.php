@@ -68,7 +68,7 @@ if (!empty($_POST)){
 				$stmt->bindValue(':'.$key, $val); //bind the values to the prepared statement
 			}
 
-			$userId = $app['pdo']->lastInsertId('users_user_id_seq');
+			$userId = $app['pdo']->lastInsertId('users_id_seq');
 
 			// try to save it
 			if($stmt->execute()){
