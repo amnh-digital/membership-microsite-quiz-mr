@@ -145,7 +145,7 @@ if (!empty($_POST)){
 		}
 
 
-		$resp = array('result'=>$result, 'message' => $message); 
+		$resp = array('result'=>$result, 'message' => $message, 'userId' => $userId); 
 		echo json_encode($resp); // response to user
 
 
