@@ -225,7 +225,11 @@ var timeline = (function($){
 			answer: userAnswer,
 			questionNumber: timelineNumber
 		};
-		
+			
+		console.log('sending data to question save');
+		console.log(data);
+
+
 		$.post("post.php",data).done(function(resp) {
 			console.log(resp);
 			result = JSON.parse(resp);
