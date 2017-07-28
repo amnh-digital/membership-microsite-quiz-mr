@@ -191,7 +191,12 @@ function calculateScore($app,$questionNumber,$answer,$userId){
 	}
 
 	//you wanna subtract one from total to exclude this answer
-	$score = round((count($worseAnswers)/(count($answerOffsets)-1) * 100)); 
+	if(count($answerOffsets) == 1){
+		$score = 100;
+	} else {
+		$score = round((count($worseAnswers)/(count($answerOffsets)-1) * 100)); 
+	}
+	
 
 	/*
 	var_dump($responses);
