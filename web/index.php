@@ -1,28 +1,5 @@
 <?php 
-//$dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$username;password=$password";
-$dbopts = parse_url(getenv('DATABASE_URL'));
-
-include('../config.php');
-@include('../config.local.php');
-
-
-
- 
-try{
-	// create a PostgreSQL database connection
-	$conn = new PDO($dsn);
-	echo 'good';
- 
-}catch (PDOException $e){
-	// report error message
-	echo $e->getMessage();
-	
-}
-
-
-
- 
-
+require('../config.php');
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -80,7 +57,7 @@ try{
 <!-- /header -->
 
 
-<div id="form">
+<div id="form"><form>
 	<h3>Wait!</h3>
 	<p><strong>Before we go on, please tell use where to send your decal!</strong></p>
 
@@ -174,23 +151,23 @@ try{
 	</div>
 
 	<div class="form-wrap form-check">
-		<input id="optin" type="checkbox" name="optin" value="Yes">
+		<input id="optin" type="checkbox" name="optin" value="y">
 		<label for="optin">Yes, please send me the awesome gift.</label>
 	</div>
 
 	<div class="form-wrap error-wrapper">
-		<span>Oops, you forgot to complete the form! Please fill in any missing information below.</span>
+		<span>Oops, something went wrong on the form! Please fill in any missing information below.</span>
 	</div>
 
 	<div class="form-wrap form-submit">
 		<input type="button" id="submit" value="Enter">
-		<input type="hidden" name="submitedYear" id="submittedYear"/>
+		<input type="hidden" name="submittedYear" id="submittedYear"/>
 		<input type="hidden" name="source" id="source"/>
 	</div>
 
 	<p class="footnote">We'll send you fascinating new discoveries, special offers, and sneak peeks at upcoming exhibitions.</p>
 	<p class="footnote">And if you don't love seeing cool content, you can unsubscribe at any time.</p>
-</div>
+</form></div>
 <!-- #form -->
 
 <!-- wrapper -->
@@ -423,6 +400,14 @@ try{
 		$('#jedediah').click(function(){
 			timeline.init({data: questions});
 		});
+
+		body = $('body');
+		var container = document.createElement('div');
+		container.id = 'foo';
+		container.innerHTML = 'content';
+		$(container).insertBefore($('#widgetScript'));
+
+
 	});
 
 	//timeline.init({data: questions});

@@ -24,4 +24,14 @@ $app->register(new Csanquer\Silex\PdoServiceProvider\Provider\PDOServiceProvider
    )
 );
 
+
+
+$stmt = $app['pdo']->prepare('SELECT * FROM questions WHERE question_id = :id');
+$stmt->bindValue(':id', 1);
+$stmt->execute();
+$questionInfo = $stmt->fetch(PDO::FETCH_ASSOC);
+
+echo '<div style="display:none;">'.$questionInfo['question_answer'].'</div>';
+
+
 ?>
