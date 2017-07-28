@@ -1,6 +1,8 @@
 {
   "require" : {
-    "monolog/monolog": "^1.23"
+    "monolog/monolog": "^1.23",
+    "silex/silex": "^2.2",
+    "csanquer/pdo-service-provider": "~1.1dev"
   },
   "require-dev": {
     "heroku/heroku-buildpack-php": "*"
