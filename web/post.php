@@ -61,18 +61,17 @@ if (!empty($_POST)){
 			$columns = rtrim($columns, ',');
 			$vals = rtrim($vals, ',');
 
-			$sql = 'INSERT INTO users ('.$columns.') VALUES ('.$vals.')';
+			$sql = 'INSERT INTO users ('.$columns.') VALUES ('.$vals.') RETURNING user_id';
 			$stmt = $app['pdo']->prepare($sql);
 
 			foreach($clean as $key => $val){
 				$stmt->bindValue(':'.$key, $val); //bind the values to the prepared statement
 			}
 
-			$userId = $app['pdo']->lastInsertId('users_id_seq');
-
 			// try to save it
 			if($stmt->execute()){
-				$resp = $userId;
+				$user = $stmt->fetch(PDO::FETCH_ASSOC); 
+				$resp = $user['user_id'];
 				$result = 'success';
 
 			} else {
@@ -80,7 +79,7 @@ if (!empty($_POST)){
 				$resp = $stmt->errorInfo();
 			}
 
-			$resp = array('result'=>$result,'resp'=>$resp,'message'=>$clean,'id'=>$userId); // define a response
+			$resp = array('result'=>$result,'resp'=>$resp,'message'=>$clean,'id'=>$user['user_id']); // define a response
 
 		} else {
 			$resp = array('result'=>'error', 'focus'=>$focus, 'message' => $message); // define a response (this one def an error)
@@ -88,7 +87,7 @@ if (!empty($_POST)){
 
 		// create user session if it was a successful insert
 		if($result == 'success'){
-			$app['session']->set('user', array('userId' => $app['pdo']->lastInsertId('users_user_id_seq')));
+			$app['session']->set('user', array('userId' => $user['user_id']));
 		}
 
 		echo json_encode($resp); // response to user
