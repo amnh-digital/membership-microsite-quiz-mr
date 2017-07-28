@@ -72,7 +72,7 @@ if (!empty($_POST)){
 
 			// try to save it
 			if($stmt->execute()){
-				$resp = $userId,
+				$resp = $userId;
 				$result = 'success';
 
 			} else {
@@ -225,5 +225,5 @@ function calculateScore($app,$questionNumber,$answer,$userId){
 
 
 
-$resp = calculateScore($app,10,1969);
+
 ?>
