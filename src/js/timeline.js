@@ -227,8 +227,9 @@ var timeline = (function($){
 		};
 		
 		$.post("post.php",data).done(function(resp) {
+			console.log(resp);
 			result = JSON.parse(resp);
-
+			console.log(result);
 			if(result.result == 'success'){
 				prepareAnswer(result.message);
 			}
@@ -240,8 +241,8 @@ var timeline = (function($){
 	var prepareAnswer = function(data){
 		
 
-		//console.log(data);
-		//console.log('done');
+		console.log(data);
+		console.log('done');
 
 
 		var timelineNum = data.questionId - 1;
