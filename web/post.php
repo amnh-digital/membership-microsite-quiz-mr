@@ -68,9 +68,10 @@ if (!empty($_POST)){
 				$stmt->bindValue(':'.$key, $val); //bind the values to the prepared statement
 			}
 
+			$userId = $app['pdo']->lastInsertId('users_user_id_seq');
 			// try to save it
 			if($stmt->execute()){
-				$resp = $app['pdo']->lastInsertId('users_user_id_seq');
+				$resp = $userId;
 				$result = 'success';
 
 			} else {
@@ -78,7 +79,7 @@ if (!empty($_POST)){
 				$resp = $stmt->errorInfo();
 			}
 
-			$resp = array('result'=>$result,'resp'=>$resp,'message'=>$clean); // define a response
+			$resp = array('result'=>$result,'resp'=>$resp,'message'=>$clean,'id'=>$userId); // define a response
 
 		} else {
 			$resp = array('result'=>'error', 'focus'=>$focus, 'message' => $message); // define a response (this one def an error)
@@ -131,7 +132,7 @@ if (!empty($_POST)){
 			$stmt->bindValue(':id', $userId);
 			if($stmt->execute()){
 				$result = 'success';
-				$message = calculateScore($app,$question,$clean['answer']);
+				$message = calculateScore($app,$question,$clean['answer'],$userId);
 
 			} else {
 				$result = 'error';
@@ -156,7 +157,7 @@ if (!empty($_POST)){
 
 
 
-function calculateScore($app,$questionNumber,$answer){
+function calculateScore($app,$questionNumber,$answer,$userId){
 
 	// get other responses for this question
 	$responses = array();
@@ -213,6 +214,7 @@ function calculateScore($app,$questionNumber,$answer){
 	$resp['questionId'] = $questionNumber;
 	$resp['questionAnswer'] = $questionInfo['question_answer'];
 	$resp['score'] = $score;
+	$resp['userId'] = $userId;
 
 
 	return $resp;
