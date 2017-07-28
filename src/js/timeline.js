@@ -344,6 +344,9 @@ var timeline = (function($){
 		$.post("post.php",data).done(function( resp ) {
 			result = JSON.parse(resp);
 
+			console.log('resp from save form');
+			console.log(result);
+
 			if(result.result == 'error'){
 				toggleSubmit(false);
 
