@@ -69,9 +69,10 @@ if (!empty($_POST)){
 			}
 
 			$userId = $app['pdo']->lastInsertId('users_user_id_seq');
+
 			// try to save it
 			if($stmt->execute()){
-				$resp = $userId;
+				$resp = $userId,
 				$result = 'success';
 
 			} else {
