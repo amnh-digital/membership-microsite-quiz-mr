@@ -183,8 +183,10 @@ require('../config.php');
 
 <!-- timeline elements -->
 <div id="timeline-spacer"></div>
-<div id="timelineWrap">
-<div id="timeline" class="dragscroll"></div>
+<div id="timelineOutter">
+	<div id="timelineWrap">
+		<div id="timeline" class="dragscroll"></div>
+	</div>
 </div>
 <!-- /timeline elements -->
 
