@@ -183,7 +183,9 @@ require('../config.php');
 
 <!-- timeline elements -->
 <div id="timeline-spacer"></div>
+<div id="timelineWrap">
 <div id="timeline" class="dragscroll"></div>
+</div>
 <!-- /timeline elements -->
 
 <div class="splash" id="splash-screen">
@@ -408,7 +410,7 @@ require('../config.php');
 
 	});
 
-	//timeline.init({data: questions});
+	timeline.init({data: questions});
 
 
 </script>
