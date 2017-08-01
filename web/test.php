@@ -92,7 +92,12 @@ require('../config.php');
 
 
 
-
+#out {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
 #fooWrap {
 	bottom:0px;
 	width: 100%;
@@ -119,7 +124,7 @@ require('../config.php');
 }
 </style>
 
-
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eros tellus, lobortis eu dictum maximus, tincidunt mattis libero. Vestibulum interdum gravida metus ornare condimentum. Nunc pulvinar nibh vitae enim tincidunt, sed viverra sapien tempus. Vestibulum luctus sed dui et convallis. Proin eros tortor, dignissim a tellus at, vestibulum posuere nulla. Donec eu turpis ex. Pellentesque a ipsum sagittis, varius sapien quis, facilisis magna. Curabitur aliquet enim sed ex bibendum feugiat.<br /><br />Curabitur varius viverra lacus non bibendum. Cras sed orci et sapien elementum sodales. Mauris non lacus eu enim ullamcorper sodales vehicula eu purus. Morbi fermentum neque consectetur odio pellentesque finibus. Donec venenatis faucibus orci eu auctor. Quisque scelerisque blandit quam eu pulvinar. Etiam convallis quam id justo consequat feugiat. Ut pulvinar aliquam auctor. Maecenas blandit orci nec ligula viverra, non mattis lectus vestibulum. Suspendisse pellentesque dignissim erat in accumsan. In tempus lacus quis tortor faucibus volutpat.<br /><br />Quisque quis pretium odio, vel lacinia libero. Cras feugiat gravida risus, dignissim varius massa. Proin molestie volutpat velit, quis venenatis metus scelerisque luctus. Etiam tincidunt pharetra est, id placerat leo. Pellentesque ultricies sed lacus quis bibendum. Praesent eget odio non urna euismod vehicula eu ac arcu. Nullam in dapibus tellus. Cras at nisi metus. In at diam gravida, dictum eros maximus, vestibulum risus. Donec eu condimentum nulla. Donec ut risus non nibh iaculis dapibus et et velit. Sed commodo rutrum sapien vel fringilla. Quisque pharetra lorem sit amet nunc viverra sagittis. In scelerisque ex eu eros malesuada tincidunt. Aenean sed lobortis dui. Sed fermentum massa vitae metus vehicula fermentum.</p>
 
 
 <div id="out">
