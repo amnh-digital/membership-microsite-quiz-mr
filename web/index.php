@@ -190,11 +190,9 @@ require('../config.php');
 	<div id="intro">
 		<img src="/dist/img/logo-white.png"/>
 		<h1>When In The World Quiz</h1>
-		<p>Our history is vast. It stretches back to stellar dust coalescing into planets… through imperceptibly small changes in geography that reshaped the face of the Earth over thousands of years... the slow evolutionary branching of all life… and yes, to human cultures developing, shifting, turning back out toward the stars.</p>
+		<p>We celebrate and explore all of that history at the American Museum of Natural History. We find one of the trickiest parts to grasp is the immense scale involved – in the simplest terms, what happened when.</p>
 
-		<p>We celebrate and explore all of that history at the American Museum of Natural History. And one of the trickiest parts to grasp is the immense scale involved – in the simplest terms, what happened when.</p>
-
-		<p>Now's your chance to test your knowledge. Take the <em>When in the World</em> quiz and see if you can pinpoint key moments on the timeline, from mummies to mammoths. <strong>Take the quiz before [DEADLINE] and we'll send you a free Museum decal so you can show off your smarts!</strong></p>
+		<p>Now's your chance to test your knowledge. Take the When in the World quiz and see if you can pinpoint key moments on the timeline, from mammoths to mummies. <strong>Take the quiz before September 9 and we'll send you a free Museum decal so you can show off your smarts!</strong></p>
 
 		<div id="jedediah">
 			<div class="left"><span>the</span></div>
