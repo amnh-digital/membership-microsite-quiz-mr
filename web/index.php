@@ -20,7 +20,7 @@ require('../config.php');
 
 	<meta property="og:title" content="American Museum of Natural History Quiz" />
 	<meta name="og:description" content="There's so much to see and do at the American Museum of Natural History">
-	<meta property="og:image" content="http://earthbulletin.amnh.org/extension/amnh/design/amnh_user/images/home-share.png" />
+	<meta property="og:image" content="/slideImages/AMNHquizfb.jpg" />
 	<meta property="og:site_name" content="AMNH" />
 	<meta property="og:type" content="non_profit" />
 	<meta property="og:url" content="" />
