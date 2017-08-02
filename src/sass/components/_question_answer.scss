@@ -7,9 +7,10 @@
 	background-size: cover;
 
 	.questionWrapper {
-		margin: 0 auto;
-		margin-top: 40px;
 		position:relative;
+		transform: translate(-50%,-50%);
+    	top: 45%;
+    	left: 50%;
 		width: 90%;
 		max-width: $question-max-width;
 		background-color: rgba(0, 0, 0, 0.7);
@@ -125,9 +126,12 @@
 	}
 	@media (max-width: $breakpoint-sm){
 		.questionWrapper, .answerWrapper {
-			margin-top: 10px;
+			margin: 10px;
 			width: calc(100% - 20px); 
 			height: calc(100% - 20px);
+			transform: initial;
+			left: 0;
+			top: 0;
 		}
 
 		.answerWrapper {

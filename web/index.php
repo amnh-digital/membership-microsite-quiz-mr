@@ -366,7 +366,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'majorGridPoint': 5,
 				'majorLabelRoundScale': 1,
 				'majorLabelOffset': 0,
-				'majorGridLabel': ' thousand years ago',
+				'majorGridLabel': ',000 years ago',
 				'image': 'stars.jpg',
 				'timelineMinWidth': 1600
 			},
