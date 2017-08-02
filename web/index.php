@@ -9,7 +9,7 @@ require('../config.php');
 	<meta name="Content-language" content="en-US" />  
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="SHORTCUT ICON" href="/dist/img/favicon.ico">
+	<link rel="SHORTCUT ICON" href="/slideImages/favicon.ico">
 
 	<title>American Museum of Natural History Quiz</title>
 
