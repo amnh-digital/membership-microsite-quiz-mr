@@ -91,6 +91,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<input type="email" name="em" id="em">
 	</div>
 
+	<div class="form-wrap form-check">
+		<input id="optin" type="checkbox" name="optin" value="y">
+		<label for="optin">Yes, send me a free Museum decal.</label>
+	</div>
+
 	<div class="form-wrap">
 		<label for="address">Street Address</label>
 		<input type="text" name="address" id="address">
@@ -165,10 +170,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<input type="text" name="zip" id="zip">
 	</div>
 
-	<div class="form-wrap form-check">
-		<input id="optin" type="checkbox" name="optin" value="y">
-		<label for="optin">Yes, please send me the awesome gift.</label>
-	</div>
+	
 
 	<div class="form-wrap error-wrapper">
 		<span>Oops, something went wrong on the form! Please fill in any missing information below.</span>
@@ -191,8 +193,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- tooltip -->
 <div id="tooltip">
-	<span class="first">Scroll timeline</span><br />
-	<span class="grey">and select time period below</span>
+	<span class="first">Click and drag</span><br />
+	<span class="grey">to scroll the timeline</span>
 </div>
 <!-- /#tooltip -->
 
@@ -425,14 +427,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		$('#jedediah').click(function(){
 			timeline.init({data: questions});
 		});
-
-		body = $('body');
-		var container = document.createElement('div');
-		container.id = 'foo';
-		container.innerHTML = 'content';
-		$(container).insertBefore($('#widgetScript'));
-
-
 	});
 
 	//timeline.init({data: questions});

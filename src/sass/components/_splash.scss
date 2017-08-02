@@ -204,6 +204,9 @@
 	background-size: cover;
 	display: none;
 
+	top: $header-height;
+	height: calc(100% - #{$header-height});
+
 	h2 {
 		font-family: $styled-font;
 		font-size: $timeline-font-h2-sm;

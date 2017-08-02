@@ -313,6 +313,9 @@ var timeline = (function($){
 	var showForm = function(selectedYear){
 		eventTrigger('show form');
 		$('#form #submittedYear').val(selectedYear);
+		$('#form #optin').trigger('click');
+		$('#form #optin').prop('checked', true);
+		
 		$(o.elems.tooltip).hide();
 		$('#form, #screen').show();
 	};
