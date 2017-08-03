@@ -78,7 +78,6 @@ $countCompletedUsers = $stmt->fetch(PDO::FETCH_ASSOC);
 		<div class="column wide40">Q7</div>
 		<div class="column wide40">Q8</div>
 		<div class="column wide40">Q9</div>
-		<div class="column wide40">Q10</div>
 	</div>
 
 	<?php foreach($users as $user){ ?>
@@ -97,7 +96,6 @@ $countCompletedUsers = $stmt->fetch(PDO::FETCH_ASSOC);
 			<div class="column wide40"><?php echo $user['q7'];?>&nbsp;</div>
 			<div class="column wide40"><?php echo $user['q8'];?>&nbsp;</div>
 			<div class="column wide40"><?php echo $user['q9'];?>&nbsp;</div>
-			<div class="column wide40"><?php echo $user['q10'];?>&nbsp;</div>
 		</div>
 	<?php } ?>
 
