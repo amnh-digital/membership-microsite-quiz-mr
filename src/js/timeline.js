@@ -37,21 +37,7 @@ var timeline = (function($){
 		buildTimelines();
 		toggleHelper();
 		addListeners();
-		start();
-
-
-		/* testing and debug */
-		var d = new Date();
-		console.log('dragger initialized');
-		console.log('end of build '+d.toLocaleTimeString());
-
-		
-		//showNextQuestion(1);
-		//$('.hit').first().trigger('click');
-
-
-		/* testing and debug */
-		
+		start();		
 	};
 
 	/**
