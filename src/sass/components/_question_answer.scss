@@ -110,6 +110,7 @@
 	@media (max-width: $breakpoint-lg){
 		.questionWrapper, .answerWrapper {
 			max-width: 900px;
+			padding: 30px;
 
 			.next {
 				padding: 20px 25px;
@@ -132,13 +133,22 @@
 			transform: initial;
 			left: 0;
 			top: 0;
+			padding: 20px;
+		}
+
+		.questionWrapper{
+			h2 {}
+			p {
+				font-size:20px;
+				line-height: 25px;
+			}
 		}
 
 		.answerWrapper {
-			padding: 20px;
+			
 
 			h2 { font-size: 17px; letter-spacing: 1px; }
-			p { font-size: 14px; line-height: 18px; }
+			p { font-size: 16px; line-height: 18px; }
 
 			.next {
 				font-size: 18px;

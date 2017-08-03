@@ -100,4 +100,8 @@ body {
 			height: 100%;
 		}
 	}
+
+	@media (max-width: $breakpoint-sm){
+		.desktop { display: none; }
+	}
 }

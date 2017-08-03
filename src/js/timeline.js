@@ -46,7 +46,7 @@ var timeline = (function($){
 		console.log('end of build '+d.toLocaleTimeString());
 
 		
-		//showNextQuestion(0);
+		//showNextQuestion(1);
 		//$('.hit').first().trigger('click');
 
 
@@ -415,6 +415,7 @@ var timeline = (function($){
 			$(o.elems.timelineWrapper).css({'pointer-events': 'auto'});
 		} else {
 			$(o.elems.timelineWrapper).css({'pointer-events': 'none'});
+			$(o.elems.tooltip).hide();
 		}
 	}
 
@@ -539,6 +540,14 @@ var timeline = (function($){
 			} else {
 				$.each(o.elems.mailFields,function(i,v){
 					$('label[for="'+v+'"]').removeClass('required');
+					$('#'+v).removeClass('error');
+
+					// check all inputs to toggle error message
+					if($('#form input[type="text"],#form input[type="email"]').hasClass('error')){
+						toggleSubmit(false);
+					} else {
+						toggleSubmit(true);
+					}
 				});
 			}
 		});
