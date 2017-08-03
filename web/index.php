@@ -18,12 +18,12 @@ require('../config.php');
 	<meta name="keywords" content="" />
 	<meta name="description" content="">
 
-	<meta property="og:title" content="American Museum of Natural History Quiz" />
-	<meta name="og:description" content="There's so much to see and do at the American Museum of Natural History">
-	<meta property="og:image" content="/slideImages/AMNHquizfb.jpg" />
+	<meta property="og:title" content="When in the World?" />
+	<meta name="og:description" content="Think you know what happened when? Take the American Museum of Natural History's new quiz, When in the World—and see if you can place mammoths, mummies, and more on the timeline. Special bonus: take the quiz today, and they’ll send you a free decal.">
+	<meta property="og:image" content="https://whenintheworld.amnh.org/slideImages/AMNHquizfb.jpg" />
 	<meta property="og:site_name" content="AMNH" />
 	<meta property="og:type" content="non_profit" />
-	<meta property="og:url" content="" />
+	<meta property="og:url" content="https://whenintheworld.amnh.org/" />
 	<meta property="fb:app_id" content="1409773259334320" />
 
 	<link rel="Home" href="/" title="amnh front page" />
@@ -62,8 +62,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<div class="site-title"><h1>Quiz: When In The World</h1></div>
 	<div class="social">
 		<ul class="social-list">
-			<li><a href="https://www.facebook.com/naturalhistory" id="gtm-header-icon-fb" target="new"><img src="/dist/img/share-fb.png"/></a></li>
-			<li><a href="https://twitter.com/amnh" id="gtm-header-icon-tw" target="new"><img src="/dist/img/share-tw.png"/></a></li>
+			<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//whenintheworld.amnh.org/" id="gtm-header-icon-fb" target="new"><img src="/dist/img/share-fb.png"/></a></li>
+			<li><a href="https://twitter.com/intent/tweet?text=Take+the+When+in+the+World%3F+quiz+from+&#64;AMNH+and+test+your+knowledge.+Try+it+now+and+get+a+free+decal%3A+https%3A//whenintheworld.amnh.org/" id="gtm-header-icon-tw" target="new"><img src="/dist/img/share-tw.png"/></a></li>
 			<li><a href="http://tumblr.amnh.org/" id="gtm-header-icon-tum" target="new"><img src="/dist/img/share-tum.png"/></a></li>
 			<li><a href="" id="gtm-header-icon-em"><img src="/dist/img/share-em.png"/></a></li>
 		</ul>
@@ -248,8 +248,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<p><a href="https://www.amnh.org/apiuser/register" id="gtm-ty-link-profile">Click here</a> to finish creating your profile on AMNH.org to make sure you're in the know about all the events and news that's important to you.</p>
 
 		<ul class="social-list">
-			<li><a href="https://www.facebook.com/naturalhistory" id="gtm-ty-icon-fb" target="new"><img src="/dist/img/share-fb.png"/></a></li>
-			<li><a href="https://twitter.com/amnh" id="gtm-ty-icon-tw" target="new"><img src="/dist/img/share-tw.png"/></a></li>
+			<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//whenintheworld.amnh.org/" id="gtm-ty-icon-fb" target="new"><img src="/dist/img/share-fb.png"/></a></li>
+			<li><a href="https://twitter.com/intent/tweet?text=Take+the+When+in+the+World%3F+quiz+from+&#64;AMNH+and+test+your+knowledge.+Try+it+now+and+get+a+free+decal%3A+https%3A//whenintheworld.amnh.org/" id="gtm-ty-icon-tw" target="new"><img src="/dist/img/share-tw.png"/></a></li>
 			<li><a href="http://tumblr.amnh.org/" id="gtm-ty-icon-tum" target="new"><img src="/dist/img/share-tum.png"/></a></li>
 			<li><a href="" id="gtm-ty-icon-em"><img src="/dist/img/share-em.png"/></a></li>
 		</ul>
