@@ -54,6 +54,25 @@ var timeline = (function($){
 
 	// show conformation page
 	var destroy = function(){
+
+		// calculate final score
+		data = { step: 'final' };
+
+		$.post("post.php",data).done(function(resp) {
+			result = JSON.parse(resp);
+			console.log(result);
+			if(result.result == 'success'){
+				
+				if(result.message > 20){
+					$('#resultScoreContainer').show();
+					$('#resultScore').html(result.message+'%');
+				}
+
+
+			}
+		});
+
+
 		eventTrigger('/end');
 		$(o.confirmation).css({'display': 'flex'});
 	};

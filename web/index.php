@@ -235,7 +235,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<img src="/dist/img/logo-white.png"/>
 		<h1>Thank Your for taking "When in the World quiz"</h1>
 
-		<h2>You did better than <span>XX%</span> of people who took this quiz!</h2>
+		<h2 id="resultScoreContainer">You did better than <span id="resultScore">XX%</span> of people who took this quiz!</h2>
 
 		<p>Thanks for exploring some of the key moments in the 4.6 billion-year story contained within the American Museum of Natural History. <span class="desktop">From our planet's earliest moments to the scientific breakthroughs happening today, this vast history helps us know more about who we are and what lies ahead.</span></p>
  

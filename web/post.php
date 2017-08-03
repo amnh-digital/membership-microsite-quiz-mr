@@ -105,9 +105,6 @@ if (!empty($_POST)){
 		$user = $app['session']->get('user');
 		$userId = $user['userId'];
 
-		//{step: "question", answer: "-5.6", questionNumber: "0"}
-		// validate required fields, save in $clean
-
 		$error = false;
 		$clean = $focus = array();
 		$message = '';
@@ -149,6 +146,13 @@ if (!empty($_POST)){
 		echo json_encode($resp); // response to user
 
 
+	}
+
+	if($_POST['step'] == 'final'){
+		$user = $app['session']->get('user');
+		$userId = $user['userId'];
+
+		$message = calculateFinalScore($app,$userId);	
 	}
 
 }
@@ -196,23 +200,6 @@ function calculateScore($app,$questionNumber,$answer,$userId){
 	} else {
 		$score = round((count($worseAnswers)/(count($answerOffsets)-1) * 100)); 
 	}
-	
-
-	/*
-	var_dump($responses);
-	echo 'this offset '.$thisOffset.'<br /><br />';
-	echo 'offsets<br />';
-	var_dump($answerOffsets);
-	echo '<br /><br />worse answers<br />';
-	var_dump($worseAnswers);
-	echo '<br /><br />'.count($worseAnswers)/count($answerOffsets);
-
-	
-
-	var_dump($score);
-
-	die();
-*/
 
 	$resp = array();
 	$resp['userAnswer'] = $answer;
@@ -226,7 +213,69 @@ function calculateScore($app,$questionNumber,$answer,$userId){
 }
 
 
+function calculateFinalScore($app,$id){
 
+	$stmt = $app['pdo']->prepare('SELECT * FROM questions');
+	$stmt->execute();
+
+	$questions = array();
+	while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+        $questions['q'.$row['question_id']] = [
+            'answer' => $row['question_answer'],
+            'scale' => $row['question_scale'],
+            'resp' => array(),
+            'offsets' => array()
+        ];
+    }
+
+	$stmt = $app['pdo']->prepare('SELECT user_id,q1,q2,q3,q4,q5,q6,q7,q8,q9 FROM users');
+	$stmt->execute();
+	$users = $stmt->fetchALL(PDO::FETCH_ASSOC);
+
+	$resp = array();
+
+	// get the offset for each question per user and save as array in user, also save avg
+	$usrRespArray = array();
+	foreach($users as $key =>$val){
+
+		foreach ($questions as $questionKey => $questionVal){
+			if($users[$key][$questionKey] != NULL){
+				$users[$key]['offsets'][] = (abs($users[$key][$questionKey]-$questions[$questionKey]['answer']))/$questions[$questionKey]['scale'];
+			}
+		}
+
+		$userFinalScore = array_sum($users[$key]['offsets']) / count($users[$key]['offsets']);
+		$users[$key]['avgOffset'] = $userFinalScore;
+
+		if($users[$key]['user_id'] == $id){
+			$thisUserScore = $userFinalScore;
+		}
+	}
+
+	$worseAnswers = 0;
+	foreach($users as $user){
+		if($user['user_id'] != $id){
+			if($user['avgOffset'] > $thisUserScore){
+				$worseAnswers++;
+			}
+
+
+		}
+	}
+
+	$score = round($worseAnswers/(count($users)-1) * 100); 
+
+	/*
+	echo '>>'.$thisUserScore.'<br /><br /><br />';
+	echo 'worse answers '.$worseAnswers;
+	echo '   total users '.count($users);
+	echo 'score '.$score;
+	echo '<br /><br /><br />';
+	var_dump($users);*/
+
+	$resp = array('result'=>'success', 'message' => $score); 
+	echo json_encode($resp); // response to user
+}
 
 
 
