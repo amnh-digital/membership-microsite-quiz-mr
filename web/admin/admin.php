@@ -28,7 +28,7 @@ $countCompletedUsers = $stmt->fetch(PDO::FETCH_ASSOC);
 	<meta name="Content-language" content="en-US" />  
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="SHORTCUT ICON" href="/dist/img/favicon.ico">
+	<link rel="SHORTCUT ICON" href="/slideImages/favicon.ico">
 
 	<title>American Museum of Natural History Quiz</title>
 
@@ -50,7 +50,7 @@ $countCompletedUsers = $stmt->fetch(PDO::FETCH_ASSOC);
 	<div class="logo"><a href=""><img src="/dist/img/logo.png" alt="American Museum of Natural History"/></a></div>
 	<div class="site-title"><h1>Quiz Admin</h1></div>
 	<div class="social">
-		<a href="logout.php">logout</a>
+		<a href="logout.php" class="logout-link">logout</a>
 	</div>
 </header>
 

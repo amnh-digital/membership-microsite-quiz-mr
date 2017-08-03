@@ -3,6 +3,11 @@
 
 	a {
 		color: inherit;
+
+		&.logout-link {
+			display: inline-block;
+			margin-top: 20px;
+		}
 	}
 
 	.admin-panel {
