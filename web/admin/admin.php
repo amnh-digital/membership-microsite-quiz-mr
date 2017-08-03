@@ -15,7 +15,7 @@ $users = $stmt->fetchALL(PDO::FETCH_ASSOC);
 $countUsers = count($users);
 
 
-$stmt = $app['pdo']->prepare('SELECT count(*) FROM users WHERE q1 IS NOT NULL AND q2 IS NOT NULL AND q3 IS NOT NULL AND q4 IS NOT NULL AND q5 IS NOT NULL AND q6 IS NOT NULL AND q7 IS NOT NULL AND q8 IS NOT NULL AND q9 IS NOT NULL AND q10 IS NOT NULL ');
+$stmt = $app['pdo']->prepare('SELECT count(*) FROM users WHERE q1 IS NOT NULL AND q2 IS NOT NULL AND q3 IS NOT NULL AND q4 IS NOT NULL AND q5 IS NOT NULL AND q6 IS NOT NULL AND q7 IS NOT NULL AND q8 IS NOT NULL AND q9 IS NOT NULL');
 $stmt->execute();
 $countCompletedUsers = $stmt->fetch(PDO::FETCH_ASSOC);
 
