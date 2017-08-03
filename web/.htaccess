@@ -1,5 +1,5 @@
 <IfModule mod_authn_file.c>
- AuthUserFile ../.htpasswd
+ AuthUserFile /.htpasswd
  AuthName "Username and password required"
  AuthType Basic
  <Limit GET POST>
