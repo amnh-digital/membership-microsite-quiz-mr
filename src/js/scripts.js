@@ -38,4 +38,12 @@ $(document).ready(function(){
 		var $thisImg = $(this).find('img');
 		$thisImg.attr('src',$thisImg.attr('src').replace('-hover.png','.png'));
 	});
+
+
+	// track initial page view
+	dataLayer.push({
+	  'gaVirtualPageURL': '/start',
+	  'event': 'gaVirtualPageview'
+	});
+	console.log('triggering event: /start');
 });

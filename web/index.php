@@ -58,14 +58,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <header>
-	<div class="logo"><a href=""><img src="/dist/img/logo.png" alt="American Museum of Natural History"/></a></div>
+	<div class="logo"><a href="http://www.amnh.org/" id="gtm-header-logo-amnh"><img src="/dist/img/logo.png" alt="American Museum of Natural History"/></a></div>
 	<div class="site-title"><h1>Quiz: When In The World</h1></div>
 	<div class="social">
 		<ul class="social-list">
-			<li><a href=""><img src="/dist/img/share-fb.png"/></a></li>
-			<li><a href=""><img src="/dist/img/share-tw.png"/></a></li>
-			<li><a href=""><img src="/dist/img/share-tum.png"/></a></li>
-			<li><a href=""><img src="/dist/img/share-em.png"/></a></li>
+			<li><a href="https://www.facebook.com/naturalhistory" id="gtm-header-icon-fb" target="new"><img src="/dist/img/share-fb.png"/></a></li>
+			<li><a href="https://twitter.com/amnh" id="gtm-header-icon-tw" target="new"><img src="/dist/img/share-tw.png"/></a></li>
+			<li><a href="http://tumblr.amnh.org/" id="gtm-header-icon-tum" target="new"><img src="/dist/img/share-tum.png"/></a></li>
+			<li><a href="" id="gtm-header-icon-em"><img src="/dist/img/share-em.png"/></a></li>
 		</ul>
 	</div>
 </header>
@@ -239,29 +239,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 		<p>Thanks for exploring some of the key moments in the 4.6 billion-year story contained within the American Museum of Natural History. <span class="desktop">From our planet's earliest moments to the scientific breakthroughs happening today, this vast history helps us know more about who we are and what lies ahead.</span></p>
  
-		<p>Your Museum decal will be on its way to you soon. Now, take a moment to help us do what we do best: share fascinating facts far and wide! Share the When in the World quiz on Facebook and Twitter, and challenge your friends to put their knowledge to the test.</p>
+		<p>Your Museum decal will be on its way to you soon. Now, take a moment to help us do what we do best: share fascinating facts far and wide! Share the When in the World quiz on <a href="https://www.facebook.com/naturalhistory" id="gtm-ty-link-fb" target="new">Facebook</a> and <a href="https://twitter.com/amnh" id="gtm-ty-link-tw" target="new">Twitter</a>, and challenge your friends to put their knowledge to the test.</p>
 
 		<p class="desktop">There is so much more to discover at the Museum, and Members get to explore our halls like no one else. Membership will give you unlimited access to the Museum's collections, along with tickets to special exhibitions and other incredible benefits.</p>
 
-		<p class="desktop"><a href="http://www.amnh.org/join-support">Click here to learn more and start or renew your membership!</a></p>
+		<p class="desktop"><a href="http://www.amnh.org/join-support" id="gtm-ty-link-membership">Click here to learn more and start or renew your membership!</a></p>
 
-		<p><a href="https://www.amnh.org/apiuser/register">Click here</a> to finish creating your profile on AMNH.org to make sure you're in the know about all the events and news that's important to you.</p>
+		<p><a href="https://www.amnh.org/apiuser/register" id="gtm-ty-link-profile">Click here</a> to finish creating your profile on AMNH.org to make sure you're in the know about all the events and news that's important to you.</p>
 
-
-
-
-
-
-
-
-
-
-	
 		<ul class="social-list">
-			<li><a href=""><img src="/dist/img/share-fb.png"/></a></li>
-			<li><a href=""><img src="/dist/img/share-tw.png"/></a></li>
-			<li><a href=""><img src="/dist/img/share-tum.png"/></a></li>
-			<li><a href=""><img src="/dist/img/share-em.png"/></a></li>
+			<li><a href="https://www.facebook.com/naturalhistory" id="gtm-ty-icon-fb" target="new"><img src="/dist/img/share-fb.png"/></a></li>
+			<li><a href="https://twitter.com/amnh" id="gtm-ty-icon-tw" target="new"><img src="/dist/img/share-tw.png"/></a></li>
+			<li><a href="http://tumblr.amnh.org/" id="gtm-ty-icon-tum" target="new"><img src="/dist/img/share-tum.png"/></a></li>
+			<li><a href="" id="gtm-ty-icon-em"><img src="/dist/img/share-em.png"/></a></li>
 		</ul>
 	</div>
 </div>

@@ -68,7 +68,7 @@ var timeline = (function($){
 
 	// show conformation page
 	var destroy = function(){
-		eventTrigger('show confirmtation');
+		eventTrigger('/end');
 		$(o.confirmation).css({'display': 'flex'});
 	};
 
@@ -226,14 +226,13 @@ var timeline = (function($){
 			questionNumber: timelineNumber
 		};
 			
-		console.log('sending data to question save');
-		console.log(data);
+		//console.log('sending data to question save');
+		//console.log(data);
 
 
 		$.post("post.php",data).done(function(resp) {
-			console.log(resp);
 			result = JSON.parse(resp);
-			console.log(result);
+			//console.log(result);
 			if(result.result == 'success'){
 				prepareAnswer(result.message);
 			}
@@ -244,10 +243,7 @@ var timeline = (function($){
 	// show the user what the correct answer after saving it is with text and timeline ticks
 	var prepareAnswer = function(data){
 		
-
-		console.log(data);
-		console.log('done');
-
+		//console.log(data);
 
 		var timelineNum = data.questionId - 1;
 		var correctAnswer = data.questionAnswer;
@@ -275,6 +271,8 @@ var timeline = (function($){
 		$('#question'+timelineNum+' .questionWrapper').hide();
 		$('#question'+timelineNum+' .answerWrapper h2').html(h2copy);
 		$('#question'+timelineNum+' .answerWrapper').show();
+
+		eventTrigger('/answer-'+(timelineNum+1));
 	};
 
 
@@ -288,15 +286,13 @@ var timeline = (function($){
 			$('.'+o.elems.questionElementClass+', .'+o.elems.timelineElementClass).hide();
 			$('.'+o.elems.timelineTickClass+' .hit').removeClass('correct').removeClass('incorrect');
 
-			eventTrigger('page show',(num+1));
+			eventTrigger('/question-'+(num+1));
 
 
 			$('#question'+num+', #timeline'+num).show();
 			fitTimelineLabels(num);
 			toggleHelper();
 		} else {
-			
-			eventTrigger('quiz complete');
 			destroy();
 		}	
 	};
@@ -311,7 +307,7 @@ var timeline = (function($){
 	*/
 	// show the user capture form
 	var showForm = function(selectedYear){
-		eventTrigger('show form');
+		eventTrigger('/email-capture');
 		$('#form #submittedYear').val(selectedYear);
 		$('#form #optin').trigger('click');
 		$('#form #optin').prop('checked', true);
@@ -351,8 +347,8 @@ var timeline = (function($){
 		$.post("post.php",data).done(function( resp ) {
 			result = JSON.parse(resp);
 
-			console.log('resp from save form');
-			console.log(result);
+			//console.log('resp from save form');
+			//console.log(result);
 
 			if(result.result == 'error'){
 				toggleSubmit(false);
@@ -369,8 +365,11 @@ var timeline = (function($){
 				toggleSubmit(true);
 				$('*').removeClass('error');
 
-				eventTrigger('form submit');
 				$('#form, #screen').hide();
+
+				dataLayer.push({
+				  'event': 'emailSignup'
+				});
 
 				saveQuestionResponse(data.submittedYear,0);
 			}
@@ -493,8 +492,6 @@ var timeline = (function($){
 			var $t = getActiveTimeline();
 			var timelineNum = $t.attr('id').substring(8);
 
-			eventTrigger('answered question',(parseInt(timelineNum)+1));
-
 			if(timelineNum == 0){
 				showForm(selectedYear);
 			} else {
@@ -555,13 +552,12 @@ var timeline = (function($){
 
 
 	// google analytics event firing
-	var eventTrigger = function(eventName,val){
-		var addition = '';
-		if(val !== undefined){
-			var addition = ', '+val;
-		}
-
-		console.log('triggering event: '+eventName+addition);
+	var eventTrigger = function(eventName){
+		console.log('triggering event: '+eventName);
+		dataLayer.push({
+		  'gaVirtualPageURL': eventName,
+		  'event': 'gaVirtualPageview'
+		});
 	};
 
 
