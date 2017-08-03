@@ -21,4 +21,6 @@ $app->register(new Csanquer\Silex\PdoServiceProvider\Provider\PDOServiceProvider
    )
 );
 
+$salt = 'Nzu09u4';
+
 ?>

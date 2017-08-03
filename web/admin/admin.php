@@ -2,13 +2,17 @@
 
 require('../../config.php');
 
+// check for user session and make sure they're an admin
+$sessionCheck = $app['session']->get('user');
+if($sessionCheck === null || $sessionCheck['admin'] == null || $sessionCheck['admin'] != true){
+	header('Location: index.php');
+}
 
 $stmt = $app['pdo']->prepare('SELECT * FROM users');
 $stmt->execute();
 $users = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
 $countUsers = count($users);
-$users = array();
 
 
 $stmt = $app['pdo']->prepare('SELECT count(*) FROM users WHERE q1 IS NOT NULL AND q2 IS NOT NULL AND q3 IS NOT NULL AND q4 IS NOT NULL AND q5 IS NOT NULL AND q6 IS NOT NULL AND q7 IS NOT NULL AND q8 IS NOT NULL AND q9 IS NOT NULL AND q10 IS NOT NULL ');
@@ -46,15 +50,16 @@ $countCompletedUsers = $stmt->fetch(PDO::FETCH_ASSOC);
 	<div class="logo"><a href=""><img src="/dist/img/logo.png" alt="American Museum of Natural History"/></a></div>
 	<div class="site-title"><h1>Quiz Admin</h1></div>
 	<div class="social">
-		<a href="">logout</a>
+		<a href="logout.php">logout</a>
 	</div>
 </header>
 
 <div class="admin-panel">
 	
 	<div class="header">
-		<div class="column wideHalf"><strong>Total Submissions:</strong> <?php echo $countUsers; ?></div>
-		<div class="column wideHalf"><strong>Finished Quizes:</strong> <?php echo $countCompletedUsers['count']; ?></div>
+		<div class="column first">Total Submissions: <strong><?php echo $countUsers; ?></strong></div>
+		<div class="column middle"><a href="download.php" target="new">download results</a></div>
+		<div class="column last">Finished Quizes: <strong><?php echo $countCompletedUsers['count']; ?></strong></div>
 	</div>
 
 
