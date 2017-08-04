@@ -38,7 +38,7 @@ var timeline = (function($){
 		addListeners();
 		start();	
 
-		//showNextQuestion(9);	
+		//showNextQuestion(6);	
 	};
 
 	/**
@@ -109,10 +109,17 @@ var timeline = (function($){
 				var minWidth = o.timelineMinWidth;
 			}
 
+			if('imagePosition' in q){
+				var imagePosition = q.imagePosition;
+			} else {
+				var imagePosition = '0% 0%';
+			}
+
 
 			// create question and answer as wrapped element
 			$("<div>", {class: o.elems.questionElementClass, id: 'question'+i}).css({
-	        	'background-image': 'url(/slideImages/'+q.image+')'
+	        	'background-image': 'url(/slideImages/'+q.image+')',
+	        	'background-position': imagePosition
 	        }).append(
 		        $("<div>", {class: o.elems.questionElementInnerClass}).append(
 		            $("<h2>").text('Question #'+(i+1)),

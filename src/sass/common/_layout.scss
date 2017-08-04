@@ -112,6 +112,8 @@ body {
 		}
 	}
 
+	#imgLoader { opacity: 0; }
+
 	@media (max-width: $breakpoint-sm){
 		.desktop { display: none; }
 	}

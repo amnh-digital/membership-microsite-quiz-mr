@@ -181,6 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<input type="hidden" name="source" id="source"/>
 	</div>
 
+	<p class="footnote">** Free decal giveaway is available for United States residents only. </p>
 	<p class="footnote">We'll send you fascinating new discoveries, special offers, and sneak peeks at upcoming exhibitions.</p>
 	<p class="footnote">And if you don't love seeing cool content, you can unsubscribe at any time.</p>
 </form></div>
@@ -253,10 +254,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</div>
 </div>
 
-
-
-
-
+<div id="imgLoader">
+	<img src="/slideImages/amnhBuilding.jpg"/>
+	<img src="/slideImages/easterIsland.jpg"/>
+	<img src="/slideImages/inside.jpg"/>
+	<img src="/slideImages/livingThings.jpg"/>
+	<img src="/slideImages/mammoths.jpg"/>
+	<img src="/slideImages/mummification.jpg"/>
+	<img src="/slideImages/solarSystem.jpg"/>
+	<img src="/slideImages/stars.jpg"/>
+	<img src="/slideImages/titanosaur.jpg"/>
+</div>
 
 <script>
 	var questions = {
@@ -273,7 +281,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'majorLabelRoundScale': 1,
 				'majorLabelOffset': 0,
 				'majorGridLabel': ' Billion years ago',
-				'image': 'museum-outside.jpg',
+				'image': 'solarSystem.jpg',
+				'imagePosition': '50% 10%',
 				'timelineMinWidth': 1800
 			},
 			{ // 2
@@ -288,7 +297,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'majorLabelRoundScale': 1,
 				'majorLabelOffset': 0,
 				'majorGridLabel': ' Billion years ago',
-				'image': 'stars.jpg',
+				'image': 'livingThings.jpg',
+				'imagePosition': '50% 10%',
 				'timelineMinWidth': 1600
 			},
 			{ // 3
@@ -318,7 +328,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'majorLabelRoundScale': 1,
 				'majorLabelOffset': 0,
 				'majorGridLabel': ' million years ago',
-				'image': 'stars.jpg',
+				'image': 'titanosaur.jpg',
+				'imagePosition': '50% 10%',
 				'timelineMinWidth': 1600
 			},
 			{ // 5
@@ -333,7 +344,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'majorLabelRoundScale': 1,
 				'majorLabelOffset': 0,
 				'majorGridLabel': ' Million years ago',
-				'image': 'stars.jpg',
+				'image': 'mammoths.jpg',
+				'imagePosition': '50% 30%',
 				'timelineMinWidth': 1600
 			},
 			{ // 6
@@ -348,22 +360,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'majorLabelRoundScale': 1,
 				'majorLabelOffset': 0,
 				'majorGridLabel': ',000 years ago',
-				'image': 'stars.jpg',
+				'image': 'mummification.jpg',
+				'imagePosition': '50% 10%',
 				'timelineMinWidth': 1600
 			},
 			{ // 7
 				'text': 'You may not recognize the name of the Rapa Nui, but you know their handiwork. They are the ones who carved <em>moai</em> ancestor figures <span class="desktop">as towering stone statues</span> on what we know as Easter Island (also called Rapa Nui). When did these people first settle on this <span class="desktop">remote</span> volcanic island?',
 				'answerText': '<p>The Rapa Nui first arrived on this remote Polynesian island around 300 CE. Located 2,300 miles from the coast of Chile, it was the most isolated inhabited island in the world. <span class="desktop">And the <em>moai</em>? They may seem like ancient history, but these unique monuments were carved between the 12th and 16th centuries.</span></p>',
-				'answer': -3.5,
-				'min': -5000,
-				'max': 300,
-				'minorScale': 100,
-				'minorLabelRoundScale': 1,
-				'majorGridPoint': 500,
+				'answer': 300,
+				'min': 0,
+				'max': 590,
+				'minorScale': 25,
+				'minorLabelRoundScale': 0,
+				'majorGridPoint': 100,
 				'majorLabelRoundScale': 1,
 				'majorLabelOffset': 0,
-				'majorGridLabel': ' years ago',
-				'image': 'stars.jpg',
+				'majorGridLabel': ' CE',
+				'image': 'easterIsland.jpg',
+				'imagePosition': '50% 30%',
 				'timelineMinWidth': 1600
 			},
 			{ // 8
@@ -378,7 +392,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'majorLabelRoundScale': 1,
 				'majorLabelOffset': 0,
 				'majorGridLabel': '',
-				'image': 'stars.jpg',
+				'image': 'amnhBuilding.jpg',
+				'imagePosition': '50% 20%',
 				'timelineMinWidth': 1600
 			},
 			{ // 9
