@@ -114,6 +114,13 @@
                 border-color: $error-red;
                 color: $error-red;
             }
+            &.active {
+                border-color: #004bb4;
+
+                option{
+                    border-color: #004bb4;
+                }
+            }
     	}
     	option {
 	    	background-color: #fff;

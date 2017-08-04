@@ -86,6 +86,17 @@ body {
 			.site-title { display: none; }
 			.social { float: right; }
 		}
+		@media (max-width: $breakpoint-sm){
+			.social {
+				ul {
+					li {
+						a{
+							padding: 10px 5px;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	.wrapper {

@@ -35,9 +35,10 @@ var timeline = (function($){
 		questions = o.data.questions;
 
 		buildTimelines();
-		toggleHelper();
 		addListeners();
-		start();		
+		start();	
+
+		//showNextQuestion(4);	
 	};
 
 	/**
@@ -256,12 +257,13 @@ var timeline = (function($){
 		var score = data.score;
 
 		if(score <= 20){
-			h2copy = 'You scored in the bottom <span>20%</span>. Perhaps you should visit the Museum to brush up on your history';
+			h2copy = 'You scored in the bottom <span>20%</span> of this question. Perhaps you should visit the Museum to brush up on your history';
 		} else {
 			h2copy = 'You did better than <span>'+score+'%</span> of people who answered this question!';
 		}
 
 		toggleTimeline(false);
+		toggleHelper('hide');
 
 
 		$('.chosen').remove();
@@ -335,6 +337,16 @@ var timeline = (function($){
 			}
 		});
 
+		if($('#zip').val() != ''){
+			var regex = /^\d{5}$/;
+			if(regex.test($('#zip').val()) == false){
+				formError = true;
+				$('#zip').addClass('error');
+			}
+		}
+
+
+
 		if(formError == true){
 			toggleSubmit(false);
 		} else {
@@ -353,7 +365,7 @@ var timeline = (function($){
 			result = JSON.parse(resp);
 
 			//console.log('resp from save form');
-			//console.log(result);
+			console.log(result);
 
 			if(result.result == 'error'){
 				toggleSubmit(false);
@@ -392,7 +404,9 @@ var timeline = (function($){
 	  * 
 	*/
 	//look at widths of window and timeline to show/hide helper tooltip
-	var toggleHelper = function(){
+	var toggleHelper = function(intent){
+
+		intent = intent || null;
 		
 		var $tooltip = $(o.elems.tooltip);
 		var $timeline = getActiveTimeline();
@@ -409,6 +423,20 @@ var timeline = (function($){
 			$tooltip.hide();
 			$(o.elems.timelineWrapper).css({'cursor': 'default'});
 		}
+
+		var $thisQ = getActiveQuestion();
+		if($thisQ.length){
+			if($thisQ.children('.answerWrapper').is(':visible')){
+				$tooltip.hide();
+				$(o.elems.timelineWrapper).css({'cursor': 'default'});
+			}
+		}
+
+		if(intent == 'hide'){ 
+			$tooltip.hide();
+			$(o.elems.timelineWrapper).css({'cursor': 'default'});
+		}
+
 	}
 
 
@@ -449,6 +477,10 @@ var timeline = (function($){
 		return $('.'+o.elems.timelineElementClass+':visible');
 	};
 
+	var getActiveQuestion = function(){
+		return $('.'+o.elems.questionElementClass+':visible');
+	};
+
 
 	// convert form fields with set value to key => value
 	var convertToJson = function(form){
@@ -467,7 +499,25 @@ var timeline = (function($){
 	}
 
 	
+	var validate = function(elem){
+		// adjust elem input
+		if($(elem).val() == ''){
+			$(elem).removeClass('active');
 
+			if($(elem).siblings('label').hasClass('required')){
+				$(elem).addClass('error');
+			}
+		} else {
+			$(elem).removeClass('error').addClass('active');
+		}
+
+		// check all inputs to toggle error message
+		if($('#form input[type="text"],#form input[type="email"]').hasClass('error')){
+			toggleSubmit(false);
+		} else {
+			toggleSubmit(true);
+		}
+	}
 
 	/**
 	  * event listeners
@@ -513,24 +563,11 @@ var timeline = (function($){
 		$('#form input[type="text"],#form input[type="email"], #form select').on('focus',function() {
 			$(this).addClass('active');
 		}).on('blur',function() {
+			validate(this);
+		});
 
-			// adjust this input
-			if($(this).val() == ''){
-				$(this).removeClass('active');
-
-				if($(this).siblings('label').hasClass('required')){
-					$(this).addClass('error');
-				}
-			} else {
-				$(this).removeClass('error').addClass('active');
-			}
-
-			// check all inputs to toggle error message
-			if($('#form input[type="text"],#form input[type="email"]').hasClass('error')){
-				toggleSubmit(false);
-			} else {
-				toggleSubmit(true);
-			}
+		$('#form select, #form #optin').click(function(){
+			validate(this);
 		});
 
 		// adjust which fields are required if the user wants a premium
@@ -544,12 +581,7 @@ var timeline = (function($){
 					$('label[for="'+v+'"]').removeClass('required');
 					$('#'+v).removeClass('error');
 
-					// check all inputs to toggle error message
-					if($('#form input[type="text"],#form input[type="email"]').hasClass('error')){
-						toggleSubmit(false);
-					} else {
-						toggleSubmit(true);
-					}
+					
 				});
 			}
 		});

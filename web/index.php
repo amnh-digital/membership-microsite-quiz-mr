@@ -64,8 +64,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<ul class="social-list">
 			<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//whenintheworld.amnh.org/" id="gtm-header-icon-fb" target="new"><img src="/dist/img/share-fb.png"/></a></li>
 			<li><a href="https://twitter.com/intent/tweet?text=Take+the+When+in+the+World%3F+quiz+from+&#64;AMNH+and+test+your+knowledge.+Try+it+now+and+get+a+free+decal%3A+https%3A//whenintheworld.amnh.org/" id="gtm-header-icon-tw" target="new"><img src="/dist/img/share-tw.png"/></a></li>
-			<li><a href="http://tumblr.amnh.org/" id="gtm-header-icon-tum" target="new"><img src="/dist/img/share-tum.png"/></a></li>
-			<li><a href="" id="gtm-header-icon-em"><img src="/dist/img/share-em.png"/></a></li>
+			<li><a href="http://tumblr.com/widgets/share/tool?canonicalUrl=https://whenintheworld.amnh.org" id="gtm-header-icon-tum" target="new"><img src="/dist/img/share-tum.png"/></a></li>
 		</ul>
 	</div>
 </header>
@@ -173,7 +172,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	
 
 	<div class="form-wrap error-wrapper">
-		<span>Oops, something went wrong on the form! Please fill in any missing information below.</span>
+		<span>Oops, something went wrong on the form! Please fill in any missing information above.</span>
 	</div>
 
 	<div class="form-wrap form-submit">
@@ -219,9 +218,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<div id="intro">
 		<img src="/dist/img/logo-white.png"/>
 		<h1>When In The World Quiz</h1>
-		<p>We celebrate and explore all of that history at the American Museum of Natural History. We find one of the trickiest parts to grasp is the immense scale involved – in the simplest terms, what happened when.</p>
-
-		<p>Now's your chance to test your knowledge. Take the When in the World quiz and see if you can pinpoint key moments on the timeline, from mammoths to mummies. <strong>Take the quiz before September 9 and we'll send you a free Museum decal so you can show off your smarts!</strong></p>
+		<p>We celebrate and explore history here at the Museum, and one of the trickiest parts to grasp is the immense scale involved – in the simplest terms, what happened when.</p>
+ 
+		<p>Now's your chance to test your knowledge. Take the <em>When in the World</em> quiz and see if you can pinpoint key moments on the timeline, from mammoths to mummies. <strong>We're sending everyone who takes the quiz before September 9 a free Museum decal – so go ahead and start your journey through time!</strong></p>
 
 		<div id="jedediah">
 			<div class="left"><span>the</span></div>
@@ -251,7 +250,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//whenintheworld.amnh.org/" id="gtm-ty-icon-fb" target="new"><img src="/dist/img/share-fb.png"/></a></li>
 			<li><a href="https://twitter.com/intent/tweet?text=Take+the+When+in+the+World%3F+quiz+from+&#64;AMNH+and+test+your+knowledge.+Try+it+now+and+get+a+free+decal%3A+https%3A//whenintheworld.amnh.org/" id="gtm-ty-icon-tw" target="new"><img src="/dist/img/share-tw.png"/></a></li>
 			<li><a href="http://tumblr.amnh.org/" id="gtm-ty-icon-tum" target="new"><img src="/dist/img/share-tum.png"/></a></li>
-			<li><a href="" id="gtm-ty-icon-em"><img src="/dist/img/share-em.png"/></a></li>
 		</ul>
 	</div>
 </div>
@@ -310,7 +308,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'timelineMinWidth': 1600
 			},
 			{ // 4
-				'text': 'When life began (3.5 billion years ago, remember?), organisms were simple and microscopic. Evolution often moves slowly, but eventually life got complicated – and big. When did the Museum\'s 122-foot-long plant-eating sauropod, the Titanosaur, roam the Earth?',
+				'text': 'When life began (3.5 billion years ago, remember?), organisms were simple and microscopic. Evolution often moves slowly, but eventually life got complicated – and <em>big</em>. When did the Museum\'s 122-foot-long plant-eating sauropod, the Titanosaur, roam the Earth?',
 				'answerText': '<p>Researchers have dated the Titanosaur to the early Cretaceous Period, about 140 million years ago. The Titanosaur was one of the largest land animals to ever stomp its way across the Earth. It also happens to be the longest animal ever displayed at the American Museum of Natural History (though not the most massive – that distinction goes to the blue whale, a model of which hangs in the Museum\'s Milstein Hall of Ocean Life).</p>',
 				'answer': -140,
 				'min': -500,
@@ -325,11 +323,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'timelineMinWidth': 1600
 			},
 			{ // 5
-				'text': 'Not as large as the Titanosaur, but still a commanding, thundering presence–when did the first mammoths appear?',
+				'text': 'Not as large as the Titanosaur, but still a commanding, thundering presence – when did the first mammoths appear?',
 				'answerText': '<p>Mammoths, like the ones on display at the Museum, are "only" about 4 million years old. That\'s quite recent compared with when titanosaurs lived, but fully 3,000,000,000 years since life first emerged. Like we said, evolution can move very slowly.</p>',
 				'answer': -4,
-				'min': -100,
-				'max': -2,
+				'min': -40,
+				'max': -1,
 				'minorScale': 2,
 				'minorLabelRoundScale': 0,
 				'majorGridPoint': 10,

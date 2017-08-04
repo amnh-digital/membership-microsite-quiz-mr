@@ -82,7 +82,7 @@ if (!empty($_POST)){
 			$resp = array('result'=>$result,'resp'=>$resp,'message'=>$clean,'id'=>$user['user_id']); // define a response
 
 		} else {
-			$resp = array('result'=>'error', 'focus'=>$focus, 'message' => $message); // define a response (this one def an error)
+			$resp = array('result'=>'error', 'focus'=>$focus, 'message' => 'Oops, something went wrong on the form! Please fill in any missing information below.'); // define a response (this one def an error)
 		}
 
 		// create user session if it was a successful insert
