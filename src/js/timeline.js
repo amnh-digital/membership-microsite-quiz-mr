@@ -38,7 +38,7 @@ var timeline = (function($){
 		addListeners();
 		start();	
 
-		//showNextQuestion(6);	
+		//showNextQuestion(8);	
 	};
 
 	/**

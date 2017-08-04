@@ -256,6 +256,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div id="imgLoader">
 	<img src="/slideImages/amnhBuilding.jpg"/>
+	<img src="/slideImages/apollo2.jpg"/>
 	<img src="/slideImages/easterIsland.jpg"/>
 	<img src="/slideImages/inside.jpg"/>
 	<img src="/slideImages/livingThings.jpg"/>
@@ -408,7 +409,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'majorLabelRoundScale': 1,
 				'majorLabelOffset': 0,
 				'majorGridLabel': '',
-				'image': 'stars.jpg',
+				'image': 'apollo2.jpg',
+				'imagePosition': '50% 15%',
 				'timelineMinWidth': 1600
 			}
 
