@@ -232,7 +232,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="splash" id="confirmation-screen">
 	<div id="thanks">
 		<img src="/dist/img/logo-white.png"/>
-		<h1>Thank Your for taking "When in the World quiz"</h1>
 
 		<h2 id="resultScoreContainer">You did better than <span id="resultScore">XX%</span> of people who took this quiz!</h2>
 
@@ -244,7 +243,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 		<p class="desktop"><a href="http://www.amnh.org/join-support" id="gtm-ty-link-membership">Click here to learn more and start or renew your membership!</a></p>
 
-		<p><a href="https://www.amnh.org/apiuser/register" id="gtm-ty-link-profile">Click here</a> to finish creating your profile on AMNH.org to make sure you're in the know about all the events and news that's important to you.</p>
+		<p class="smaller"><a href="https://www.amnh.org/apiuser/register" id="gtm-ty-link-profile">Click here</a> to finish creating your profile on AMNH.org to make sure you're in the know about all the events and news that's important to you.</p>
 
 		<ul class="social-list">
 			<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//whenintheworld.amnh.org/" id="gtm-ty-icon-fb" target="new"><img src="/dist/img/share-fb.png"/></a></li>
@@ -353,17 +352,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'timelineMinWidth': 1600
 			},
 			{ // 7
-				'text': 'You may not recognize the name of the Rapa Nui, but you know their handiwork. They are the ones who carved moai ancestor figures <span class="desktop">as towering stone statues</span> on what we know as Easter Island (also called Rapa Nui). When did these people first settle on this <span class="desktop">remote</span> volcanic island?',
-				'answerText': '<p>The Rapa Nui first arrived on this remote Polynesian island around 300 CE. Located 2,300 miles from the coast of Chile, it was the most isolated inhabited island in the world. <span class="desktop">And the moai? They may seem like ancient history, but these unique monuments were carved between the 12th and 16th centuries.</span></p>',
+				'text': 'You may not recognize the name of the Rapa Nui, but you know their handiwork. They are the ones who carved <em>moai</em> ancestor figures <span class="desktop">as towering stone statues</span> on what we know as Easter Island (also called Rapa Nui). When did these people first settle on this <span class="desktop">remote</span> volcanic island?',
+				'answerText': '<p>The Rapa Nui first arrived on this remote Polynesian island around 300 CE. Located 2,300 miles from the coast of Chile, it was the most isolated inhabited island in the world. <span class="desktop">And the <em>moai</em>? They may seem like ancient history, but these unique monuments were carved between the 12th and 16th centuries.</span></p>',
 				'answer': -3.5,
-				'min': -5,
-				'max': -1.1,
-				'minorScale': .1,
+				'min': -5000,
+				'max': 300,
+				'minorScale': 100,
 				'minorLabelRoundScale': 1,
-				'majorGridPoint': 1,
+				'majorGridPoint': 500,
 				'majorLabelRoundScale': 1,
 				'majorLabelOffset': 0,
-				'majorGridLabel': ' Billion years ago',
+				'majorGridLabel': ' years ago',
 				'image': 'stars.jpg',
 				'timelineMinWidth': 1600
 			},
@@ -386,8 +385,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'text': 'Okay, here\'s our last question, and the only one that you might well remember experiencing if you are of a certain age: when did the first person land on the Moon?',
 				'answerText': '<p>That giant leap for mankind occurred on July 20, 1969, during the Apollo 11 mission — 100 years after the founding of the Museum. It is a stirring reminder of the discoveries still to be made and frontiers still to be explored, and of the hunger for knowledge that drives everything we do at the Museum.</p>',
 				'answer': 1969,
-				'min': 1920,
-				'max': 1989,
+				'min': 1940,
+				'max': 1979,
 				'minorScale': 1,
 				'minorLabelRoundScale': 0,
 				'majorGridPoint': 10,
@@ -395,7 +394,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'majorLabelOffset': 0,
 				'majorGridLabel': '',
 				'image': 'stars.jpg',
-				'timelineMinWidth': 2200
+				'timelineMinWidth': 1600
 			}
 
 			/*
