@@ -104,6 +104,7 @@ body {
 		margin: 0;
 		width: 100%;
 		background-color: #cfcfcf;
+		z-index: 100;
 		height: calc(100% - #{$header-height} - #{$timeline-height} - #{$timeline-spacer-height});
 
 		.innerWrapper {	
