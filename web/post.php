@@ -40,7 +40,7 @@ if (!empty($_POST)){
 		if(!empty($_POST['city'])){ $clean['city'] = filter_var($_POST['city'],FILTER_SANITIZE_STRING); }
 		if(!empty($_POST['state'])){ $clean['state'] = filter_var($_POST['state'],FILTER_SANITIZE_STRING); }
 		if(!empty($_POST['zip'])){ $clean['zip'] = filter_var($_POST['zip'],FILTER_SANITIZE_STRING); }
-		if(!empty($_POST['source'])){ $clean['source_code'] = filter_var($_POST['source'],FILTER_SANITIZE_STRING); }
+		if(!empty($_POST['source'])){ $clean['source_code'] = 'WITWQuiz-'.filter_var($_POST['source'],FILTER_SANITIZE_STRING); }
 		if(!empty($_POST['optin']) && $_POST['optin'] == 'y'){ $clean['opt_in'] = 'y'; }
 
 

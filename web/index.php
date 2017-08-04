@@ -178,7 +178,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<div class="form-wrap form-submit">
 		<input type="button" id="submit" value="Enter">
 		<input type="hidden" name="submittedYear" id="submittedYear"/>
-		<input type="hidden" name="source" id="source"/>
+		<input type="hidden" name="source" id="source" value="Organic"/>
 	</div>
 
 	<p class="footnote">** Free decal giveaway is available for United States residents only. </p>
