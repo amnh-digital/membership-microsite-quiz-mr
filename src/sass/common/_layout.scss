@@ -106,6 +106,8 @@ body {
 		background-color: #cfcfcf;
 		z-index: 100;
 		height: calc(100% - #{$header-height} - #{$timeline-height} - #{$timeline-spacer-height});
+		height: calc(100% - #{$header-height});
+		z-index: 200;
 
 		.innerWrapper {	
 			width: 100%;

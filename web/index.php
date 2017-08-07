@@ -62,7 +62,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header>
 	<div class="logo"><a href="http://www.amnh.org/" id="gtm-header-logo-amnh"><img src="/dist/img/logo.png" alt="American Museum of Natural History"/></a></div>
-	<div class="site-title"><h1>Quiz: When In The World</h1></div>
+	<div class="site-title"><h1>When In The World Quiz</h1></div>
 	<div class="social">
 		<ul class="social-list">
 			<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//whenintheworld.amnh.org/%3Futm_medium%3Dsocial%26utm_source%3Dfbshare%26utm_campaign%3DWhenIntheWorldQuiz" id="gtm-header-icon-fb" target="new"><img src="/dist/img/share-fb.png"/></a></li>
@@ -111,7 +111,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<div class="form-wrap form-state">
 		<label for="state">State</label>
 		<select id="state" name="state">
-			<option value=""></option>
+			<option value="">Select</option>
 			<option value="AL">Alabama</option>
 			<option value="AK">Alaska</option>
 			<option value="AZ">Arizona</option>
@@ -196,8 +196,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- tooltip -->
 <div id="tooltip">
-	<span class="first">Click and drag</span><br />
-	<span class="grey">to scroll the timeline</span>
+	<span class="first">Select a date on the timeline</span><br />
+	<span class="grey">Click and drag to scroll</span>
 </div>
 <!-- /#tooltip -->
 
@@ -241,11 +241,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 		<p>Thanks for exploring some of the key moments in the 4.6 billion-year story contained within the American Museum of Natural History. <span class="desktop">From our planet's earliest moments to the scientific breakthroughs happening today, this vast history helps us know more about who we are and what lies ahead.</span></p>
  
-		<p>Your Museum decal will be on its way to you soon. Now, take a moment to help us do what we do best: share fascinating facts far and wide! Share the When in the World quiz on <a href="https://www.facebook.com/naturalhistory" id="gtm-ty-link-fb" target="new">Facebook</a> and <a href="https://twitter.com/amnh" id="gtm-ty-link-tw" target="new">Twitter</a>, and challenge your friends to put their knowledge to the test.</p>
+		<p>Your Museum decal will be on its way to you soon. Now, take a moment to help us do what we do best: share fascinating facts far and wide! Share the When in the World quiz on <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//whenintheworld.amnh.org/%3Futm_medium%3Dsocial%26utm_source%3Dfbshare%26utm_campaign%3DWhenIntheWorldQuiz" id="gtm-ty-link-fb" target="new">Facebook</a> and <a href="https://twitter.com/intent/tweet?text=Take+the+When+in+the+World%3F+quiz+from+&#64;AMNH+and+test+your+knowledge.+Try+it+now+and+get+a+free+decal%3A+http%3A//bit.ly/2u90yrj" id="gtm-ty-link-tw" target="new">Twitter</a>, and challenge your friends to put their knowledge to the test.</p>
 
 		<p class="desktop">There is so much more to discover at the Museum, and Members get to explore our halls like no one else. Membership will give you unlimited access to the Museum's collections, along with tickets to special exhibitions and other incredible benefits.</p>
 
-		<p class="desktop"><a href="http://www.amnh.org/join-support" id="gtm-ty-link-membership">Click here to learn more and start or renew your membership!</a></p>
+		<p class="desktop"><a href="http://www.amnh.org/join-support/membership" id="gtm-ty-link-membership">Click here to learn more and start or renew your membership!</a></p>
 
 		<p class="smaller"><a href="https://www.amnh.org/apiuser/register" id="gtm-ty-link-profile">Click here</a> to finish creating your profile on AMNH.org to make sure you're in the know about all the events and news that's important to you.</p>
 

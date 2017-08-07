@@ -31,7 +31,7 @@ $(document).ready(function(){
 	});
 
 	//header social share hover states
-	$('.social-list a').hover(function() {
+	$('header .social-list a').hover(function() {
 		var $thisImg = $(this).find('img');
 		$thisImg.attr('src',$thisImg.attr('src').replace('.png','-hover.png'));
 	}, function() {

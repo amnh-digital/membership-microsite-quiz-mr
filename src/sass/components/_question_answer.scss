@@ -19,6 +19,7 @@
 		-webkit-box-sizing: border-box; 
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
+		display:none;
 
 		h2 {
 			font-family: $styled-font;
@@ -41,8 +42,9 @@
 	}
 
 	.answerWrapper {
-		margin: 0 auto;
-		margin-top: 40px;
+		transform: translate(-50%,-50%);
+    	top: 45%;
+    	left: 50%;
 		position:relative;
 		width: 90%;
 		max-width: $question-max-width;

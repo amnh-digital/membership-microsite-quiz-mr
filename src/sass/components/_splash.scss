@@ -28,6 +28,14 @@
 		width: 85%;
 	}
 
+	#intro {
+		max-width: 800px;
+	}
+
+	#thanks {
+		background-color: rgba(0, 0, 0, 0.85);
+	}
+
 	h1 {
 		font-family: $styled-font;
 		font-size: 30px;
@@ -191,7 +199,7 @@
 		}
 		h1{ font-size: 22px; letter-spacing: 0; }
 		p { 
-			font-size:15px;
+			font-size:17px;
 			line-height: 18px;
 		}
 	}
@@ -288,7 +296,7 @@
 			box-shadow: 0 0 0 5px rgba(255,255,255,.3);
 
 			p{
-				font-size: 16px; 
+				font-size: 18px; 
 				&.smaller {
 					font-size: 13px;
 					line-height: 15px;

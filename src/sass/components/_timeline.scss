@@ -54,6 +54,8 @@
 		height: 100%;
 		overflow: hidden;
 		margin-top:0;
+		left:0;
+		top:0;
 		
 
     	.timelineElementTop, .timelineElementBottom {
@@ -88,8 +90,6 @@
 			font-size: $timeline-font-sm;
 			vertical-align: top;
 			border-right: 1px solid $tick-border;
-			
-			
 			height: 100%;
 
 			.hit{

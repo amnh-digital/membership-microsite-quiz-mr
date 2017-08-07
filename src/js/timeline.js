@@ -38,7 +38,9 @@ var timeline = (function($){
 		addListeners();
 		start();	
 
-		//showNextQuestion(8);	
+		//showNextQuestion(10);	
+		//destroy();
+		console.log('v1.2');
 	};
 
 	/**
@@ -48,7 +50,8 @@ var timeline = (function($){
 	*/
 	// hide the splash page, show the first question
 	var start = function(){
-		$(o.splash).hide();
+		$('.'+o.elems.timelineElementClass).hide();
+		$(o.splash).slideUp();
 		showNextQuestion(0);
 	};
 
@@ -61,7 +64,7 @@ var timeline = (function($){
 
 		$.post("post.php",data).done(function(resp) {
 			result = JSON.parse(resp);
-			console.log(result);
+
 			if(result.result == 'success'){
 				
 				if(result.message > 20){
@@ -229,6 +232,20 @@ var timeline = (function($){
 
 		});
 	};
+
+
+	var centerTimeline = function(){
+
+		var timeline = getActiveTimeline();
+
+		if($(window).width() < (timeline).width()){
+			//$(timeline).scrollLeft( 300 );
+			//var elmnt = document.getElementById("timeline0");
+    		//elmnt.scrollRight= 50;
+    		//elmnt.scrollLeft = 40;
+			//console.log(elmnt.scrollLeft);
+		}
+	}
 	
 
 	// save individual question
@@ -293,19 +310,37 @@ var timeline = (function($){
 	// hide this timeline and show the next one
 	var showNextQuestion = function(num){
 
-		toggleTimeline(true);
-		
+		toggleTimeline(true);		
 		
 		if($('#question'+num).length) {
-			$('.'+o.elems.questionElementClass+', .'+o.elems.timelineElementClass).hide();
-			$('.'+o.elems.timelineTickClass+' .hit').removeClass('correct').removeClass('incorrect');
-
 			eventTrigger('/question-'+(num+1));
 
 
-			$('#question'+num+', #timeline'+num).show();
+			// hide this one
+			$('#timeline'+(num-1)).fadeOut();//.hide( "slide", { direction: 'left' },1400);
+			$('.'+o.elems.questionElementClass).hide();
+			$('.'+o.elems.timelineTickClass+' .hit').removeClass('correct').removeClass('incorrect');		
+
+
+
+			// show the next one
+			$('#question'+num).show();
+			var targetHeight = $(window).height() - 60 - 115 - 20;
+			
+			
+			if(num == 0){
+				$('body .wrapper').delay(1000).animate({height: targetHeight+"px"}, 500);
+				
+			} else {
+				//$('#timeline'+num).delay(800).show( "slide", { direction: 'right' },1400);
+			}
+			$('#timeline'+num).delay(2000).show();
+			$('#question'+num+' .questionWrapper').delay(2000).fadeIn();
+
+
 			fitTimelineLabels(num);
-			toggleHelper();
+			setTimeout(toggleHelper, 3000);
+			centerTimeline();
 		} else {
 			destroy();
 		}	
@@ -370,9 +405,6 @@ var timeline = (function($){
 
 		$.post("post.php",data).done(function( resp ) {
 			result = JSON.parse(resp);
-
-			//console.log('resp from save form');
-			console.log(result);
 
 			if(result.result == 'error'){
 				toggleSubmit(false);
@@ -573,7 +605,13 @@ var timeline = (function($){
 			validate(this);
 		});
 
-		$('#form select, #form #optin').click(function(){
+		$('#form input[type="text"],#form input[type="email"], #form select').on('keyup',function() {
+			if($(this).hasClass('error')){
+				validate(this);
+			}
+		});
+
+		$('#form select').click(function(){
 			validate(this);
 		});
 
@@ -587,10 +625,9 @@ var timeline = (function($){
 				$.each(o.elems.mailFields,function(i,v){
 					$('label[for="'+v+'"]').removeClass('required');
 					$('#'+v).removeClass('error');
-
-					
 				});
 			}
+			validate(this);
 		});
 	};
 

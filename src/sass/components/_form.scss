@@ -109,22 +109,27 @@
 		    appearance: none;
 		    background-color: #fff;
 		    font-size: 15px;
-            color: #004bb4;
+            color: #333333;
             &.error {
                 border-color: $error-red;
                 color: $error-red;
             }
             &.active {
                 border-color: #004bb4;
+                color: #004bb4;
 
                 option{
                     border-color: #004bb4;
+                    color: #004bb4;
                 }
             }
     	}
     	option {
 	    	background-color: #fff;
             color: #004bb4;
+            &:first-child {
+                color: #333333;
+            }
 	    }
 
 	    input[type="button"], input[type="submit"]{

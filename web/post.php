@@ -61,7 +61,19 @@ if (!empty($_POST)){
 			$columns = rtrim($columns, ',');
 			$vals = rtrim($vals, ',');
 
+			$stmt = $app['pdo']->prepare('SELECT * FROM users WHERE email = :em');
+			$stmt->bindValue(':em', $clean['email']);
+			$stmt->execute();
+			$existingUser = $stmt->fetch(PDO::FETCH_ASSOC);
+
+			if($existingUser == false){
+				$sql = 'INSERT INTO users ('.$columns.') VALUES ('.$vals.') RETURNING user_id';
+			} else {
+				//$sql = 'INSERT INTO users ('.$columns.') VALUES ('.$vals.') RETURNING user_id';
+				//$sql = "UPDATE users SET q".$question." = :answer WHERE user_id = :id";
+			}
 			$sql = 'INSERT INTO users ('.$columns.') VALUES ('.$vals.') RETURNING user_id';
+
 			$stmt = $app['pdo']->prepare($sql);
 
 			foreach($clean as $key => $val){
