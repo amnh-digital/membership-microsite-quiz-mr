@@ -40,7 +40,7 @@ var timeline = (function($){
 
 		//showNextQuestion(10);	
 		//destroy();
-		console.log('v1.3');
+		console.log('v1.4');
 	};
 
 	/**
@@ -281,7 +281,7 @@ var timeline = (function($){
 		var score = data.score;
 
 		if(score <= 20){
-			h2copy = 'You scored in the bottom <span>20%</span> of this question. Perhaps you should visit the Museum to brush up on your history';
+			h2copy = 'Oops! Your score was in the bottom <span>20%</span> of this question. A visit to the museum can help you brush up on our history.';
 		} else {
 			h2copy = 'You did better than <span>'+score+'%</span> of people who answered this question!';
 		}
@@ -314,7 +314,7 @@ var timeline = (function($){
 	// hide this timeline and show the next one
 	var showNextQuestion = function(num){
 
-		toggleTimeline(true);		
+				
 		
 		if($('#question'+num).length) {
 			eventTrigger('/question-'+(num+1));
@@ -340,11 +340,17 @@ var timeline = (function($){
 			}
 			$('#timeline'+num).delay(2000).show();
 			$('#question'+num+' .questionWrapper').delay(2000).fadeIn();
-
-
 			fitTimelineLabels(num);
-			setTimeout(toggleHelper, 3000);
-			centerTimeline();
+
+			setTimeout(function(){
+				
+				toggleHelper();
+				centerTimeline();
+				toggleTimeline(true);
+			},3000);
+
+			
+			
 		} else {
 			destroy();
 		}	

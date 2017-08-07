@@ -21,11 +21,11 @@
   		padding: 0 3px;
   	}
 
-  	.first:before {
+  	.grey:before {
   		content:'\2190';
   		padding-right: 3px;
   	}
-  	.first::after {
+  	.grey:after {
   		padding-left: 3px;
   		content:'\2192'
   	}
