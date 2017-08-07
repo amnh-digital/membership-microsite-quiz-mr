@@ -1,3 +1,17 @@
+#state-menu, .ui-selectmenu-menu, .ui-front {
+        max-height: 120px;
+        height: 120px;
+        z-index:999;
+
+    }
+
+    #state-button{
+        background-color: #fff;
+        padding: 10px;
+        padding-top: 14px;
+        border-radius: 2px
+    }
+
 #screen {
 	position: fixed;
 	width: 100%;
@@ -14,7 +28,7 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	box-shadow: 0px 0px 0px 10px rgba(255,255,255,0.3);
-	z-index: 999;
+	z-index: 900;
 	left: 0;
     right: 0;
     margin-left: auto;

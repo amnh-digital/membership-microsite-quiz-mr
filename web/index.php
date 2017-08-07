@@ -42,7 +42,9 @@ $app['session']->clear();
 	})(window,document,'script','dataLayer','GTM-WZCFGBM');</script>
 	<!-- End Google Tag Manager -->
 
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="/dist/css/main.css" type="text/css">
+
 	<script type="text/javascript" src="/dist/js/main.js" charset="utf-8"></script>
 	<script src="https://cdn.optimizely.com/js/5768981649.js"></script>
 
