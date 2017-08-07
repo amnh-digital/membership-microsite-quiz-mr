@@ -182,6 +182,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<input type="button" id="submit" value="Enter">
 		<input type="hidden" name="submittedYear" id="submittedYear"/>
 		<input type="hidden" name="source" id="source" value="Organic"/>
+		<input type="hidden" name="medium" id="medium" value=""/>
+		<input type="hidden" name="campaign" id="campaign" value=""/>
+		<input type="hidden" name="term" id="term" value=""/>
+		<input type="hidden" name="content" id="content" value=""/>
 	</div>
 
 	<p class="footnote">** Free decal giveaway is available for United States residents only. </p>

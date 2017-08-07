@@ -40,8 +40,12 @@ if (!empty($_POST)){
 		if(!empty($_POST['city'])){ $clean['city'] = filter_var($_POST['city'],FILTER_SANITIZE_STRING); }
 		if(!empty($_POST['state'])){ $clean['state'] = filter_var($_POST['state'],FILTER_SANITIZE_STRING); }
 		if(!empty($_POST['zip'])){ $clean['zip'] = filter_var($_POST['zip'],FILTER_SANITIZE_STRING); }
-		if(!empty($_POST['source'])){ $clean['source_code'] = 'WITWQuiz-'.filter_var($_POST['source'],FILTER_SANITIZE_STRING); }
 		if(!empty($_POST['optin']) && $_POST['optin'] == 'y'){ $clean['opt_in'] = 'y'; }
+		if(!empty($_POST['source'])){ $clean['utmSource'] = 'WITWQuiz-'.filter_var($_POST['source'],FILTER_SANITIZE_STRING); }
+		if(!empty($_POST['medium'])){ $clean['utmMedium'] = filter_var($_POST['medium'],FILTER_SANITIZE_STRING); }
+		if(!empty($_POST['campaign'])){ $clean['utmCampaign'] = filter_var($_POST['campaign'],FILTER_SANITIZE_STRING); }
+		if(!empty($_POST['term'])){ $clean['utmTerm'] = filter_var($_POST['term'],FILTER_SANITIZE_STRING); }
+		if(!empty($_POST['content'])){ $clean['utmContent'] = filter_var($_POST['content'],FILTER_SANITIZE_STRING); }
 
 
 		// how'd we do?

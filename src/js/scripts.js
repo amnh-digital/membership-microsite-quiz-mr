@@ -20,7 +20,11 @@ $(document).ready(function(){
 		'fn':'#fn',
 		'ln':'#ln',
 		'em': '#em',
-		'utm_source': '#source'
+		'utm_source': '#source',
+		'utm_medium': '#medium', 
+		'utm_campaign': '#campaign',
+		'utm_term': '#term',
+		'utm_content': '#content'
 	};
 
 	// load form values
