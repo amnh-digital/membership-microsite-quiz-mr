@@ -78,19 +78,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<h3>Wait!</h3>
 	<p><strong>Before we go on, please tell use where to send your decal!</strong></p>
 
-	<div class="form-wrap">
-		<label for="fn" class="required">First name</label>
+	<div class="form-wrap form-half-left">
 		<input type="text" name="fn" id="fn">
+		<label for="fn" class="required placeholder">First name</label>
 	</div>
 
-	<div class="form-wrap">
-		<label for="ln" class="required">Last name</label>
+	<div class="form-wrap form-half-right">
 		<input type="text" name="ln" id="ln">
+		<label for="ln" class="required placeholder">Last name</label>
 	</div>
 
 	<div class="form-wrap">
-		<label for="em" class="required">Email</label>
 		<input type="email" name="em" id="em">
+		<label for="em" class="required placeholder">Email</label>
 	</div>
 
 	<div class="form-wrap form-check">
@@ -99,19 +99,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</div>
 
 	<div class="form-wrap">
-		<label for="address">Street Address</label>
 		<input type="text" name="address" id="address">
+		<label for="address" class="placeholder">Street Address</label>
 	</div>
 
 	<div class="form-wrap">
-		<label for="city">City</label>
 		<input type="text" name="city" id="city">
+		<label for="city" class="placeholder">City</label>
 	</div>
 
-	<div class="form-wrap form-state">
-		<label for="state">State</label>
+	<div class="form-wrap form-half-left">
 		<select id="state" name="state">
-			<option value="">Select</option>
+			<option value=""></option>
 			<option value="AL">Alabama</option>
 			<option value="AK">Alaska</option>
 			<option value="AZ">Arizona</option>
@@ -165,11 +164,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<option value="WI">Wisconsin</option>
 			<option value="WY">Wyoming</option>
 		</select>
+		<label for="state" class="placeholder">State</label>
 	</div>
 
-	<div class="form-wrap form-zip">
-		<label for="zip">Zip</label>
+	<div class="form-wrap form-half-right">
 		<input type="text" name="zip" id="zip">
+		<label for="zip" class="placeholder">Zip</label>
 	</div>
 
 	
@@ -306,7 +306,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			},
 			{ // 3
 				'text': 'They say that breaking up is hard to do – but without it, our planet wouldn\'t be nearly as interesting. When did the supercontinent of Pangaea begin to break up into the separate continents we know today?',
-				'answerText': '<p>Pangaea broke up about 300 million years ago during the early Jurassic Period, as the continental plates inched along their separate paths. The evidence of plate tectonics is all around, from the puzzle-piece coastlines of Africa and South America to the similarity of fossil organisms on land now separated by vast oceans – but it wasn\'t until the 20th Century that scientists recognized this crucial part of our history.</p>',
+				'answerText': '<p>Pangaea broke up about 300 million years ago during the early Jurassic Period, as the continental plates inched along their separate paths. The evidence of plate tectonics is all around, from the puzzle-piece coastlines of Africa and South America to the similarity of fossil organisms on land now separated by vast oceans<span class="desktop"> – but it wasn\'t until the 20th Century that scientists recognized this crucial part of our history</span>.</p>',
 				'min': -900,
 				'max': -125,
 				'minorScale': 25,
@@ -321,7 +321,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			},
 			{ // 4
 				'text': 'When life began (3.5 billion years ago, remember?), organisms were simple and microscopic. Evolution often moves slowly, but eventually life got complicated – and <em>big</em>. When did the Museum\'s 122-foot-long plant-eating sauropod, the Titanosaur, roam the Earth?',
-				'answerText': '<p>Researchers have dated the Titanosaur to the early Cretaceous Period, about 140 million years ago. The Titanosaur was one of the largest land animals to ever stomp its way across the Earth. It also happens to be the longest animal ever displayed at the American Museum of Natural History (though not the most massive – that distinction goes to the blue whale, a model of which hangs in the Museum\'s Milstein Hall of Ocean Life).</p>',
+				'answerText': '<p>Researchers have dated the Titanosaur to the early Cretaceous Period, about 140 million years ago. The Titanosaur was one of the largest land animals to ever stomp its way across the Earth. It also happens to be the longest animal ever displayed at the American Museum of Natural History<span class="desktop"> (though not the most massive – that distinction goes to the blue whale, a model of which hangs in the Museum\'s Milstein Hall of Ocean Life)</span>.</p>',
 				'min': -500,
 				'max': -10,
 				'minorScale': 20,
@@ -381,7 +381,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			},
 			{ // 8
 				'text': 'Here\'s one that\'s a little close to home: When was the American Museum of Natural History founded?',
-				'answerText': '<p>TThe Museum was founded in 1869 thanks to the efforts of Albert Smith Bickmore, a one-time student of Harvard zoologist Louis Agassiz, and a group of influential New Yorkers including Theodore Roosevelt, Sr., and J. Pierpont Morgan. The rest, as they say, is history.</p><p><em>The American Museum of Natural History is open from 10 am to 5:45 pm 363 days a year (closed on Thanksgiving and Christmas—we hope to see you around sometime soon!</em></p>',
+				'answerText': '<p>The Museum was founded in 1869 thanks to the efforts of Albert Smith Bickmore, a one-time student of Harvard zoologist Louis Agassiz, and a group of influential New Yorkers<span class="desktop"> including Theodore Roosevelt, Sr., and J. Pierpont Morgan. The rest, as they say, is history</span>.</p><p><em>The American Museum of Natural History is open from 10 am to 5:45 pm 363 days a year (closed on Thanksgiving and Christmas<span class="desktop">—we hope to see you around sometime soon</span>!</em></p>',
 				'min': 1850,
 				'max': 1899,
 				'minorScale': 1,

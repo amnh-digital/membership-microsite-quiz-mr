@@ -40,7 +40,7 @@ var timeline = (function($){
 
 		//showNextQuestion(10);	
 		//destroy();
-		console.log('v1.2');
+		console.log('v1.3');
 	};
 
 	/**
@@ -284,6 +284,10 @@ var timeline = (function($){
 			h2copy = 'You scored in the bottom <span>20%</span> of this question. Perhaps you should visit the Museum to brush up on your history';
 		} else {
 			h2copy = 'You did better than <span>'+score+'%</span> of people who answered this question!';
+		}
+
+		if(userAnswer == correctAnswer){
+			h2copy = 'You got it right!';
 		}
 
 		toggleTimeline(false);
@@ -548,6 +552,7 @@ var timeline = (function($){
 			}
 		} else {
 			$(elem).removeClass('error').addClass('active');
+			$(elem).siblings('label').addClass('complete');
 		}
 
 		// check all inputs to toggle error message
