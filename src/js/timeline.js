@@ -36,6 +36,7 @@ var timeline = (function($){
 		questions = o.data.questions;
 
 		buildTimelines();
+		checkForm();
 		addListeners();
 		start();	
 	};
@@ -552,6 +553,12 @@ var timeline = (function($){
 	    
 	    return json;
 	}
+
+	var checkForm = function(){
+		$('#form input').each(function(){
+			validate(this);
+		});
+	};
 
 	
 	var validate = function(elem){
