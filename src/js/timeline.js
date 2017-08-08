@@ -1,10 +1,12 @@
 var timeline = (function($){
 	var questions;
+	console.log('v2');
 
 	var o = {
 		splash: '#splash-screen',
 		confirmation: '#confirmation-screen',
-		scrollAmount: 100,
+		scrollAmount: 2,
+		mouseIsDown: false,
 		timelineMinWidth: 1000,
 		imgPath: '/dist/img/',
 		elems: {
@@ -239,8 +241,17 @@ var timeline = (function($){
 			currentScroll = currentScroll - o.scrollAmount;
 		}
 
-		//$('#timelineInner').scrollLeft(currentScroll);
-		$('#timelineInner').animate({scrollLeft: currentScroll}, 200);
+		$('#timelineInner').scrollLeft(currentScroll);
+		//$('#timelineInner').animate({scrollLeft: currentScroll}, 200);
+
+
+		if (o.mouseIsDown) {
+      		//o.mouseIsDown = setInterval(moveTimeline(direction), 100);
+      		setTimeout(function(){
+      			moveTimeline(direction);
+      		}, 10);
+    	}
+
 	}
 
 
@@ -661,10 +672,17 @@ var timeline = (function($){
 			validate(this);
 		});
 
-		$('#tooltip .arrow').click(function(){
+
+
+		$('#tooltip .arrow').mousedown(function(){
 			if($(this).hasClass('arrow-left')){ direction = 'right'; }
 			else { direction = 'left'; }
+			o.mouseIsDown = true;
 			moveTimeline(direction);
+
+		}).mouseup(function() {
+    		//clearInterval(o.mouseIsDown);
+    		o.mouseIsDown = false;
 		});
 	};
 
