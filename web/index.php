@@ -202,8 +202,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- tooltip -->
 <div id="tooltip">
-	<span class="first">Select a date on the timeline</span><br />
-	<span class="grey">Click and drag to scroll</span>
+	<div class="first">Select a date on the timeline</div>
+	<div class="second">
+		<div class="arrow arrow-left"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></div>
+		<div class="grey">Click the arrows to scroll</div>
+		<div class="arrow arrow-right"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></div>
+	</div>
 </div>
 <!-- /#tooltip -->
 
@@ -283,8 +287,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			{ // 1
 				'text': 'You gotta start somewhere (or somewhen): when did our solar system form?',
 				'answerText': '<p>Our solar system began forming from a wispy cloud of gas and dust about 4.6 billion years ago. Gravity compressed the center of this flat spinning disk until nuclear fusion sparked our Sun, with enough leftover material for planets, moons, asteroids, and comets. <span class="desktop">And while 4.6 billion years ago seems like a long time, think about this: our galaxy had already been around for over 8.5 billion years before the Sun came into existence.</span></p>',
-				'min': 	-8,
-				'max': -2.1,
+				'min': 	-6,
+				'max': -3.1,
 				'minorScale': .1,
 				'minorLabelRoundScale': 1,
 				'majorGridPoint': 1,
@@ -298,7 +302,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			{ // 2
 				'text': 'The sad thing about the first appearance of life on a planet is that there\'s no one around to say "It\'s alive. It\'s ALIIIIIVE!!!" When did living things first begin to form on Earth?',
 				'answerText': '<p>Your first ancestor (and your cat\'s, your houseplant\'s, your digestive microorganisms\' first ancestor) appeared about 3.5 billion years ago. Scientists are still working to determine exactly <em>how</em> life first emerged&#8212;but knowing <em>when</em> is a pretty good start.</p>',
-				'min': -5,
+				'min': -4,
 				'max': -1.1,
 				'minorScale': .1,
 				'minorLabelRoundScale': 1,
@@ -313,7 +317,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			{ // 3
 				'text': 'They say that breaking up is hard to do&#8212;but without it, our planet wouldn\'t be nearly as interesting. When did the supercontinent of Pangaea begin to break up into the separate continents we know today?',
 				'answerText': '<p>Pangaea broke up about 200 million years ago during the early Jurassic Period, as the continental plates inched along their separate paths. The evidence of plate tectonics is all around, from the puzzle-piece coastlines of Africa and South America to the similarity of fossil organisms on land now separated by vast oceans<span class="desktop">&#8212;but it wasn\'t until the 20th Century that scientists recognized this crucial part of our history</span>.</p>',
-				'min': -900,
+				'min': -800,
 				'max': -125,
 				'minorScale': 25,
 				'minorLabelRoundScale': 0,
@@ -343,9 +347,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			{ // 5
 				'text': 'Not as large as the Titanosaur, but still a commanding, thundering presence&#8212;when did the first mammoths appear?',
 				'answerText': '<p>Mammoths, like the ones on display at the Museum, are "only" about 4 million years old. That\'s quite recent compared with when titanosaurs lived, but fully 3,000,000,000 years since life first emerged. Evolution can move very slowly.</p>',
-				'min': -40,
+				'min': -30,
 				'max': -1,
-				'minorScale': 2,
+				'minorScale': 1,
 				'minorLabelRoundScale': 0,
 				'majorGridPoint': 10,
 				'majorLabelRoundScale': 1,
@@ -358,7 +362,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			{ // 6
 				'text': 'Ancient Egyptians may get all the attention (thanks, Hollywood), but they were not the only ones to wrap and preserve their dead. When did cultures in Peru begin the practice of mummification?',
 				'answerText': '<p>Several cultures in what is now Peru began practicing mummification over 7,000 years ago, long before the Egyptians. <span class="desktop">This practice helped the living connect with the dead&#8212;in fact, some people kept mummies in their homes or brought them to festivals.</span></p><p><em><span class="desktop">Take in the fascinating history of ancient mummification&#8212;Egyptian and Peruvian&#8212;in the special Mummies exhibition at the LeFrak Gallery, open through January 2018.</span><span class="mobile">View both Egyptian and Peruvian mummies in the temporary Mummies exhibition at the LeFrak Gallery through January 2018.</span></em></p>',
-				'min': -40,
+				'min': -25,
 				'max': -1,
 				'minorScale': 1,
 				'minorLabelRoundScale': 0,
@@ -374,7 +378,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'text': 'You may not recognize the name of the Rapa Nui, but you know their handiwork. They are the ones who carved <em>moai</em> ancestor figures <span class="desktop">as towering stone statues</span> on what we know as Easter Island (also called Rapa Nui). When did these people first settle on this <span class="desktop">remote</span> volcanic island?',
 				'answerText': '<p>The Rapa Nui first arrived on this remote Polynesian island around 300 CE. Located 2,300 miles from the coast of Chile, it was the most isolated inhabited island in the world. <span class="desktop">And the <em>moai</em>? They may seem like ancient history, but these unique monuments were carved between the 12th and 16th centuries.</span></p>',
 				'min': 0,
-				'max': 590,
+				'max': 690,
 				'minorScale': 25,
 				'minorLabelRoundScale': 0,
 				'majorGridPoint': 100,
@@ -389,7 +393,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'text': 'Here\'s one that\'s a little close to home: When was the American Museum of Natural History founded?',
 				'answerText': '<p>The Museum was founded in 1869 thanks to the efforts of Albert Smith Bickmore<span class="desktop">, a one-time student of Harvard zoologist Louis Agassiz,</span> and a group of influential New Yorkers<span class="desktop"> including Theodore Roosevelt, Sr., and J. Pierpont Morgan. The rest, as they say, is history</span>.</p><p><em>The American Museum of Natural History is open from 10 am to 5:45 pm 363 days a year (closed on Thanksgiving and Christmas)<span class="desktop">—we hope to see you around sometime soon</span>!</em></p>',
 				'min': 1850,
-				'max': 1899,
+				'max': 1889,
 				'minorScale': 1,
 				'minorLabelRoundScale': 0,
 				'majorGridPoint': 10,
@@ -403,7 +407,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			{ // 9
 				'text': 'Okay, here\'s our last question, and the only one that you might well remember experiencing if you are of a certain age: when did the first person land on the Moon?',
 				'answerText': '<p>That giant leap for mankind occurred on July 20, 1969, during the Apollo 11 mission&#8212;100 years after the founding of the Museum. It is a stirring reminder of the discoveries still to be made and frontiers still to be explored, and of the hunger for knowledge that drives everything we do at the Museum.</p>',
-				'min': 1940,
+				'min': 1950,
 				'max': 1979,
 				'minorScale': 1,
 				'minorLabelRoundScale': 0,
@@ -429,7 +433,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		});
 	});
 
-	//timeline.init({data: questions});
+	timeline.init({data: questions});
 
 
 </script>

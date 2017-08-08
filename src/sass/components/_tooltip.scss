@@ -5,6 +5,7 @@
     position: absolute;
     z-index: 250;
     padding: 15px;
+    padding-bottom: 6px;
     bottom: calc(#{$timeline-height} + #{$timeline-spacer-height} + 30px);
     left: 0; 
   	right: 0; 
@@ -17,22 +18,48 @@
   	font-size: 16px;
   	display: none;
 
-  	.first {
+  	.first, .second {
   		padding: 0 3px;
+      position: relative;
+      float:left;
+      clear:both;
+      text-align:center;
+      width: calc(100% - 6px);
+      span { display: inline-block; }
   	}
 
-  	.grey:before {
-  		content:'\2190';
-  		padding-right: 3px;
-  	}
-  	.grey:after {
-  		padding-left: 3px;
-  		content:'\2192'
-  	}
+    .second {
+      text-align: center;
+      margin: 0 auto;
+      div {
+        position: relative;
+        float:left;
+      }
+    }
 
   	.grey {
   		color: #999999;
+      margin-top: 6px;
+      width: calc(100% - 70px);
   	}
+    .arrow {
+        font-size: 28px;
+        margin-top:0;
+        width: 35px;
+        color: #999999;
+
+        &.arrow-left {
+          float:left;
+        }
+        &.arrow-right {
+          float: right;
+        }
+        &:hover { 
+          color: #202020; 
+          color: #fff;
+          cursor: pointer;
+        }
+      }
 }
  
 #tooltip:after /* triangle decoration */ {

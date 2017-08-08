@@ -4,6 +4,7 @@ var timeline = (function($){
 	var o = {
 		splash: '#splash-screen',
 		confirmation: '#confirmation-screen',
+		scrollAmount: 100,
 		timelineMinWidth: 1000,
 		imgPath: '/dist/img/',
 		elems: {
@@ -229,26 +230,23 @@ var timeline = (function($){
 		});
 	};
 
+	var moveTimeline = function(direction){
+		var currentScroll = $('#timelineInner').scrollLeft();
+
+		if(direction == 'left'){
+			currentScroll = currentScroll + o.scrollAmount;
+		} else {
+			currentScroll = currentScroll - o.scrollAmount;
+		}
+
+		//$('#timelineInner').scrollLeft(currentScroll);
+		$('#timelineInner').animate({scrollLeft: currentScroll}, 200);
+	}
+
 
 	var centerTimeline = function(num){
-
-		var timeline = getActiveTimeline();
-		//var thisId = $(timeline).attr('id');
-		//var thisElem = document.getElementById(thisId);
-		
-		//var f = $('#timelineInner').scrollLeft();
-		//console.log('scrollLeft is currently '+f);
-
-
+		//var timeline = getActiveTimeline();
 		$('#timelineInner').scrollLeft(0);
-
-		if($(window).width() < (timeline).width()){
-			//$(timeline).scrollLeft( 300 );
-			//var elmnt = document.getElementById("timeline0");
-    		//elmnt.scrollRight= 50;
-    		//elmnt.scrollLeft = 40;
-			//console.log(elmnt.scrollLeft);
-		}
 	}
 	
 
@@ -661,6 +659,12 @@ var timeline = (function($){
 				});
 			}
 			validate(this);
+		});
+
+		$('#tooltip .arrow').click(function(){
+			if($(this).hasClass('arrow-left')){ direction = 'right'; }
+			else { direction = 'left'; }
+			moveTimeline(direction);
 		});
 	};
 

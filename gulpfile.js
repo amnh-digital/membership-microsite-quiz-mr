@@ -26,8 +26,6 @@ gulp.task( 'sass', function() {
 gulp.task( 'sass', function() {
 	var cssFiles = ['./src/sass/main.scss'];
 
-	console.log(plugins.mainBowerFiles());
-
 	gulp.src(plugins.mainBowerFiles().concat(cssFiles))
 		.pipe(plugins.filter(['**/*.css','**/*.scss']))
 		.pipe(plugins.order([
