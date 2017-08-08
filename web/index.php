@@ -63,7 +63,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <header>
-	<div class="logo"><a href="http://www.amnh.org/" id="gtm-header-logo-amnh"><img src="/dist/img/logo.png" alt="American Museum of Natural History"/></a></div>
+	<div class="logo"><a href="http://www.amnh.org/?utm_medium=Referral&utm_source=whenintheworld.amnh.org&utm_campaign=WhenIntheWorldQuiz" id="gtm-header-logo-amnh"><img src="/dist/img/logo.png" alt="American Museum of Natural History"/></a></div>
 	<div class="site-title"><h1>When In The World Quiz</h1></div>
 	<div class="social">
 		<ul class="social-list">
@@ -228,9 +228,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<div id="intro">
 		<img src="/dist/img/logo-white.png"/>
 		<h1>When In The World Quiz</h1>
-		<p>We celebrate and explore history here at the Museum, and one of the trickiest parts to grasp is the immense scale involved – in the simplest terms, what happened when.</p>
+		<p>We celebrate and explore history here at the Museum, and one of the trickiest parts to grasp is the immense scale involved&#8212;in the simplest terms, what happened when.</p>
  
-		<p>Now's your chance to test your knowledge. Take the <em>When in the World</em> quiz and see if you can pinpoint key moments on the timeline, from mammoths to mummies. <strong>We're sending everyone who takes the quiz before September 9 a free Museum decal – so go ahead and start your journey through time!</strong></p>
+		<p>Now's your chance to test your knowledge. Take the <em>When in the World</em> quiz and see if you can pinpoint key moments on the timeline, from mammoths to mummies. <strong>We're sending everyone who takes the quiz before September 9 a free Museum decal&#8212;so go ahead and start your journey through time!</strong></p>
 
 		<div id="jedediah">
 			<div class="left"><span>the</span></div>
@@ -241,7 +241,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="splash" id="confirmation-screen">
 	<div id="thanks">
-		<img src="/dist/img/logo-white.png"/>
+		<img src="/dist/img/logo-white.png" class="desktop"/>
 
 		<h2 id="resultScoreContainer">You did better than <span id="resultScore">XX%</span> of people who took this quiz!</h2>
 
@@ -251,9 +251,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 		<p class="desktop">There is so much more to discover at the Museum, and Members get to explore our halls like no one else. Membership will give you unlimited access to the Museum's collections, along with tickets to special exhibitions and other incredible benefits.</p>
 
-		<p class="desktop"><a href="http://www.amnh.org/join-support/membership" id="gtm-ty-link-membership">Click here to learn more and start or renew your membership!</a></p>
+		<p class="desktop"><a href="http://www.amnh.org/join-support/membership?utm_medium=Referral&utm_source=whenintheworld.amnh.org&utm_campaign=WhenIntheWorldQuiz" id="gtm-ty-link-membership">Click here to learn more and start or renew your membership!</a></p>
 
-		<p class="smaller"><a href="https://www.amnh.org/apiuser/register" id="gtm-ty-link-profile">Click here</a> to finish creating your profile on AMNH.org to make sure you're in the know about all the events and news that's important to you.</p>
+		<p class="smaller"><a href="https://www.amnh.org/apiuser/register?utm_medium=Referral&utm_source=whenintheworld.amnh.org&utm_campaign=WhenIntheWorldQuiz" id="gtm-ty-link-profile">Click here</a> to finish creating your profile on AMNH.org to make sure you're in the know about all the events and news that's important to you.</p>
 
 		<ul class="social-list">
 			<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//whenintheworld.amnh.org/%3Futm_medium%3Dsocial%26utm_source%3Dfbshare%26utm_campaign%3DWhenIntheWorldQuiz" id="gtm-ty-icon-fb" target="new"><img src="/dist/img/share-fb.png"/></a></li>
@@ -297,7 +297,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			},
 			{ // 2
 				'text': 'The sad thing about the first appearance of life on a planet is that there\'s no one around to say "It\'s alive. It\'s ALIIIIIVE!!!" When did living things first begin to form on Earth?',
-				'answerText': '<p>Your first ancestor (and your cat\'s, your houseplant\'s, your digestive microorganisms\' first ancestor) appeared about 3.5 billion years ago. Scientists are still working to determine exactly <em>how</em> life first emerged – but knowing <em>when</em> is a pretty good start.</p>',
+				'answerText': '<p>Your first ancestor (and your cat\'s, your houseplant\'s, your digestive microorganisms\' first ancestor) appeared about 3.5 billion years ago. Scientists are still working to determine exactly <em>how</em> life first emerged&#8212;but knowing <em>when</em> is a pretty good start.</p>',
 				'min': -5,
 				'max': -1.1,
 				'minorScale': .1,
@@ -311,8 +311,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'timelineMinWidth': 1600
 			},
 			{ // 3
-				'text': 'They say that breaking up is hard to do – but without it, our planet wouldn\'t be nearly as interesting. When did the supercontinent of Pangaea begin to break up into the separate continents we know today?',
-				'answerText': '<p>Pangaea broke up about 300 million years ago during the early Jurassic Period, as the continental plates inched along their separate paths. The evidence of plate tectonics is all around, from the puzzle-piece coastlines of Africa and South America to the similarity of fossil organisms on land now separated by vast oceans<span class="desktop"> – but it wasn\'t until the 20th Century that scientists recognized this crucial part of our history</span>.</p>',
+				'text': 'They say that breaking up is hard to do&#8212;but without it, our planet wouldn\'t be nearly as interesting. When did the supercontinent of Pangaea begin to break up into the separate continents we know today?',
+				'answerText': '<p>Pangaea broke up about 200 million years ago during the early Jurassic Period, as the continental plates inched along their separate paths. The evidence of plate tectonics is all around, from the puzzle-piece coastlines of Africa and South America to the similarity of fossil organisms on land now separated by vast oceans<span class="desktop">&#8212;but it wasn\'t until the 20th Century that scientists recognized this crucial part of our history</span>.</p>',
 				'min': -900,
 				'max': -125,
 				'minorScale': 25,
@@ -326,8 +326,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'timelineMinWidth': 1600
 			},
 			{ // 4
-				'text': 'When life began (3.5 billion years ago, remember?), organisms were simple and microscopic. Evolution often moves slowly, but eventually life got complicated – and <em>big</em>. When did the Museum\'s 122-foot-long plant-eating sauropod, the Titanosaur, roam the Earth?',
-				'answerText': '<p>Researchers have dated the Titanosaur to the early Cretaceous Period, about 140 million years ago. The Titanosaur was one of the largest land animals to ever stomp its way across the Earth. It also happens to be the longest animal ever displayed at the American Museum of Natural History<span class="desktop"> (though not the most massive – that distinction goes to the blue whale, a model of which hangs in the Museum\'s Milstein Hall of Ocean Life)</span>.</p>',
+				'text': 'When life began (3.5 billion years ago, remember?), organisms were simple and microscopic. Evolution often moves slowly, but eventually life got complicated&#8212;and <em>big</em>. When did the Museum\'s 122-foot-long plant-eating sauropod, the Titanosaur, roam the Earth?',
+				'answerText': '<p>Researchers have dated the Titanosaur to the early Cretaceous Period, about 140 million years ago. The Titanosaur was one of the largest land animals to ever stomp its way across the Earth. It also happens to be the longest animal ever displayed at the American Museum of Natural History<span class="desktop"> (though not the most massive&#8212;that distinction goes to the blue whale, a model of which hangs in the Museum\'s Milstein Hall of Ocean Life)</span>.</p>',
 				'min': -500,
 				'max': -10,
 				'minorScale': 20,
@@ -341,8 +341,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'timelineMinWidth': 1600
 			},
 			{ // 5
-				'text': 'Not as large as the Titanosaur, but still a commanding, thundering presence – when did the first mammoths appear?',
-				'answerText': '<p>Mammoths, like the ones on display at the Museum, are "only" about 4 million years old. That\'s quite recent compared with when titanosaurs lived, but fully 3,000,000,000 years since life first emerged. Like we said, evolution can move very slowly.</p>',
+				'text': 'Not as large as the Titanosaur, but still a commanding, thundering presence&#8212;when did the first mammoths appear?',
+				'answerText': '<p>Mammoths, like the ones on display at the Museum, are "only" about 4 million years old. That\'s quite recent compared with when titanosaurs lived, but fully 3,000,000,000 years since life first emerged. Evolution can move very slowly.</p>',
 				'min': -40,
 				'max': -1,
 				'minorScale': 2,
@@ -357,7 +357,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			},
 			{ // 6
 				'text': 'Ancient Egyptians may get all the attention (thanks, Hollywood), but they were not the only ones to wrap and preserve their dead. When did cultures in Peru begin the practice of mummification?',
-				'answerText': '<p>Several cultures in what is now Peru began practicing mummification over 7,000 years ago, long before the Egyptians. <span class="desktop">This practice helped the living connect with the dead – in fact, some people kept mummies in their homes or brought them to festivals.</span></p><p><em>Take in the fascinating history of ancient mummification– Egyptian and Peruvian – in the special Mummies exhibition at the LeFrak Gallery, open through January 2018.</em></p>',
+				'answerText': '<p>Several cultures in what is now Peru began practicing mummification over 7,000 years ago, long before the Egyptians. <span class="desktop">This practice helped the living connect with the dead&#8212;in fact, some people kept mummies in their homes or brought them to festivals.</span></p><p><em><span class="desktop">Take in the fascinating history of ancient mummification&#8212;Egyptian and Peruvian&#8212;in the special Mummies exhibition at the LeFrak Gallery, open through January 2018.</span><span class="mobile">View both Egyptian and Peruvian mummies in the temporary Mummies exhibition at the LeFrak Gallery through January 2018.</span></em></p>',
 				'min': -40,
 				'max': -1,
 				'minorScale': 1,
@@ -387,7 +387,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			},
 			{ // 8
 				'text': 'Here\'s one that\'s a little close to home: When was the American Museum of Natural History founded?',
-				'answerText': '<p>The Museum was founded in 1869 thanks to the efforts of Albert Smith Bickmore, a one-time student of Harvard zoologist Louis Agassiz, and a group of influential New Yorkers<span class="desktop"> including Theodore Roosevelt, Sr., and J. Pierpont Morgan. The rest, as they say, is history</span>.</p><p><em>The American Museum of Natural History is open from 10 am to 5:45 pm 363 days a year (closed on Thanksgiving and Christmas<span class="desktop">—we hope to see you around sometime soon</span>!</em></p>',
+				'answerText': '<p>The Museum was founded in 1869 thanks to the efforts of Albert Smith Bickmore<span class="desktop">, a one-time student of Harvard zoologist Louis Agassiz,</span> and a group of influential New Yorkers<span class="desktop"> including Theodore Roosevelt, Sr., and J. Pierpont Morgan. The rest, as they say, is history</span>.</p><p><em>The American Museum of Natural History is open from 10 am to 5:45 pm 363 days a year (closed on Thanksgiving and Christmas)<span class="desktop">—we hope to see you around sometime soon</span>!</em></p>',
 				'min': 1850,
 				'max': 1899,
 				'minorScale': 1,
@@ -402,7 +402,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			},
 			{ // 9
 				'text': 'Okay, here\'s our last question, and the only one that you might well remember experiencing if you are of a certain age: when did the first person land on the Moon?',
-				'answerText': '<p>That giant leap for mankind occurred on July 20, 1969, during the Apollo 11 mission — 100 years after the founding of the Museum. It is a stirring reminder of the discoveries still to be made and frontiers still to be explored, and of the hunger for knowledge that drives everything we do at the Museum.</p>',
+				'answerText': '<p>That giant leap for mankind occurred on July 20, 1969, during the Apollo 11 mission&#8212;100 years after the founding of the Museum. It is a stirring reminder of the discoveries still to be made and frontiers still to be explored, and of the hunger for knowledge that drives everything we do at the Museum.</p>',
 				'min': 1940,
 				'max': 1979,
 				'minorScale': 1,

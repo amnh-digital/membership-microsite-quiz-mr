@@ -81,6 +81,16 @@
 			text-align:center;
 		}
 
+		.answerText {
+			span.desktop { display: inline; }
+			span.mobile { display: none; }
+
+			@media (max-width: $breakpoint-sm){
+				span.desktop { display: none; }
+				span.mobile { display: inline; }
+			}
+		}
+
 		.nextButtonWrapper {
 			text-align:center;
 			padding-top: 20px;

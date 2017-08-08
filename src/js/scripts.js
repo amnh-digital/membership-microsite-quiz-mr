@@ -63,4 +63,10 @@ $(document).ready(function(){
 	  'event': 'gaVirtualPageview'
 	});
 	console.log('triggering event: /start');
+
+
+
+
+
+	
 });

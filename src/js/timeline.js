@@ -1,5 +1,5 @@
 var timeline = (function($){
-
+	//console.log('1');
 	var questions;
 
 	var o = {
@@ -30,6 +30,7 @@ var timeline = (function($){
 	};
 	
 	var init = function(opt){
+		
 		o = $.extend({}, o, opt);
 
 		questions = o.data.questions;
@@ -37,10 +38,6 @@ var timeline = (function($){
 		buildTimelines();
 		addListeners();
 		start();	
-
-		//showNextQuestion(10);	
-		//destroy();
-		console.log('v1.6');
 	};
 
 	/**
@@ -210,19 +207,21 @@ var timeline = (function($){
 			var timeline = $('#timeline'+timelineId);
 		}
 		
-		
 		var majorGridPoint = $(timeline).attr('data-axis');
 		var childTicks = $(timeline).find('.'+o.elems.timelineTickClass);
-		//console.log('major point: '+majorGridPoint);
-		//console.log('timeline: '+$(timeline).attr('id'));
 
 		$(childTicks).each(function(){
 
 			var thisYear = $(this).attr('data-year');
 			if(thisYear % majorGridPoint === 0){
-				var offset = $(this).offset();
-				//console.log(offset);
+				//var offset = $(this).offset();
+				var offset = $(this).position();
+
 				//console.log(thisYear);
+				//console.log(offset);
+				//console.log('  ');
+
+
 				var majorPoint = $(timeline).find('.'+o.elems.timelineAxisClass+'[data-year="'+thisYear+'"]');
 				$(majorPoint).css({'left':(offset.left-1)+'px'});
 			}
@@ -231,12 +230,16 @@ var timeline = (function($){
 	};
 
 
-	var centerTimeline = function(){
+	var centerTimeline = function(num){
 
 		var timeline = getActiveTimeline();
 		//var thisId = $(timeline).attr('id');
 		//var thisElem = document.getElementById(thisId);
 		
+		//var f = $('#timelineInner').scrollLeft();
+		//console.log('scrollLeft is currently '+f);
+
+
 		$('#timelineInner').scrollLeft(0);
 
 		if($(window).width() < (timeline).width()){
@@ -315,42 +318,44 @@ var timeline = (function($){
 	// hide this timeline and show the next one
 	var showNextQuestion = function(num){
 
-				
-		
 		if($('#question'+num).length) {
 			eventTrigger('/question-'+(num+1));
 
 
+
 			// hide this one
-			$('#timeline'+(num-1)).fadeOut();//.hide( "slide", { direction: 'left' },1400);
+			$('#timeline'+(num-1)).hide()//.fadeOut();
 			$('.'+o.elems.questionElementClass).hide();
 			$('.'+o.elems.timelineTickClass+' .hit').removeClass('correct').removeClass('incorrect');		
 
 
-
+			
 			// show the next one
 			$('#question'+num).show();
-			var targetHeight = $(window).height() - 60 - 115 - 20;
 			
 			
+
 			if(num == 0){
-				$('body .wrapper').delay(1000).animate({height: targetHeight+"px"}, 500);
+				var targetHeight = $(window).height() - 60 - 115 - 20;
+				$('body .wrapper').delay(500).animate({height: targetHeight+"px"}, 500);
 				
 			} else {
 				//$('#timeline'+num).delay(800).show( "slide", { direction: 'right' },1400);
 			}
-			$('#timeline'+num)/*.delay(2000)*/.show();
-			$('#question'+num+' .questionWrapper').delay(2000).fadeIn();
-			centerTimeline();
+
+
+			$('#timeline'+num).show();//.delay(1000).show();
+			centerTimeline(num);
 			fitTimelineLabels(num);
-			
+			$('#question'+num+' .questionWrapper').show();//.delay(1000).fadeIn();
+
 
 			setTimeout(function(){
 				toggleHelper();
 				toggleTimeline(true);
-			},3000);
+			},1500);
 
-			
+	
 			
 		} else {
 			destroy();
@@ -583,6 +588,10 @@ var timeline = (function($){
 		$(window).resize(function() {
 			fitTimelineLabels();
 			toggleHelper();
+
+			var targetHeight = $(window).height() - 60 - 115 - 20;
+			$('body .wrapper').height(targetHeight+"px");
+
 		});
 
 		// user has viewed an answer, move on to the next question
