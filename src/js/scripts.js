@@ -35,12 +35,10 @@ $(document).ready(function(){
 	});
 
 	//header social share hover states
-	$('header .social-list a').hover(function() {
-		var $thisImg = $(this).find('img');
-		$thisImg.attr('src',$thisImg.attr('src').replace('.png','-hover.png'));
+	$('header .social-list li').hover(function() {
+		$(this).addClass('hover');
 	}, function() {
-		var $thisImg = $(this).find('img');
-		$thisImg.attr('src',$thisImg.attr('src').replace('-hover.png','.png'));
+		$(this).removeClass('hover');
 	});
 
 	$('#state').selectmenu({

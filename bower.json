@@ -4,6 +4,7 @@
     "jquery": "^3.2.1",
     "normalize-css": "normalize.css#^7.0.0",
     "dragscroll": "^0.0.8",
-    "jquery-ui": "^1.12.1"
+    "jquery-ui": "^1.12.1",
+    "components-font-awesome": "^4.7.0"
   }
 }

@@ -26,6 +26,8 @@ gulp.task( 'sass', function() {
 gulp.task( 'sass', function() {
 	var cssFiles = ['./src/sass/main.scss'];
 
+	console.log(plugins.mainBowerFiles());
+
 	gulp.src(plugins.mainBowerFiles().concat(cssFiles))
 		.pipe(plugins.filter(['**/*.css','**/*.scss']))
 		.pipe(plugins.order([
@@ -38,6 +40,13 @@ gulp.task( 'sass', function() {
 		.pipe(gulp.dest( './web/dist/css/' ));
 
 });
+
+gulp.task('fonts', function() {
+    return gulp.src([
+                    'public/vendor/components-font-awesome/fonts/fontawesome-webfont.*'])
+            .pipe(gulp.dest('./web/dist/fonts/'));
+});
+
 
 //
 //  Watch
@@ -69,5 +78,5 @@ gulp.task('image', function () {
 //
 //  Build tasks
 //
-gulp.task( 'heroku:production', ['sass','js','image'] );
-gulp.task( 'default', ['sass','js'] );
+gulp.task( 'heroku:production', ['sass','js','image','fonts'] );
+gulp.task( 'default', ['sass','js','fonts'] );

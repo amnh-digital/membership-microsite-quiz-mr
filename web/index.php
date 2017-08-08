@@ -67,9 +67,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<div class="site-title"><h1>When In The World Quiz</h1></div>
 	<div class="social">
 		<ul class="social-list">
-			<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//whenintheworld.amnh.org/%3Futm_medium%3Dsocial%26utm_source%3Dfbshare%26utm_campaign%3DWhenIntheWorldQuiz" id="gtm-header-icon-fb" target="new"><img src="/dist/img/share-fb.png"/></a></li>
-			<li><a href="https://twitter.com/intent/tweet?text=Take+the+When+in+the+World%3F+quiz+from+&#64;AMNH+and+test+your+knowledge.+Try+it+now+and+get+a+free+decal%3A+http%3A//bit.ly/2u90yrj" id="gtm-header-icon-tw" target="new"><img src="/dist/img/share-tw.png"/></a></li>
-			<li><a href="http://tumblr.com/widgets/share/tool?canonicalUrl=https://whenintheworld.amnh.org" id="gtm-header-icon-tum" target="new"><img src="/dist/img/share-tum.png"/></a></li>
+			<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//whenintheworld.amnh.org/%3Futm_medium%3Dsocial%26utm_source%3Dfbshare%26utm_campaign%3DWhenIntheWorldQuiz" id="gtm-header-icon-fb" target="new"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+			<li><a href="https://twitter.com/intent/tweet?text=Take+the+When+in+the+World%3F+quiz+from+&#64;AMNH+and+test+your+knowledge.+Try+it+now+and+get+a+free+decal%3A+http%3A//bit.ly/2u90yrj" id="gtm-header-icon-tw" target="new"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+			<li><a href="http://tumblr.com/widgets/share/tool?canonicalUrl=https://whenintheworld.amnh.org" id="gtm-header-icon-tum" target="new"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
 		</ul>
 	</div>
 </header>
@@ -256,9 +256,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<p class="smaller"><a href="https://www.amnh.org/apiuser/register?utm_medium=Referral&utm_source=whenintheworld.amnh.org&utm_campaign=WhenIntheWorldQuiz" id="gtm-ty-link-profile">Click here</a> to finish creating your profile on AMNH.org to make sure you're in the know about all the events and news that's important to you.</p>
 
 		<ul class="social-list">
-			<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//whenintheworld.amnh.org/%3Futm_medium%3Dsocial%26utm_source%3Dfbshare%26utm_campaign%3DWhenIntheWorldQuiz" id="gtm-ty-icon-fb" target="new"><img src="/dist/img/share-fb.png"/></a></li>
-			<li><a href="https://twitter.com/intent/tweet?text=Take+the+When+in+the+World%3F+quiz+from+&#64;AMNH+and+test+your+knowledge.+Try+it+now+and+get+a+free+decal%3A+http%3A//bit.ly/2u90yrj" id="gtm-ty-icon-tw" target="new"><img src="/dist/img/share-tw.png"/></a></li>
-			<li><a href="http://tumblr.amnh.org/" id="gtm-ty-icon-tum" target="new"><img src="/dist/img/share-tum.png"/></a></li>
+			<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//whenintheworld.amnh.org/%3Futm_medium%3Dsocial%26utm_source%3Dfbshare%26utm_campaign%3DWhenIntheWorldQuiz" id="gtm-ty-icon-fb" target="new"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+			<li><a href="https://twitter.com/intent/tweet?text=Take+the+When+in+the+World%3F+quiz+from+&#64;AMNH+and+test+your+knowledge.+Try+it+now+and+get+a+free+decal%3A+http%3A//bit.ly/2u90yrj" id="gtm-ty-icon-tw" target="new"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+			<li><a href="http://tumblr.amnh.org/" id="gtm-ty-icon-tum" target="new"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
 		</ul>
 	</div>
 </div>
