@@ -40,7 +40,7 @@ var timeline = (function($){
 
 		//showNextQuestion(10);	
 		//destroy();
-		console.log('v1.4');
+		console.log('v1.6');
 	};
 
 	/**
@@ -167,13 +167,6 @@ var timeline = (function($){
 			        $("<div>", {class: 'label'}).text(displayYear)
 			    ).appendTo($(thisT).children('.'+o.elems.timelineTopClass));
 
-				/*
-				if('hideMinorLabels' in q){
-					if(q.hideMinorLabels == true){
-						$(tick).html('<div></div>');
-					}
-				}*/
-
 				thisYear = thisYear + scale;
 				count++;
 			}
@@ -220,12 +213,16 @@ var timeline = (function($){
 		
 		var majorGridPoint = $(timeline).attr('data-axis');
 		var childTicks = $(timeline).find('.'+o.elems.timelineTickClass);
+		//console.log('major point: '+majorGridPoint);
+		//console.log('timeline: '+$(timeline).attr('id'));
 
 		$(childTicks).each(function(){
 
 			var thisYear = $(this).attr('data-year');
 			if(thisYear % majorGridPoint === 0){
 				var offset = $(this).offset();
+				//console.log(offset);
+				//console.log(thisYear);
 				var majorPoint = $(timeline).find('.'+o.elems.timelineAxisClass+'[data-year="'+thisYear+'"]');
 				$(majorPoint).css({'left':(offset.left-1)+'px'});
 			}
@@ -237,6 +234,10 @@ var timeline = (function($){
 	var centerTimeline = function(){
 
 		var timeline = getActiveTimeline();
+		//var thisId = $(timeline).attr('id');
+		//var thisElem = document.getElementById(thisId);
+		
+		$('#timelineInner').scrollLeft(0);
 
 		if($(window).width() < (timeline).width()){
 			//$(timeline).scrollLeft( 300 );
@@ -338,14 +339,14 @@ var timeline = (function($){
 			} else {
 				//$('#timeline'+num).delay(800).show( "slide", { direction: 'right' },1400);
 			}
-			$('#timeline'+num).delay(2000).show();
+			$('#timeline'+num)/*.delay(2000)*/.show();
 			$('#question'+num+' .questionWrapper').delay(2000).fadeIn();
+			centerTimeline();
 			fitTimelineLabels(num);
+			
 
 			setTimeout(function(){
-				
 				toggleHelper();
-				centerTimeline();
 				toggleTimeline(true);
 			},3000);
 
