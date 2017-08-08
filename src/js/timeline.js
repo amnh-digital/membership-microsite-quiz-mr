@@ -559,7 +559,9 @@ var timeline = (function($){
 
 	var checkForm = function(){
 		$('#form input').each(function(){
-			validate(this);
+			if($(this).val() != ''){
+				validate(this);
+			}
 		});
 	};
 
