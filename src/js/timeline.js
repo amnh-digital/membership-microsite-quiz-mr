@@ -1,5 +1,4 @@
 var timeline = (function($){
-	//console.log('1');
 	var questions;
 
 	var o = {
@@ -325,7 +324,7 @@ var timeline = (function($){
 
 
 			// hide this one
-			$('#timeline'+(num-1)).hide()//.fadeOut();
+			$('#timeline'+(num-1)).fadeOut();
 			$('.'+o.elems.questionElementClass).hide();
 			$('.'+o.elems.timelineTickClass+' .hit').removeClass('correct').removeClass('incorrect');		
 
@@ -345,16 +344,20 @@ var timeline = (function($){
 			}
 
 
-			$('#timeline'+num).show();//.delay(1000).show();
-			centerTimeline(num);
-			fitTimelineLabels(num);
-			$('#question'+num+' .questionWrapper').show();//.delay(1000).fadeIn();
+			$('#timeline'+num).fadeIn(400,function(){
+				centerTimeline(num);
+				fitTimelineLabels(num);
+				$('#question'+num+' .questionWrapper').delay(1000).fadeIn();
+				setTimeout(function(){
+					toggleHelper();
+					toggleTimeline(true);
+				},1500);
+			});
+			
+			
 
 
-			setTimeout(function(){
-				toggleHelper();
-				toggleTimeline(true);
-			},1500);
+			
 
 	
 			
