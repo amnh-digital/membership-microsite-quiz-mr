@@ -1,8 +1,9 @@
 var timeline = (function($){
+
 	var questions;
-	console.log('v2');
 
 	var o = {
+		testing: false,
 		splash: '#splash-screen',
 		confirmation: '#confirmation-screen',
 		scrollAmount: 2,
@@ -40,6 +41,7 @@ var timeline = (function($){
 		buildTimelines();
 		checkForm();
 		addListeners();
+		testing();
 		start();	
 	};
 
@@ -50,6 +52,9 @@ var timeline = (function($){
 	*/
 	// hide the splash page, show the first question
 	var start = function(){
+		log('starting timeline');
+		log(' - - - - - -');
+
 		$('.'+o.elems.timelineElementClass).hide();
 		$(o.splash).slideUp();
 		showNextQuestion(0);
@@ -58,12 +63,14 @@ var timeline = (function($){
 
 	// show conformation page
 	var destroy = function(){
+		log('preparing confirmation page, calculating final score');
 
 		// calculate final score
 		data = { step: 'final' };
 
 		$.post("post.php",data).done(function(resp) {
 			result = JSON.parse(resp);
+			log(result);
 
 			if(result.result == 'success'){
 				
@@ -91,6 +98,7 @@ var timeline = (function($){
 	*/
 	// go through each question and built timeline, question text, answer text
 	var buildTimelines = function(){
+		log('calling func buildTimelines()');
 
 		data = o.data;
 
@@ -191,6 +199,7 @@ var timeline = (function($){
 				}
 			});
 		});
+		log('end buildTimelines()');
 	};
 
 
@@ -203,6 +212,8 @@ var timeline = (function($){
 	*/
 	// look at the year boxes for this timeline and adjust their widths
 	var fitTimelineLabels = function(timelineId){
+		log('fit labels for timeline '+timelineId);
+		log(' - - - - - -');
 
 		if(timelineId == null){
 			var timeline = getActiveTimeline();
@@ -219,11 +230,6 @@ var timeline = (function($){
 			if(thisYear % majorGridPoint === 0){
 				//var offset = $(this).offset();
 				var offset = $(this).position();
-
-				//console.log(thisYear);
-				//console.log(offset);
-				//console.log('  ');
-
 
 				var majorPoint = $(timeline).find('.'+o.elems.timelineAxisClass+'[data-year="'+thisYear+'"]');
 				$(majorPoint).css({'left':(offset.left-1)+'px'});
@@ -256,11 +262,32 @@ var timeline = (function($){
 
 
 	var centerTimeline = function(num){
+		log('center timeline '+num);
 		//var timeline = getActiveTimeline();
 		$('#timelineInner').scrollLeft(0);
 	}
 	
 
+	// save the first question
+	var saveFirstQuestionResponse = function(userAnswer,timelineNumber){
+		
+		data = {
+			step: 'firstQuestion',
+			answer: userAnswer,
+			questionNumber: timelineNumber
+		};
+		log('saving first question. save data below.');
+		log(data);
+
+		$.post("post.php",data).done(function(resp) {
+			result = JSON.parse(resp);
+			log('first question saved, response below');
+			log(result);
+			if(result.result == 'success'){
+				prepareAnswer(result.message);
+			}
+		});
+	};
 	// save individual question
 	var saveQuestionResponse = function(userAnswer,timelineNumber){
 		data = {
@@ -271,6 +298,8 @@ var timeline = (function($){
 			
 		//console.log('sending data to question save');
 		//console.log(data);
+		log('saving individual question response '+timelineNumber);
+		log(data);
 
 
 		$.post("post.php",data).done(function(resp) {
@@ -285,8 +314,10 @@ var timeline = (function($){
 
 	// show the user what the correct answer after saving it is with text and timeline ticks
 	var prepareAnswer = function(data){
-		
-		//console.log(data);
+		log('show answer and user score, prepareAnswer()');
+		log('user score data');
+		log(data);
+		log(' - - - - - -');
 
 		var timelineNum = data.questionId - 1;
 		var correctAnswer = data.questionAnswer;
@@ -326,6 +357,7 @@ var timeline = (function($){
 
 	// hide this timeline and show the next one
 	var showNextQuestion = function(num){
+		log('showing question '+num);
 
 		if($('#question'+num).length) {
 			eventTrigger('/question-'+(num+1));
@@ -362,15 +394,8 @@ var timeline = (function($){
 					toggleTimeline(true);
 				},1500);
 			});
-			
-			
-
-
-			
-
-	
-			
 		} else {
+			log('question '+num+' does not exist');
 			destroy();
 		}	
 	};
@@ -385,7 +410,10 @@ var timeline = (function($){
 	*/
 	// show the user capture form
 	var showForm = function(selectedYear){
+		log('showing capture form');
+		log(' - - - - - -');
 		eventTrigger('/email-capture');
+
 		$('#form #submittedYear').val(selectedYear);
 		$('#form #optin').trigger('click');
 		$('#form #optin').prop('checked', true);
@@ -397,7 +425,7 @@ var timeline = (function($){
 
 	// validate form fields on capture form
 	var validateForm = function(){
-
+		log('validating capture form');
 		var formError = false;
 		$(o.elems.form + ' .required').each(function() {
 			var $theInput = $(this).siblings();
@@ -416,8 +444,6 @@ var timeline = (function($){
 			}
 		}
 
-
-
 		if(formError == true){
 			toggleSubmit(false);
 		} else {
@@ -429,11 +455,15 @@ var timeline = (function($){
 
 	// post the form to the database, move on to first answer
 	var saveFormResponse = function(data){
-
 		data.step = 'user';
+
+		log('form validation passed, saving form with data');
+		log(data);
 
 		$.post("post.php",data).done(function( resp ) {
 			result = JSON.parse(resp);
+			log('form saved. response below');
+			log(result);
 
 			if(result.result == 'error'){
 				toggleSubmit(false);
@@ -456,10 +486,8 @@ var timeline = (function($){
 				  'event': 'emailSignup'
 				});
 
-				saveQuestionResponse(data.submittedYear,0);
+				saveQuestionResponse(data.submittedYear,1);
 			}
-
-
 		});
 	};
 
@@ -567,6 +595,7 @@ var timeline = (function($){
 	}
 
 	var checkForm = function(){
+		log('starting checkForm()');
 		$('#form input').each(function(){
 			if($(this).val() != ''){
 				validate(this);
@@ -596,12 +625,30 @@ var timeline = (function($){
 		}
 	}
 
+	var log = function(msg){
+		if(o.testing == true){
+			console.log(msg);
+		}
+	}
+
+	var testing = function(){
+		if(o.testing == true){
+			log('setting up testing environment');
+			$('#fn').val('David');
+			$('#ln').val('Danforth');
+			$('#em').val('dadanforth@gmail.com');
+			$('#optin').prop('checked',false);
+			checkForm();
+		}
+	}
+
 	/**
 	  * event listeners
 	  * catch events, prepare some values, call a function
 	  * 
 	*/
 	var addListeners = function(){
+		log('attaching event listeners');
 		var that = this;
 
 		// timeline year boxes need to be sized properly on load and resize
@@ -619,20 +666,31 @@ var timeline = (function($){
 		$('.next').click(function(){
 			var thisTimeline = $(this).attr('data-timeline');
 			thisTimeline++;
+			log('advancing timeline');
 			showNextQuestion(thisTimeline);
 		});
 
 		// user has picked their answer, proceed to answer or capture if this is Q #1
 		$('.'+o.elems.timelineTickClass+' .hit').click(function(){
+			log('answer selected');
+
 			var selectedYear = $(this).parent().attr('data-year');
 			var $t = getActiveTimeline();
 			var timelineNum = $t.attr('id').substring(8);
 
 			if(timelineNum == 0){
+				saveFirstQuestionResponse(selectedYear,timelineNum);
+			} else if (timelineNum == 1){
 				showForm(selectedYear);
 			} else {
 				saveQuestionResponse(selectedYear,timelineNum);
 			}
+			/*
+			if(timelineNum == 0){
+				showForm(selectedYear);
+			} else {
+				saveQuestionResponse(selectedYear,timelineNum);
+			}*/
 		});
 
 		// user has attempted to submit the capture form
@@ -681,7 +739,6 @@ var timeline = (function($){
 			moveTimeline(direction);
 
 		}).mouseup(function() {
-    		//clearInterval(o.mouseIsDown);
     		o.mouseIsDown = false;
 		});
 	};
@@ -689,7 +746,6 @@ var timeline = (function($){
 
 	// google analytics event firing
 	var eventTrigger = function(eventName){
-		console.log('triggering event: '+eventName);
 		dataLayer.push({
 		  'gaVirtualPageURL': eventName,
 		  'event': 'gaVirtualPageview'
