@@ -1,5 +1,5 @@
 var timeline = (function($){
-
+	console.log('v3');
 	var questions;
 
 	var o = {
@@ -731,15 +731,13 @@ var timeline = (function($){
 		});
 
 
-
-		$('#tooltip .arrow').mousedown(function(){
+		$('#tooltip .arrow').on('mousedown touchstart',function(){
 			if($(this).hasClass('arrow-left')){ direction = 'right'; }
 			else { direction = 'left'; }
 			o.mouseIsDown = true;
 			moveTimeline(direction);
-
-		}).mouseup(function() {
-    		o.mouseIsDown = false;
+		}).on('mouseup touchend',function(){
+			o.mouseIsDown = false;
 		});
 	};
 
