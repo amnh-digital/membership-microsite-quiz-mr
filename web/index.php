@@ -427,9 +427,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		]
 	};
 
+	timelineObj = {};
+	timelineObj.data = questions;
+	if($.getUrlVar('testing') && $.getUrlVar('testing') == 'true'){
+		timelineObj.testing = true;
+	}
+
+	console.log(timelineObj);
+
 	$(document).ready(function(){
 		$('#jedediah').click(function(){
-			timeline.init({data: questions});
+			timeline.init(timelineObj);
 		});
 	});
 
