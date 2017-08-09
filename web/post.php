@@ -128,6 +128,12 @@ if (!empty($_POST)){
 					$result = 'success';
 					$message = 'ok';
 
+					if($clean['opt_in'] && $clean['opt_in'] == 'y'){
+						$sessionVals = $app['session']->get('user');
+						$sessionVals['optin'] = true;
+						$app['session']->set('user', $sessionVals);
+					}
+
 				} else {
 					$result = 'error';
 					$message = $stmt->errorInfo();
@@ -139,7 +145,7 @@ if (!empty($_POST)){
 			}
 		}
 
-		$resp = array('result'=>$result,'focus' => $focus,'message'=>$message,'id'=>$userId); // define a response
+		$resp = array('result'=>$result,'focus' => $focus,'message'=>$message,'id'=>$userId, 'se' =>$sessionVals); // define a response
 
 		echo json_encode($resp);
 	}
@@ -315,6 +321,14 @@ function calculateFinalScore($app,$id){
 
 	$score = round($worseAnswers/(count($users)-1) * 100); 
 
+	$optin = 'n';
+	$user = $app['session']->get('user');
+	if((array_key_exists('optin', $user))&&($user['optin'] == true)){
+		$optin = 'y';
+	}
+
+	
+
 	/*
 	echo '>>'.$thisUserScore.'<br /><br /><br />';
 	echo 'worse answers '.$worseAnswers;
@@ -323,7 +337,7 @@ function calculateFinalScore($app,$id){
 	echo '<br /><br /><br />';
 	var_dump($users);*/
 
-	$resp = array('result'=>'success', 'message' => $score); 
+	$resp = array('result'=>'success', 'message' => $score, 'optin' => $optin); 
 	echo json_encode($resp); // response to user
 }
 

@@ -1,5 +1,5 @@
 var timeline = (function($){
-	console.log('v3');
+	console.log('v1');
 	var questions;
 
 	var o = {
@@ -77,6 +77,10 @@ var timeline = (function($){
 				if(result.message > 20){
 					$('#resultScoreContainer').show();
 					$('#resultScore').html(result.message+'%');
+				}
+
+				if(result.optin == 'n'){
+					$('.optinLanguage').hide();
 				}
 
 
