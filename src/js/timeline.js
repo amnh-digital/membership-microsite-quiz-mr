@@ -1,12 +1,12 @@
 var timeline = (function($){
-	console.log('v1=');
+	console.log('v2');
 	var questions;
 
 	var o = {
 		testing: false,
 		splash: '#splash-screen',
 		confirmation: '#confirmation-screen',
-		scrollAmount: 2,
+		scrollAmount: 8,
 		mouseIsDown: false,
 		timelineMinWidth: 1000,
 		imgPath: '/dist/img/',
@@ -723,9 +723,30 @@ var timeline = (function($){
 			}
 		});
 
+
+		$( "#state" ).on( "selectmenuselect", function( event, ui ) {
+			console.log('changed');
+			if(ui.item.value != ''){
+				$('label[for="state-button"]').hide();
+			} else {
+				$('label[for="state-button"]').show();
+			}
+
+			if($('#state-button').hasClass('error')){
+				if(ui.item.value != ''){
+					toggleSubmit(true);
+					$('#state-button').removeClass('error');
+				}
+			}
+		});
+
+
 		$('#form select').click(function(){
 			validate(this);
 		});
+
+
+
 
 		// adjust which fields are required if the user wants a premium
 		$('#form #optin').click(function(){

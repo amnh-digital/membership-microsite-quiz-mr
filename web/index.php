@@ -326,7 +326,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			{ // 3
 				'text': 'They say that breaking up is hard to do&#8212;but without it, our planet wouldn\'t be nearly as interesting. When did the supercontinent of Pangaea begin to break up into the separate continents we know today?',
 				'answerText': '<p>Pangaea broke up about 200 million years ago during the early Jurassic Period, as the continental plates inched along their separate paths.<span class="desktop"> The evidence of plate tectonics is all around, from the puzzle-piece coastlines of Africa and South America to the similarity of fossil organisms on land now separated by vast oceans&#8212;but it wasn\'t until the 20th Century that scientists recognized this crucial part of our history.</span></p>',
-				'min': -800,
+				'min': -600,
 				'max': -125,
 				'minorScale': 25,
 				'minorLabelRoundScale': 0,
@@ -356,7 +356,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			{ // 5
 				'text': 'Not as large as the Titanosaur, but still a commanding, thundering presence&#8212;when did the first mammoths appear?',
 				'answerText': '<p>Mammoths, like the ones on display at the Museum, are "only" about 4 million years old. That\'s quite recent compared with when titanosaurs lived, but fully 3,000,000,000 years since life first emerged. Evolution can move very slowly.</p>',
-				'min': -30,
+				'min': -20,
 				'max': -1,
 				'minorScale': 1,
 				'minorLabelRoundScale': 0,
@@ -371,7 +371,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			{ // 6
 				'text': 'Ancient Egyptians may get all the attention (thanks, Hollywood), but they were not the only ones to wrap and preserve their dead. When did cultures in Peru begin the practice of mummification?',
 				'answerText': '<p>Several cultures in what is now Peru began practicing mummification over 7,000 years ago, long before the Egyptians. <span class="desktop">This practice helped the living connect with the dead&#8212;in fact, some people kept mummies in their homes or brought them to festivals.</span></p><p><em><span class="desktop">Take in the fascinating history of ancient mummification&#8212;Egyptian and Peruvian&#8212;in the special Mummies exhibition at the LeFrak Gallery, open through January 2018.</span></em></p>',
-				'min': -25,
+				'min': -20,
 				'max': -1,
 				'minorScale': 1,
 				'minorLabelRoundScale': 0,

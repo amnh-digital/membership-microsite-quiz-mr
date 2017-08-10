@@ -45,16 +45,6 @@ $(document).ready(function(){
 	  width: '100%'
 	});
 
-	$( "#state" ).on( "selectmenuselect", function( event, ui ) {
-		if(ui.item.value != ''){
-			console.log('hide it');
-			$('label[for="state-button"]').hide();
-		} else {
-			$('label[for="state-button"]').hide();
-		}
-	} );
-
-
 	// track initial page view
 	dataLayer.push({
 	  'gaVirtualPageURL': '/start',

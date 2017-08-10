@@ -376,3 +376,10 @@
 		}
 	}
 }
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	#splash-screen #decalWrapper legend {
+		float:left;
+	}
+}
