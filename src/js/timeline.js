@@ -1,5 +1,5 @@
 var timeline = (function($){
-	console.log('v2');
+	console.log('v1');
 	var questions;
 
 	var o = {
@@ -556,10 +556,10 @@ var timeline = (function($){
 	toggleSubmit = function(newStatus){
 
 		if(newStatus == true){
-			$(o.elems.formError).css({'opacity': 0});
+			$(o.elems.formError).hide().css({'opacity': 0});
 			$(o.elems.formSubmit).removeAttr('disabled');
 		} else {
-			$(o.elems.formError).css({'opacity': 1});
+			$(o.elems.formError).show().css({'opacity': 1});
 			$(o.elems.formSubmit).attr('disabled','disabled');
 		}
 	}
