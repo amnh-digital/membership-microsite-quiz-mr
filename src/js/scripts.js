@@ -53,9 +53,7 @@ $(document).ready(function(){
 	console.log('triggering event: /start');
 
 
-	$(window).bind('touchmove',function(e) {
-		e.preventDefault();
-	});
+
 
 
 
