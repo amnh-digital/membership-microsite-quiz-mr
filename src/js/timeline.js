@@ -1,5 +1,5 @@
 var timeline = (function($){
-	console.log('v1');
+	console.log('v2');
 	var questions;
 
 	var o = {
@@ -385,14 +385,14 @@ var timeline = (function($){
 				$('body .wrapper').delay(500).animate({height: targetHeight+"px"}, 500);
 				
 			} else {
-				//$('#timeline'+num).delay(800).show( "slide", { direction: 'right' },1400);
+				
 			}
 
 
 			$('#timeline'+num).fadeIn(400,function(){
 				centerTimeline(num);
 				fitTimelineLabels(num);
-				$('#question'+num+' .questionWrapper').delay(1000).fadeIn();
+				$('#question'+num+' .questionWrapper').delay(200).fadeIn();
 				setTimeout(function(){
 					toggleHelper();
 					toggleTimeline(true);

@@ -231,14 +231,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="splash" id="splash-screen">
 	<div id="intro">
 		<img src="/dist/img/logo-white.png"/>
-		<h1>When In The World Quiz</h1>
+		<h1>When In The World? Quiz</h1>
 		<p>We celebrate and explore history here at the Museum, and one of the trickiest parts to grasp is the immense scale involved&#8212;in the simplest terms, what happened when.</p>
  
-		<p>Now's your chance to test your knowledge. Take the <em>When in the World</em> quiz and see if you can pinpoint key moments on the timeline, from mammoths to mummies. <strong>We're sending everyone who takes the quiz before September 9 a free Museum decal&#8212;so go ahead and start your journey through time!</strong></p>
+		<p class="desktop">Now's your chance to test your knowledge. Take the <em>When in the World</em> quiz and see if you can pinpoint key moments on the timeline, from mammoths to mummies. <strong>We're sending everyone who takes the quiz before September 9 a free Museum decal&#8212;so go ahead and start your journey through time!</strong></p>
 
-		<div id="jedediah">
-			<div class="left"><span>the</span></div>
-			<div class="right"><span>Take Quiz</span></div>
+		<div id="introBottomWrap">
+			<fieldset id="decalWrapper">
+				<legend align="center">Get A Free Decal</legend>
+		
+					<img src="/dist/img/amnhQuizDecal.png"/>
+			
+			</fieldset>
+
+			<div id="jedediah">
+				<div class="left"><span>the</span></div>
+				<div class="right"><span>Take Quiz</span></div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -316,7 +325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			},
 			{ // 3
 				'text': 'They say that breaking up is hard to do&#8212;but without it, our planet wouldn\'t be nearly as interesting. When did the supercontinent of Pangaea begin to break up into the separate continents we know today?',
-				'answerText': '<p>Pangaea broke up about 200 million years ago during the early Jurassic Period, as the continental plates inched along their separate paths. The evidence of plate tectonics is all around, from the puzzle-piece coastlines of Africa and South America to the similarity of fossil organisms on land now separated by vast oceans<span class="desktop">&#8212;but it wasn\'t until the 20th Century that scientists recognized this crucial part of our history</span>.</p>',
+				'answerText': '<p>Pangaea broke up about 200 million years ago during the early Jurassic Period, as the continental plates inched along their separate paths.<span class="desktop"> The evidence of plate tectonics is all around, from the puzzle-piece coastlines of Africa and South America to the similarity of fossil organisms on land now separated by vast oceans&#8212;but it wasn\'t until the 20th Century that scientists recognized this crucial part of our history</span>.</p>',
 				'min': -800,
 				'max': -125,
 				'minorScale': 25,
@@ -330,7 +339,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'timelineMinWidth': 1600
 			},
 			{ // 4
-				'text': 'When life began (3.5 billion years ago, remember?), organisms were simple and microscopic. Evolution often moves slowly, but eventually life got complicated&#8212;and <em>big</em>. When did the Museum\'s 122-foot-long plant-eating sauropod, the Titanosaur, roam the Earth?',
+				'text': '<span class="desktop">When life began (3.5 billion years ago, remember?), organisms were simple and microscopic. Evolution often moves slowly, but eventually life got complicated&#8212;and <em>big</em>. </span>When did the Museum\'s 122-foot-long plant-eating sauropod, the Titanosaur, roam the Earth?',
 				'answerText': '<p>Researchers have dated the Titanosaur to the early Cretaceous Period, about 140 million years ago. The Titanosaur was one of the largest land animals to ever stomp its way across the Earth. It also happens to be the longest animal ever displayed at the American Museum of Natural History<span class="desktop"> (though not the most massive&#8212;that distinction goes to the blue whale, a model of which hangs in the Museum\'s Milstein Hall of Ocean Life)</span>.</p>',
 				'min': -500,
 				'max': -10,
