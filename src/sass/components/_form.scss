@@ -142,6 +142,9 @@
                 }
             }
     	}
+        span.error {
+            border-color: $error-red;
+        }
     	option {
 	    	background-color: #fff;
             color: #004bb4;

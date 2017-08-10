@@ -1,5 +1,5 @@
 var timeline = (function($){
-	console.log('v1');
+	console.log('v1=');
 	var questions;
 
 	var o = {
@@ -15,7 +15,7 @@ var timeline = (function($){
 			timelineWrapper: '#timeline',
 			tooltip: '#tooltip',
 			form: '#form',
-			mailFields: ['address','city','state','zip'],
+			mailFields: ['address','city','state','zip','state-button'],
 			formSubmit: '#form #submit',
 			formError: '.error-wrapper',
 			questionElementClass: 'questionElement',
@@ -437,6 +437,14 @@ var timeline = (function($){
 			if($theInput.val() == ''){
 				formError = true;
 				$($theInput).addClass('error');
+
+
+				console.log($theInput.attr('id'));
+
+				if($theInput.attr('id') == 'state'){
+					console.log('ping state');
+					$('#state-button').addClass('error');
+				}
 			}
 		});
 
