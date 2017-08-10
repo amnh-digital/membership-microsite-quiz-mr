@@ -266,12 +266,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 		<p class="desktop"><a href="http://www.amnh.org/join-support/membership?utm_medium=Referral&utm_source=whenintheworld.amnh.org&utm_campaign=WhenIntheWorldQuiz" id="gtm-ty-link-membership">Click here to learn more and start or renew your membership!</a></p>
 
-		<p class="smaller"><a href="https://www.amnh.org/apiuser/register?utm_medium=Referral&utm_source=whenintheworld.amnh.org&utm_campaign=WhenIntheWorldQuiz" id="gtm-ty-link-profile">Click here</a> to finish creating your profile on AMNH.org to make sure you're in the know about all the events and news that's important to you.</p>
+		<p class="smaller"><a href="https://www.amnh.org/apiuser/register?utm_medium=Referral&utm_source=whenintheworld.amnh.org&utm_campaign=WhenIntheWorldQuiz" id="gtm-ty-link-profile" target="new">Click here</a> to finish creating your profile on AMNH.org to make sure you're in the know about all the events and news that's important to you.</p>
 
 		<ul class="social-list">
 			<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//whenintheworld.amnh.org/%3Futm_medium%3Dsocial%26utm_source%3Dfbshare%26utm_campaign%3DWhenIntheWorldQuiz" id="gtm-ty-icon-fb" target="new"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 			<li><a href="https://twitter.com/intent/tweet?text=Take+the+When+in+the+World%3F+quiz+from+&#64;AMNH+and+test+your+knowledge.+Try+it+now+and+get+a+free+decal%3A+http%3A//bit.ly/2u90yrj" id="gtm-ty-icon-tw" target="new"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-			<li><a href="http://tumblr.amnh.org/" id="gtm-ty-icon-tum" target="new"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
+			<li><a href="http://tumblr.com/widgets/share/tool?canonicalUrl=https://whenintheworld.amnh.org" id="gtm-ty-icon-tum" target="new"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
 		</ul>
 	</div>
 </div>
@@ -325,7 +325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			},
 			{ // 3
 				'text': 'They say that breaking up is hard to do&#8212;but without it, our planet wouldn\'t be nearly as interesting. When did the supercontinent of Pangaea begin to break up into the separate continents we know today?',
-				'answerText': '<p>Pangaea broke up about 200 million years ago during the early Jurassic Period, as the continental plates inched along their separate paths.<span class="desktop"> The evidence of plate tectonics is all around, from the puzzle-piece coastlines of Africa and South America to the similarity of fossil organisms on land now separated by vast oceans&#8212;but it wasn\'t until the 20th Century that scientists recognized this crucial part of our history</span>.</p>',
+				'answerText': '<p>Pangaea broke up about 200 million years ago during the early Jurassic Period, as the continental plates inched along their separate paths.<span class="desktop"> The evidence of plate tectonics is all around, from the puzzle-piece coastlines of Africa and South America to the similarity of fossil organisms on land now separated by vast oceans&#8212;but it wasn\'t until the 20th Century that scientists recognized this crucial part of our history.</span></p>',
 				'min': -800,
 				'max': -125,
 				'minorScale': 25,
@@ -370,7 +370,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			},
 			{ // 6
 				'text': 'Ancient Egyptians may get all the attention (thanks, Hollywood), but they were not the only ones to wrap and preserve their dead. When did cultures in Peru begin the practice of mummification?',
-				'answerText': '<p>Several cultures in what is now Peru began practicing mummification over 7,000 years ago, long before the Egyptians. <span class="desktop">This practice helped the living connect with the dead&#8212;in fact, some people kept mummies in their homes or brought them to festivals.</span></p><p><em><span class="desktop">Take in the fascinating history of ancient mummification&#8212;Egyptian and Peruvian&#8212;in the special Mummies exhibition at the LeFrak Gallery, open through January 2018.</span><span class="mobile">View both Egyptian and Peruvian mummies in the temporary Mummies exhibition at the LeFrak Gallery through January 2018.</span></em></p>',
+				'answerText': '<p>Several cultures in what is now Peru began practicing mummification over 7,000 years ago, long before the Egyptians. <span class="desktop">This practice helped the living connect with the dead&#8212;in fact, some people kept mummies in their homes or brought them to festivals.</span></p><p><em><span class="desktop">Take in the fascinating history of ancient mummification&#8212;Egyptian and Peruvian&#8212;in the special Mummies exhibition at the LeFrak Gallery, open through January 2018.</span></em></p>',
 				'min': -25,
 				'max': -1,
 				'minorScale': 1,
@@ -384,7 +384,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'timelineMinWidth': 1600
 			},
 			{ // 7
-				'text': 'You may not recognize the name of the Rapa Nui, but you know their handiwork. They are the ones who carved <em>moai</em> ancestor figures <span class="desktop">as towering stone statues</span> on what we know as Easter Island (also called Rapa Nui). When did these people first settle on this <span class="desktop">remote</span> volcanic island?',
+				'text': 'You may not recognize the name of the Rapa Nui, but you know their handiwork. They are the ones who carved <em>moai</em> ancestor figures <span class="desktop">as towering stone statues </span>on what we know as Easter Island (also called Rapa Nui). When did these people first settle on this <span class="desktop">remote</span> volcanic island?',
 				'answerText': '<p>The Rapa Nui first arrived on this remote Polynesian island around 300 CE. Located 2,300 miles from the coast of Chile, it was the most isolated inhabited island in the world. <span class="desktop">And the <em>moai</em>? They may seem like ancient history, but these unique monuments were carved between the 12th and 16th centuries.</span></p>',
 				'min': 0,
 				'max': 690,
