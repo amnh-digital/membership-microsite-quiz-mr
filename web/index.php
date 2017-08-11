@@ -264,7 +264,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 		<p class="desktop">There is so much more to discover at the Museum, and Members get to explore our halls like no one else. Membership will give you unlimited access to the Museum's collections, along with tickets to special exhibitions and other incredible benefits.</p>
 
-		<p class="desktop"><a href="http://www.amnh.org/join-support/membership?utm_medium=Referral&utm_source=whenintheworld.amnh.org&utm_campaign=WhenIntheWorldQuiz" id="gtm-ty-link-membership">Click here to learn more and start or renew your membership!</a></p>
+		<p class="desktop"><a href="http://www.amnh.org/join-support/membership?utm_medium=Referral&utm_source=whenintheworld.amnh.org&utm_campaign=WhenIntheWorldQuiz" id="gtm-ty-link-membership" target="new">Click here to learn more and start or renew your membership!</a></p>
 
 		<p class="smaller"><a href="https://www.amnh.org/apiuser/register?utm_medium=Referral&utm_source=whenintheworld.amnh.org&utm_campaign=WhenIntheWorldQuiz" id="gtm-ty-link-profile" target="new">Click here</a> to finish creating your profile on AMNH.org to make sure you're in the know about all the events and news that's important to you.</p>
 
